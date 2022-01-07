@@ -1,0 +1,16 @@
+divMigrate-online
+
+Relative directional Migration matrix Calculated using
+Gst (Nei & Chesser, 1983)
+
+If bootstrapping has been carried out, statistically
+significant values (alpha = 0.5) are indicated with '*'
+
+ Pops	HNL301,	OICP541,	IRO601,	HGRF661,	PTP721,	RRL782,	DHFA1202,
+HNL301, 	NA 	0.287 	0.293 	0.285 	0.287 	0.297 	0.835
+OICP541, 	0.306 	NA 	0.639 	0.309 	0.372 	0.445 	0.307
+IRO601, 	0.478 	0.543 	NA 	0.467 	0.496 	1 	0.494
+HGRF661, 	0.239 	0.254 	0.27 	NA 	0.984 	0.249 	0.266
+PTP721, 	0.357 	0.664 	0.666 	0.589 	NA 	0.502 	0.361
+RRL782, 	0.345 	0.361 	0.567 	0.339 	0.35 	NA 	0.344
+DHFA1202, 	0.705 	0.295 	0.305 	0.296 	0.295 	0.302 	NA
