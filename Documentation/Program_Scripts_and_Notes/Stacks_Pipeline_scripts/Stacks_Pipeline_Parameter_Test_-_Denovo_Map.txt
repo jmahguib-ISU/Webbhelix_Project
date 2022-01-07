@@ -1,0 +1,126 @@
+# Stacks Pipeline: Denovo Maps
+
+
+#####denovo_maps is a program within the Stacks package that allows you to run all the components of the Stacks pipeline in one command script; this is particularly useful for running multiple runs of the pipeline while trying to test for the best parameter set to use for downstream analyses. This is the program you will use to generate SNPs for your replicated samples (from across random populations of your total specimen sampling) using variations in the Stacks parameters "-m," "-M," "--max_locus_stacks," and "-n," keeping all parameters set to their default values while adjusting the values of only one of the parameters at a time. The following indicates the default values that will be used, as well as the value ranges you might want to test for each parameter:
+
+-m (specifies the minimum number of identical raw reads required to create a stack)
+	Default value: 3
+	Range for testing: 2 - 10
+
+-M (specifies number of mismatches allowed between loci when processing a single individual)
+	Default value: 2
+	Range for testing: 2 - 8
+
+--max_locus_stacks (maximum number of stacks at a single de novo locus)
+	Default value: 3
+	Range for testing: 2 - 6
+
+-n (specifies number of mismatches allowed between loci when building the catalog)
+	Default value: 0
+	Range for testing: 0 - 7
+
+
+
+
+
+#####Example script for running Denovo Map as it should be entered into the terminal (01/22/2018):
+
+denovo_map.pl -m 3 -M 2 -X "ustacks:--max_locus_stacks 3" -n 0 -T 15 -S -b 3230 -t -o ./jmahguib/Stacks_Denovo_Map_outputs/Cg_practice_8replicates/ -X "populations:--plink --vcf" -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_09.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_09_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_12.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_12_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_15.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_15_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_16.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_16_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_06.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_06_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_08.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_08_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_09.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_09_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_10.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_10_r.fq
+
+
+
+
+
+#####Breakdown of the components of the above script for running denovo_map, with annotations:
+
+denovo_map.pl ###Command to initiate the denovo_map program within the Stacks module
+
+-m 2 ###Indicates the minimum number of identical raw sequence reads needed to create a stack
+
+-M 2 ###Tells the program how many mismatches are allowed between loci when processing one individual specimen
+
+-X "ustacks:--max_locus_stacks 3" ###The '-X' option in denovo_map allows for a specific component of the Stacks pipeline to be given a specific value for one of its options; in the example script here, '-X' is being used to specify to the UStacks component of the pipeline (indicated by "ustacks: " where the parenthesis are required for the option to function) to set the option '--max_locus_stacks' to specified values. Notice that unlike the normal way of specifying options in programs by putting a dash in front of the signifying letter for the option (such as '-m'), when specifying options for a specific program within the '-X' option in denovo_map, you have to use two dashes before the option signifier (such as '--m')
+
+-n 1 ###Sets the number of mismatches allowed between loci when building the catalog of loci
+
+-T 15 ###Specifies the number of threads to use (I'm not really clear on what this means; this isn't a value I'll be playing around with)
+
+-S ###Used to disable SQL data in the database (whatever that means)
+
+-b 3230 ###This sets the batch ID number for the dataset; the number you assign here will be tagged onto the output files for each run of the script. This is a useful tool for labeling your output files so that they don't override previous output files that were generated using program default names
+
+-t ###This option instructs the pipeline to remove/break up highly repetitive RAD-Tags (done so in the UStacks portion of the pipeline)
+
+-o ./jmahguib/Denovo_Map_outputs/Cg_practice_8replicates/ ###This option designates the directory that output files from the pipeline will be deposited into
+
+-X "populations:--plink --vcf" ###Option for specifically instructing the Populations program of the Stacks pipeline to generate output files in both 'plink' and 'vcf' formats
+
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_09.fq ###This option describes the file path to your raw sequence data files, which denovo_map needs to read in order to run the pipeline. You need to add this option once for every input file you have for the pipeline
+
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_09_r.fq 
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_12.fq 
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_12_r.fq 
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_15.fq 
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_15_r.fq 
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_16.fq 
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_16_r.fq 
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_06.fq 
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_06_r.fq 
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_08.fq 
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_08_r.fq 
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_09.fq 
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_09_r.fq 
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_10.fq 
+-s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_10_r.fq
+
+
+
+
+
+#####After testing the above four parameters (-m, -M, -mls and -n) and determining which set results in the lowest SNP error rate, there are four more options that should be added to the above denovo_map script and tested: --model_type ('SNP' model vs 'bounded' model, implemented in UStacks; for 'bounded' model, option '--bound_high' should be included and varied); --min_maf (minimum minor allele frequency, implemented in Populations program); --write_single_snp (option in the Populations program to restrict data analysis to only the first SNP per locus); rxstacks (another program in the Stacks package that makes corrections to genotype and haplotype calls in individual samples based on data accumulated from a population-wide examination). However, unlike with -m, -M, -mls and -n, testing --model_type, --min_maf, --write_single_snp and the rxstacks corrections should be done one after the other, rather than in sets, and they should be tested in the order they're presented here:
+
+--model_type ('SNP' (default model) or 'bounded' model)
+	When testing 'bounded' model, use option --bound_high and vary its value...
+	Values for testing: 0.05, 0.1, 0.2 and 0.3
+
+--min_maf (specifies a minimum minor allele frequency required to process a nucleotide site at a locus)
+	Value for testing: 0.05
+	*This is a "with or without" test; don't need to test a range of values*
+
+--write_single_snp (restricts data analysis to only the first SNP per locus)
+	*This is a "with or without" test; no specific values to test
+
+rxstacks (makes corrections to genotype and haplotype calls in individual samples)
+	*
+
+
+
+
+
+#####Example script for running Denovo Map as it should be entered into the terminal for testing model type, minimum minor allele frequency, rxstacks correction and single SNP per locus calling (REMEMBER, these should be tested on after the other in the above listed sequence, and the resulting lowest SNP error rate in each test should inform the next test):
+
+###For testing model type...
+
+denovo_map.pl -m 3 -M 2 -X "ustacks:--max_locus_stacks 3 --model_type bounded --bound_high 0.05" -n 3 -T 15 -S -b 3233005 -t -o ./jmahguib/Stacks_Denovo_Map_outputs/Cg_practice_8replicates/ -X "populations:--plink --vcf" -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_09.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_09_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_12.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_12_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_15.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_15_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_16.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_16_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_06.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_06_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_08.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_08_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_09.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_09_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_10.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_10_r.fq
+
+###For testing minimum minor allele frequency...
+
+denovo_map.pl -m 3 -M 2 -X "ustacks:--max_locus_stacks 3 --model_type bounded --bound_high 0.05" -n 3 -T 15 -S -b 3233005005 -t -o ./jmahguib/Stacks_Denovo_Map_outputs/Cg_practice_8replicates/ -X "populations:--min_maf 0.05 --plink --vcf" -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_09.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_09_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_12.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_12_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_15.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_15_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_16.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_16_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_06.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_06_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_08.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_08_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_09.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_09_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_10.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_10_r.fq
+
+###For testing first-SNP only calling...
+
+denovo_map.pl -m 3 -M 2 -X "ustacks:--max_locus_stacks 3 --model_type bounded --bound_high 0.05" -n 3 -T 15 -S -b 323303051 -t -o ./jmahguib/Stacks_Denovo_Map_outputs/Cg_practice_8replicates/ -X "populations:--min_maf 0.05 --write_single_snp --plink --vcf" -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_09.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_09_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_12.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_12_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_15.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_15_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_16.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CLR_16_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_06.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_06_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_08.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_08_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_09.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_09_r.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_10.fq -s ./jmahguib/Stacks_Process_RadTags_outputs/Cg_practice_8replicates/CSP_10_r.fq
+
+###For running the rxstacks correction...
+
+rxstacks -b 1 -P ./kkim/cg_duplicate/ -o ./kkim/cg_duplicate_corr/ --conf_lim 0.25 --prune_haplo --model_type bounded --bound_high 0.1 --lnl_lim -10.0 -t 8
+
+#or...
+
+rxstacks -b 1 -P ./kkim/cgdr_out_238/ -o ./kkim/cgdr_out_238_corr_snp/ --conf_lim 0.25 --prune_haplo --model_type snp --lnl_lim -10.0 -t 8
+
+#...depending on which model type was better in the first test above
+
+
+
+

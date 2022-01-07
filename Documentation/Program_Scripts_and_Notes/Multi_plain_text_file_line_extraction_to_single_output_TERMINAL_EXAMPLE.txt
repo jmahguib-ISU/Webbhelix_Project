@@ -1,0 +1,359 @@
+Last login: Tue Dec  3 15:19:19 on ttys002
+kjroemba:~ jermaine$ ls
+Applications			Geneious Backup			MyFirstGitRepository
+BCB546X-Spring2017		ISU_Data_Backup			Pictures
+BCB546X-UnixAssignment-Jermaine	ISU_Projects			Public
+Desktop				Jmol.pov			Samsung
+Documents			Jmol.pov.ini			Temp
+Downloads			Library				anaconda
+Dropbox				Movies				homebrew-science
+Geneious 8.1 Data		Music
+kjroemba:~ jermaine$ cd Desktop/
+kjroemba:Desktop jermaine$ ls
+2000px-Zonitoides_nitidus_drawing.svg.png
+BCB546X-Spring2017-Play
+BCBIO444_-_Bioinformatic_Analysis
+Bell Museum Triodopsis.xls
+Bio211L
+Bio212L
+Bio255L
+Bio312L
+D_macc_locations_073016.xlsx
+Discidae Species List.xls
+Discids from J_Slapcinsky 2.xlsx
+Discids from J_Slapcinsky.xlsx
+Discids from T_Pierce.xlsx
+EEB511
+EEOB563_-_Molecular_Phylogenetics_Spring_2019
+EEOB563_Final_Project
+ISU Specimen Notebook 042016.xls
+It_Could_Happen_Here_podcast_episodes
+It_Could_Happen_Here_podcast_episodes.zip
+Jermaine_Mahguib_UM_Membership_Form.rtf
+Jermaine_Mahguib_UM_TravelGrant_Abstract.docx
+Jermaine_Mahguib_UM_TravelGrant_Abstract_KJR.docx
+Jermaine_Mahguib_UM_TravelGrant_Form_2019.doc
+Jermaine_Mahguib_WCM2019_Abstract.docx
+Jermaine_Mahguib_WCM2019_Abstract.pdf
+Jermaines CV7.doc
+Mahguib_WCM2019.pptx
+MinSampSize_Webbhelix_Project
+MinSampSize_Workspace
+Miscellaneous
+Old_Papers
+PGDSpider_2.1.1.5
+POS_Committee_Meeting_2019.pptx
+POS_Meeting_Supplemental_2019.pptx
+PSMC analysis of RAD data.ppt
+Proposal
+Ref_Papers
+SNPsim presentation.ppt
+Screen Shot 2019-08-29 at 4.14.40 PM.png
+Seminar in EEB - The Coalescent
+Tax-Free_Ethanol_Training_Certificate_Nov2018-2021.pdf
+To Argus
+TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_LDnHWE_SNPs_filtered__genepop.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_LDnHWE_SNPs_filtered__genepopRF.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered__genepop.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered__genepopRF.txt
+Viewing Workday Payslips.pdf
+Webbhelix presentation pics
+Webbhelix_photography_supplies.xls
+Webbhelix_shell_color_photos
+Wm_IllinoisNHS
+Yosemite_2019
+dppm4.5.20-installer.dmg
+email_out
+eum3.5.10-installer.dmg
+ms_Playground
+psem1.17.20-installer.dmg
+sftp_get
+sftp_put
+kjroemba:Desktop jermaine$ cd MinSampSize_Workspace
+kjroemba:MinSampSize_Workspace jermaine$ ls
+TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered
+kjroemba:MinSampSize_Workspace jermaine$ cd TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered/
+kjroemba:TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered jermaine$ ls
+FstRslts	GenDivRslts
+kjroemba:TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered jermaine$ cd FstRslts/
+kjroemba:FstRslts jermaine$ ls
+02SubSampPerPop	06SubSampPerPop	10SubSampPerPop	14SubSampPerPop	18SubSampPerPop	22SubSampPerPop
+04SubSampPerPop	08SubSampPerPop	12SubSampPerPop	16SubSampPerPop	20SubSampPerPop
+kjroemba:FstRslts jermaine$ cd 04SubSampPerPop/
+kjroemba:04SubSampPerPop jermaine$ ls
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep001_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep002_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep003_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep004_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep005_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep006_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep007_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep008_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep009_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep010_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep011_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep012_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep013_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep014_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep015_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep016_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep017_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep018_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep019_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep020_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep021_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep022_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep023_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep024_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep025_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep026_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep027_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep028_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep029_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep030_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep031_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep032_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep033_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep034_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep035_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep036_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep037_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep038_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep039_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep040_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep041_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep042_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep043_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep044_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep045_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep046_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep047_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep048_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep049_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep050_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep051_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep052_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep053_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep054_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep055_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep056_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep057_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep058_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep059_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep060_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep061_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep062_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep063_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep064_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep065_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep066_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep067_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep068_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep069_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep070_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep071_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep072_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep073_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep074_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep075_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep076_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep077_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep078_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep079_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep080_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep081_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep082_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep083_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep084_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep085_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep086_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep087_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep088_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep089_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep090_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep091_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep092_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep093_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep094_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep095_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep096_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep097_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep098_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep099_FstRslts.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_04SubSampPops_Rep100_FstRslts.txt
+kjroemba:04SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==2' {} \; > All_TGCP-STT_TGCP-MPO_TGCP-PTP_FstRslts.txt
+kjroemba:04SubSampPerPop jermaine$ cd ..
+kjroemba:FstRslts jermaine$ ls
+02SubSampPerPop	06SubSampPerPop	10SubSampPerPop	14SubSampPerPop	18SubSampPerPop	22SubSampPerPop
+04SubSampPerPop	08SubSampPerPop	12SubSampPerPop	16SubSampPerPop	20SubSampPerPop
+kjroemba:FstRslts jermaine$ cd ..
+kjroemba:TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered jermaine$ ls
+FstRslts	GenDivRslts
+kjroemba:TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered jermaine$ cd GenDivRslts/
+kjroemba:GenDivRslts jermaine$ ls
+02SubSampPerPop	06SubSampPerPop	10SubSampPerPop	14SubSampPerPop	18SubSampPerPop	22SubSampPerPop
+04SubSampPerPop	08SubSampPerPop	12SubSampPerPop	16SubSampPerPop	20SubSampPerPop
+kjroemba:GenDivRslts jermaine$ cd 02SubSampPerPop/
+kjroemba:02SubSampPerPop jermaine$ find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==27' {} \; > All_TGCP_GenDivRslts.txt
+kjroemba:02SubSampPerPop jermaine$ cd ..
+kjroemba:GenDivRslts jermaine$ ls
+02SubSampPerPop	06SubSampPerPop	10SubSampPerPop	14SubSampPerPop	18SubSampPerPop	22SubSampPerPop
+04SubSampPerPop	08SubSampPerPop	12SubSampPerPop	16SubSampPerPop	20SubSampPerPop
+kjroemba:GenDivRslts jermaine$ cd ..
+kjroemba:TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered jermaine$ ls
+FstRslts	GenDivRslts
+kjroemba:TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered jermaine$ cd FstRslts/
+kjroemba:FstRslts jermaine$ cd 06SubSampPerPop/
+kjroemba:06SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==2' {} \; > All_TGCP-STT_TGCP-MPO_TGCP-PTP_FstRslts.txt
+kjroemba:06SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==3' {} \; > All_STT-MPO_STT-PTP_FstRslts.txt
+kjroemba:06SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==4' {} \; > All_MPO-PTP_FstRslts.txt
+kjroemba:06SubSampPerPop jermaine$ cd ../08SubSampPerPop/
+kjroemba:08SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==2' {} \; > All_TGCP-STT_TGCP-MPO_TGCP-PTP_FstRslts.txt
+kjroemba:08SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==3' {} \; > All_STT-MPO_STT-PTP_FstRslts.txt
+kjroemba:08SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==4' {} \; > All_MPO-PTP_FstRslts.txt
+kjroemba:08SubSampPerPop jermaine$ cd ../10SubSampPerPop/
+kjroemba:10SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==2' {} \; > All_TGCP-STT_TGCP-MPO_TGCP-PTP_FstRslts.txt
+kjroemba:10SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==3' {} \; > All_STT-MPO_STT-PTP_FstRslts.txt
+kjroemba:10SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==4' {} \; > All_MPO-PTP_FstRslts.txt
+kjroemba:10SubSampPerPop jermaine$ cd ../12SubSampPerPop/
+kjroemba:12SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==2' {} \; > All_TGCP-STT_TGCP-MPO_TGCP-PTP_FstRslts.txt
+kjroemba:12SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==3' {} \; > All_STT-MPO_STT-PTP_FstRslts.txt
+kjroemba:12SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==4' {} \; > All_MPO-PTP_FstRslts.txt
+kjroemba:12SubSampPerPop jermaine$ cd ../14SubSampPerPop/
+kjroemba:14SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==2' {} \; > All_TGCP-STT_TGCP-MPO_TGCP-PTP_FstRslts.txt
+kjroemba:14SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==3' {} \; > All_STT-MPO_STT-PTP_FstRslts.txt
+kjroemba:14SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==4' {} \; > All_MPO-PTP_FstRslts.txt
+kjroemba:14SubSampPerPop jermaine$ cd ../16SubSampPerPop/
+kjroemba:16SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==2' {} \; > All_TGCP-STT_TGCP-MPO_TGCP-PTP_FstRslts.txt
+kjroemba:16SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==3' {} \; > All_STT-MPO_STT-PTP_FstRslts.txt
+kjroemba:16SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==4' {} \; > All_MPO-PTP_FstRslts.txt
+kjroemba:16SubSampPerPop jermaine$ cd ../18SubSampPerPop/
+kjroemba:18SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==2' {} \; > All_TGCP-STT_TGCP-MPO_TGCP-PTP_FstRslts.txt
+kjroemba:18SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==3' {} \; > All_STT-MPO_STT-PTP_FstRslts.txt
+kjroemba:18SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==4' {} \; > All_MPO-PTP_FstRslts.txt
+kjroemba:18SubSampPerPop jermaine$ cd ../20SubSampPerPop/
+kjroemba:20SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==2' {} \; > All_TGCP-STT_TGCP-MPO_TGCP-PTP_FstRslts.txt
+kjroemba:20SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==3' {} \; > All_STT-MPO_STT-PTP_FstRslts.txt
+kjroemba:20SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==4' {} \; > All_MPO-PTP_FstRslts.txt
+kjroemba:20SubSampPerPop jermaine$ cd ../22SubSampPerPop/
+kjroemba:22SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==2' {} \; > All_TGCP-STT_TGCP-MPO_TGCP-PTP_FstRslts.txt
+kjroemba:22SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==3' {} \; > All_STT-MPO_STT-PTP_FstRslts.txt
+kjroemba:22SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==4' {} \; > All_MPO-PTP_FstRslts.txt
+kjroemba:22SubSampPerPop jermaine$ cd ../04SubSampPerPop/
+kjroemba:04SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==3' {} \; > All_STT-MPO_STT-PTP_FstRslts.txt
+kjroemba:04SubSampPerPop jermaine$ find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==4' {} \; > All_MPO-PTP_FstRslts.txt
+kjroemba:04SubSampPerPop jermaine$ cd ..
+kjroemba:FstRslts jermaine$ ls
+02SubSampPerPop	06SubSampPerPop	10SubSampPerPop	14SubSampPerPop	18SubSampPerPop	22SubSampPerPop
+04SubSampPerPop	08SubSampPerPop	12SubSampPerPop	16SubSampPerPop	20SubSampPerPop
+kjroemba:FstRslts jermaine$ cd ..
+kjroemba:TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered jermaine$ ls
+FstRslts	GenDivRslts
+kjroemba:TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered jermaine$ cd GenDivRslts/
+kjroemba:GenDivRslts jermaine$ ls
+02SubSampPerPop	06SubSampPerPop	10SubSampPerPop	14SubSampPerPop	18SubSampPerPop	22SubSampPerPop
+04SubSampPerPop	08SubSampPerPop	12SubSampPerPop	16SubSampPerPop	20SubSampPerPop
+kjroemba:GenDivRslts jermaine$ cd 04SubSampPerPop/
+kjroemba:04SubSampPerPop jermaine$ find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==27' {} \; > All_TGCP_GenDivRslts.txt
+kjroemba:04SubSampPerPop jermaine$ find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==28' {} \; > All_STT_GenDivRslts.txt
+kjroemba:04SubSampPerPop jermaine$ find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==29' {} \; > All_MPO_GenDivRslts.txt
+kjroemba:04SubSampPerPop jermaine$ find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==30' {} \; > All_PTP_GenDivRslts.txt
+kjroemba:04SubSampPerPop jermaine$ cd ../06SubSampPerPop/
+kjroemba:06SubSampPerPop jermaine$ find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==27' {} \; > All_TGCP_GenDivRslts.txt
+kjroemba:06SubSampPerPop jermaine$ find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==28' {} \; > All_STT_GenDivRslts.txt
+kjroemba:06SubSampPerPop jermaine$ find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==29' {} \; > All_MPO_GenDivRslts.txt
+kjroemba:06SubSampPerPop jermaine$ find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==30' {} \; > All_PTP_GenDivRslts.txt
+kjroemba:06SubSampPerPop jermaine$ cd ../08SubSampPerPop/
+kjroemba:08SubSampPerPop jermaine$ find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==27' {} \; > All_TGCP_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==28' {} \; > All_STT_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==29' {} \; > All_MPO_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==30' {} \; > All_PTP_GenDivRslts.txt
+kjroemba:08SubSampPerPop jermaine$ cd ../10SubSampPerPop/ && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==27' {} \; > All_TGCP_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==28' {} \; > All_STT_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==29' {} \; > All_MPO_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==30' {} \; > All_PTP_GenDivRslts.txt && cd ../12SubSampPerPop/ && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==27' {} \; > All_TGCP_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==28' {} \; > All_STT_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==29' {} \; > All_MPO_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==30' {} \; > All_PTP_GenDivRslts.txt && cd ../14SubSampPerPop/ && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==27' {} \; > All_TGCP_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==28' {} \; > All_STT_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==29' {} \; > All_MPO_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==30' {} \; > All_PTP_GenDivRslts.txt && cd ../16SubSampPerPop/ && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==27' {} \; > All_TGCP_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==28' {} \; > All_STT_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==29' {} \; > All_MPO_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==30' {} \; > All_PTP_GenDivRslts.txt && cd ../18SubSampPerPop/ && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==27' {} \; > All_TGCP_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==28' {} \; > All_STT_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==29' {} \; > All_MPO_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==30' {} \; > All_PTP_GenDivRslts.txt && cd ../20SubSampPerPop/ && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==27' {} \; > All_TGCP_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==28' {} \; > All_STT_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==29' {} \; > All_MPO_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==30' {} \; > All_PTP_GenDivRslts.txt && cd ../22SubSampPerPop/ && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==27' {} \; > All_TGCP_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==28' {} \; > All_STT_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==29' {} \; > All_MPO_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==30' {} \; > All_PTP_GenDivRslts.txt
+kjroemba:22SubSampPerPop jermaine$ cd
+kjroemba:~ jermaine$ ls
+Applications			Geneious Backup			MyFirstGitRepository
+BCB546X-Spring2017		ISU_Data_Backup			Pictures
+BCB546X-UnixAssignment-Jermaine	ISU_Projects			Public
+Desktop				Jmol.pov			Samsung
+Documents			Jmol.pov.ini			Temp
+Downloads			Library				anaconda
+Dropbox				Movies				homebrew-science
+Geneious 8.1 Data		Music
+kjroemba:~ jermaine$ cd Desktop/
+kjroemba:Desktop jermaine$ ls
+2000px-Zonitoides_nitidus_drawing.svg.png
+BCB546X-Spring2017-Play
+BCBIO444_-_Bioinformatic_Analysis
+Bell Museum Triodopsis.xls
+Bio211L
+Bio212L
+Bio255L
+Bio312L
+D_macc_locations_073016.xlsx
+Discidae Species List.xls
+Discids from J_Slapcinsky 2.xlsx
+Discids from J_Slapcinsky.xlsx
+Discids from T_Pierce.xlsx
+EEB511
+EEOB563_-_Molecular_Phylogenetics_Spring_2019
+EEOB563_Final_Project
+ISU Specimen Notebook 042016.xls
+It_Could_Happen_Here_podcast_episodes
+It_Could_Happen_Here_podcast_episodes.zip
+Jermaine_Mahguib_UM_Membership_Form.rtf
+Jermaine_Mahguib_UM_TravelGrant_Abstract.docx
+Jermaine_Mahguib_UM_TravelGrant_Abstract_KJR.docx
+Jermaine_Mahguib_UM_TravelGrant_Form_2019.doc
+Jermaine_Mahguib_WCM2019_Abstract.docx
+Jermaine_Mahguib_WCM2019_Abstract.pdf
+Jermaines CV7.doc
+Mahguib_WCM2019.pptx
+MinSampSize_Webbhelix_Project
+MinSampSize_Workspace
+Miscellaneous
+Old_Papers
+PGDSpider_2.1.1.5
+POS_Committee_Meeting_2019.pptx
+POS_Meeting_Supplemental_2019.pptx
+PSMC analysis of RAD data.ppt
+Proposal
+Ref_Papers
+SNPsim presentation.ppt
+Screen Shot 2019-08-29 at 4.14.40 PM.png
+Seminar in EEB - The Coalescent
+Tax-Free_Ethanol_Training_Certificate_Nov2018-2021.pdf
+To Argus
+TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_LDnHWE_SNPs_filtered__genepop.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_LDnHWE_SNPs_filtered__genepopRF.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered__genepop.txt
+TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered__genepopRF.txt
+Viewing Workday Payslips.pdf
+Webbhelix presentation pics
+Webbhelix_photography_supplies.xls
+Webbhelix_shell_color_photos
+Wm_IllinoisNHS
+Yosemite_2019
+dppm4.5.20-installer.dmg
+email_out
+eum3.5.10-installer.dmg
+ms_Playground
+psem1.17.20-installer.dmg
+sftp_get
+sftp_put
+kjroemba:Desktop jermaine$ cd MinSampSize_Workspace
+kjroemba:MinSampSize_Workspace jermaine$ ls
+TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered
+kjroemba:MinSampSize_Workspace jermaine$ cd TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered/
+kjroemba:TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered jermaine$ ls
+FstRslts	GenDivRslts
+kjroemba:TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_LDnHWE_SNPs_filtered jermaine$ cd GenDivRslts/
+kjroemba:GenDivRslts jermaine$ ls
+02SubSampPerPop	06SubSampPerPop	10SubSampPerPop	14SubSampPerPop	18SubSampPerPop	22SubSampPerPop
+04SubSampPerPop	08SubSampPerPop	12SubSampPerPop	16SubSampPerPop	20SubSampPerPop
+kjroemba:GenDivRslts jermaine$ cd 02SubSampPerPop/
+kjroemba:02SubSampPerPop jermaine$ find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==28' {} \; > All_STT_GenDivRslts.txt
+kjroemba:02SubSampPerPop jermaine$ find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==29' {} \; > All_MPO_GenDivRslts.txt
+kjroemba:02SubSampPerPop jermaine$ find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==30' {} \; > All_PTP_GenDivRslts.txt
+kjroemba:02SubSampPerPop jermaine$ cd
+kjroemba:~ jermaine$ ssh jmahguib@pronto.las.iastate.edu
+Warning: Permanently added the RSA host key for IP address '10.90.4.34' to the list of known hosts.
+jmahguib@pronto.las.iastate.edu's password: 
+Connection closed by 10.90.4.34
+kjroemba:~ jermaine$ 

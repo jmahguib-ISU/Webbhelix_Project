@@ -1,0 +1,28 @@
+
+
+---------------------------------------------------------------------------------------
+
+
+find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==2' {} \; > All_TGCP-STT_TGCP-MPO_TGCP-PTP_FstRslts.txt
+
+
+
+
+
+find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==27' {} \; > All_TGCP_GenDivRslts.txt
+
+
+---------------------------------------------------------------------------------------
+
+
+find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==2' {} \; > All_TGCP-STT_TGCP-MPO_TGCP-PTP_FstRslts.txt && find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==3' {} \; > All_STT-MPO_STT-PTP_FstRslts.txt && find . -type f -iname "*_FstRslts.txt" -exec awk 'NR==4' {} \; > All_MPO-PTP_FstRslts.txt
+
+
+
+
+
+find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==27' {} \; > All_TGCP_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==28' {} \; > All_STT_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==29' {} \; > All_MPO_GenDivRslts.txt && find . -type f -iname "*_GenDivRslts.txt" -exec awk 'NR==30' {} \; > All_PTP_GenDivRslts.txt
+
+
+
+

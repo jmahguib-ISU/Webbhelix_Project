@@ -1,0 +1,31 @@
+#####Notes from meeting with Kyung Seok on using the program STRUCTURE to analyze Webbhelix SNP data (Oct 14 2020)
+
+
+
+
+
+#Setting Parameters 
+
+Run Length
+
+Burnin 50000 (initially, just to test) --> run at 100,000 later
+MCMC 100000 (initially, just to test) --> run at 500,000 later
+
+
+
+Ancestry Model
+
+Use Admixture Model
+(don't use box checkbox under that)
+
+
+
+Allele Freq Model
+
+Allele Freqs Correlated 
+
+
+
+Advanced Settings
+
+Defaults

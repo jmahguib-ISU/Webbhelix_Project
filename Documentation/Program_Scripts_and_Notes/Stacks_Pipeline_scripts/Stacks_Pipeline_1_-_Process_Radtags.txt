@@ -1,0 +1,42 @@
+# Stacks Pipeline: Process_Radtags
+
+
+#####Note: Process_Radtags must be run on each group of samples by Index used, from each population/location that samples were taken
+
+
+
+
+
+#####Example script for running Process Radtags as it should be entered into the terminal (07/26/2017):
+
+process_radtags -p ./jmahguib/Raw_GBS_Data/TrkNbr-1083_I12/ -o ./jmahguib/Stacks_Process_RadTags_outputs/TrkNbr-1083_I12/ -b ./jmahguib/Barcodes/Barcodes_I12.txt -e pstI -E phred33 -r -c -q -D -t 90
+
+
+
+
+
+#####Breakdown of the components of the above script for running Process_Radtags, with annotations:
+
+process_radtags ###Command to initiate the Process_Radtags program within the Stacks module
+
+-p ./jmahguib/Raw_GBS_Data/TrkNbr-1083_I12/ ###Instructs the program to pair the files within the specified directory
+
+-o ./jmahguib/Stacks_Process_RadTags_outputs/TrkNbr-1083_I12/ ###Tells the program to put output files into the specified directory
+
+-b ./jmahguib/Barcodes/Barcodes_I12.txt ###Specifies a file path to the directory containing the 'Barcodes' file for this particular run of the program; 'Barcodes' files need to be constructed in advance by hand and made available for use by Process_Radtags (in other words, 'Barcodes' file must be uploaded to the Speedy server)
+
+-e pstI ###Specifies the restriction enzyme that was used to generate the data
+
+-E phred33 ###Tells the program how to encode the quality scores, based on how sequencing was carried out ('phred33' [Illumina 1.8+, Sanger, default] or 'phred64' [Illumina 1.3 - 1.5])
+
+-r ###Instructs the program to "rescue barcodes and RAD-Tags"
+
+-c ###Instructs the program to "clean data" and "remove any read with an uncalled base"
+
+-q ###Option to "discard reads with low quality scores"
+
+-D ###Tells the program to "capture discarded reads to a file"
+
+-t 90 ###Specifies to the program to "truncate final read length" to the value given
+
+

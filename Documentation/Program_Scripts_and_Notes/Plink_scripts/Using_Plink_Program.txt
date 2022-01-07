@@ -1,0 +1,178 @@
+########Using the Plink Program
+
+_______________________________________________________________________________________
+_______________________________________________________________________________________
+
+#####Example of Plink program use in a Mac Terminal, using the ISU campus servers...
+
+[jmahguib@speedy ~]$ module load plink
+
+   Module name: plink                      Version: 1.90beta            
+
+       Contact: researchit@iastate.edu
+      Homepage: https://www.cog-genomics.org/plink2                     
+      Download: https://www.cog-genomics.org/plink2                     
+          Help: Documentation is available online                       
+         Notes: PLINK is a free, open-source whole genome association analysis toolset, designed to perform a range of basic, large-scale analyses in a computationally efficient manner. 
+
+[jmahguib@speedy ~]$ ls
+ccp4_tmp  jmahguib  kjroe-lab
+[jmahguib@speedy ~]$ plink --file ./jmahguib/Stacks_Denovo_Map_outputs/Cg_practice_8replicates/batch_3230.plink --allow-no-sex --recodeA --allow-extra-chr
+PLINK v1.90b3.42 64-bit (20 Sep 2016)      https://www.cog-genomics.org/plink2
+(C) 2005-2016 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Note: --recodeA flag deprecated.  Use 'recode A ...'.
+Logging to plink.log.
+Options in effect:
+  --allow-extra-chr
+  --allow-no-sex
+  --file ./jmahguib/Stacks_Denovo_Map_outputs/Cg_practice_8replicates/batch_3230.plink
+  --recode A
+
+257673 MB RAM detected; reserving 128836 MB for main workspace.
+.ped scan complete (for binary autoconversion).
+Performing single-pass .bed write (51615 variants, 16 people).
+--file: plink-temporary.bed + plink-temporary.bim + plink-temporary.fam
+written.
+51615 variants loaded from .bim file.
+16 people (0 males, 0 females, 16 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to plink.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 16 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.349273.
+51615 variants and 16 people pass filters and QC.
+Note: No phenotypes present.
+--recode A to plink.raw ... done.
+[jmahguib@speedy ~]$ ls
+ccp4_tmp  jmahguib  kjroe-lab  plink.log  plink.nosex  plink.raw
+[jmahguib@speedy ~]$ mv plink.raw plink_3230.raw
+[jmahguib@speedy ~]$ ls
+ccp4_tmp  jmahguib  kjroe-lab  plink_3230.raw  plink.log  plink.nosex
+
+_______________________________________________________________________________________
+_______________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+mv plink.raw plink_323300001.raw
+mv plink.nosex plink_323300001.nosex
+mv plink.log plink_323300001.log
+ls
+
+
+
+
+
+get plink_323300001.raw /Users/jermaine/ISU_Projects/Cg_practice_8replicates_Plink_outputs
+
+
+
+
+
+
+
+
+
+
+_______________________________________________________________________________________
+_______________________________________________________________________________________
+
+#####5.8 Linkage disequilibrium based SNP pruning (from PLINK (1.07) Documentation [Shaun Purcell, May 10, 2010], pages 78-79)
+
+###Sometimes it is useful to generate a pruned subset of SNPs that are in approximate linkage equilibrium with each other. This can be achieved via two commands: --indep which prunes based on the variance inflation factor (VIF), which recursively removes SNPs within a sliding window; second, --indep-pairwise which is similar, except it is based only on pairwise genotypic correlation.
+
+###Hint The output of either of these commands is two lists of SNPs: those that are pruned out and those that are not. A separate command using the --extract or --exclude option is necessary to actually perform the pruning.
+
+###The VIF pruning routine is performed:
+
+plink --file data --indep 50 5 2
+
+###will create files
+
+plink.prune.in
+plink.prune.out
+
+###Each is a simlpe list of SNP IDs; both these files can subsequently be specified as the argument for a --extract or --exclude command.
+
+###The parameters for --indep are: window size in SNPs (e.g. 50), the number of SNPs to shift the window at each step (e.g. 5), the VIF threshold. The VIF is 1/(1-R^2) where R^2 is the multiple correlation coefficient for a SNP being regressed on all other SNPs simultaneously. That is, this considers the correlations between SNPs but also between linear combinations of SNPs. A VIF of 10 is often taken to represent near collinearity problems in standard multiple regression analyses (i.e. implies Rˆ2 of 0.9). A VIF of 1 would imply that the SNP is completely independent of all other SNPs. Practically, values between 1.5 and 2 should probably be used; particularly in small samples, if this threshold is too low and/or the window size is too large, too many SNPs may be removed.
+
+###The second procedure is performed:
+
+plink --file data --indep-pairwise 50 5 0.5
+
+###This generates the same output files as the first version; the only difference is that a simple pairwise threshold is used. The first two parameters (50 and 5) are the same as above (window size and step); the third parameter represents the r^2 threshold. Note: this represents the pairwise SNP-SNP metric now, not the multiple correlation coefficient; also note, this is based on the genotypic correlation, i.e. it does not involve phasing.
+
+###To give a concrete example: the command above that specifies 50 5 0.5 would a) consider a window of 50 SNPs, b) calculate LD between each pair of SNPs in the window, b) remove one of a pair of SNPs if the LD is greater than 0.5, c) shift the window 5 SNPs forward and repeat the procedure.
+
+###To make a new, pruned file, then use something like (in this example, we also convert the standard PED fileset to a binary one):
+
+plink --file data --extract plink.prune.in --make-bed --out pruneddata
+
+_______________________________________________________________________________________
+_______________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+plink --file /path/to/yourfile --recode vcf --out /path/to/yourfile
+
+###To filter SNPs that strongly deviate from Hardy-Weinberg equilibrium due to serious sequencing errors, use the option --hwe <p-value> ['midp']
+
+###To filter SNPs that are in linkage disequilibrium with another SNP, use the option --indep-pairwise 50 5 0.5
+
+
+
+
+
+
+
+
+
+
+_______________________________________________________________________________________
+
+***************************************************************************************
+_______________________________________________________________________________________
+
+#####Example command for using Plink to examine Webbhelix SNP data from the Stacks pipeline for SNPs that are in high linkage disequilibrium with other SNPs, and output a pair of files, one that lists high LD SNPs that ought be 'pruned out' and the other listing low LD 'pruned in' SNPs (command below was used to create '.pruned.out' and '.pruned.in' SNP list files for secondary plink commands using the '--extract' or '--exclude' options; command below used on files in 'TrkNbr_1083n1282_L1n2_PrelimPops_for_Genodive_MinSampSizeRuns' data set from Stacks):
+
+
+plink --file ./jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.plink --make-bed --allow-extra-chr --allow-no-sex --indep-pairwise 50 5 0.5 --out LD_SNP_lists
+
+
+
+#####Example command for using Plink to '--extract' low LD SNPs listed in '.pruned.in' from previous command above; the example command below also filters Webbhelix SNP data from the Stacks pipeline for SNPs that strongly deviate from Hardy-Weinberg equilibrium due to serious sequencing errors (command was used to filter SNPs with high HWE in 'TrkNbr_1083n1282_L1n2_PrelimPops_for_Genodive_MinSampSizeRuns' data set from Stacks)...
+
+
+plink --file ./jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.plink --make-bed --allow-extra-chr --allow-no-sex --extract LD_SNP_lists.prune.in --hwe 0.001 midp --recode vcf --out LDandHWE_SNPs_filtered
+
+
+
+#####...the example command directly above also instructs the Plink program to write a VCF formatted output file for later conversion into a .genepop file using the program PGDspider.
+
+_______________________________________________________________________________________
+
+***************************************************************************************
+_______________________________________________________________________________________
+
+
+
+
+
+
+
+
+

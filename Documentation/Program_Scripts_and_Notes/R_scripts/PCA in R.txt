@@ -1,0 +1,154 @@
+PCA tutorial
+
+Converting data from a Genepop .gen file to a genind object... 
+
+> setwd("~/Desktop/Kevin Roe's lab/Project_Cyprogenia/Cyprogenia_results/PCA")
+> cg <- read.fstat("/Users/Mac_kim/Desktop/Kevin Roe's lab/Project_Cyprogenia/Cyprogenia_results/PCA/FSTAT_cg_148_filled.dat")
+> cg <- adegenet::read.genepop("larvaeSNP9loci8popsforPCAinR.gen")
+
+File description:  Title line:"" 
+
+...done.
+
+Warning message:
+In adegenet::read.genepop("larvaeSNP9loci8popsforPCAinR.gen") :
+  Duplicate individual names detected. Coercing them to be unique.
+> cg
+/// GENIND OBJECT /////////
+
+ // 148 individuals; 6,986 loci; 13,972 alleles; size: 11.1 Mb
+
+ // Basic content
+   @tab:  148 x 13972 matrix of allele counts
+   @loc.n.all: number of alleles per locus (range: 2-2)
+   @loc.fac: locus factor for the 13972 columns of @tab
+   @all.names: list of allele names for each locus
+   @ploidy: ploidy of each individual  (range: 2-2)
+   @type:  codom
+   @call: read.fstat(file = "/Users/Mac_kim/Desktop/Kevin Roe's lab/Project_Cyprogenia/Cyprogenia_results/FSTAT_cg_148_6986.dat")
+
+ // Optional content
+   @pop: population of each individual (group size range: 5-31)
+   
+> x = tab(cg, freq=TRUE, NA.method="mean")
+> pca <- prcomp(x, center = TRUE, scale. = FALSE) # in case that function “princomp” is not working!
+> print(pca)
+> plot(pca, type = "l")
+> summary(pca)
+> pca.cg = dudi.pca(x, center=TRUE, scale=FALSE)
+Select the number of axes: 
+3
+> pca.cg
+Duality diagramm
+class: pca dudi
+$call: dudi.pca(df = x, center = TRUE, scale = FALSE)
+
+$nf: 3 axis-components saved
+$rank: 147
+eigen values: 219.7 52.32 24.45 20.47 17.59 ...
+  vector length mode    content       
+1 $cw    13972  numeric column weights
+2 $lw    148    numeric row weights   
+3 $eig   147    numeric eigen values  
+
+  data.frame nrow  ncol  content             
+1 $tab       148   13972 modified array      
+2 $li        148   3     row coordinates     
+3 $l1        148   3     row normed scores   
+4 $co        13972 3     column coordinates  
+5 $c1        13972 3     column normed scores
+other elements: cent norm 
+> s.label(pca.cg$li)
+> title("PCA of Cyprogenia")
+> s.class(pca.cg$li, pop(cg))
+> title("PCA of Cyprogenia")
+> col <- funky(15)
+> s.class(pca.cg$li, pop(cg),xax=1,yax=2, col=transp(col,.6), axesell=FALSE, cstar=0, cpoint=2, grid=FALSE)
+> add.scatter.eig(pca.cg$eig[1:50],3,1,2, ratio=.3) #optional!
+> colorplot(pca.cg$li, pca.cg$li, transp=TRUE, cex=1.5, xlab="PC 1", ylab="PC 2")
+> colorplot(pca.cg$li, pca.cg$li, transp=TRUE, cex=1.5, xlab="PC 1_12.2%", ylab="PC 2_4.0%")
+> abline(h=0,v=0,col="grey",lty=2)
+> title("PCA of Cyprogenia")
+
+
+
+> pca <- princomp(x)  
+> pca <- prcomp(x, center = TRUE, scale. = FALSE) # in case that function “princomp” is not working!
+> print(pca)
+> plot(pca, type = "l")
+> summary(pca)
+Importance of components (148_cg_10river_6792_raw_EZA):
+                           PC1      PC2     PC3     PC4     PC5     PC6    PC7     PC8    PC9    PC10
+Standard deviation     27.3172 13.33078 5.75855 5.33642 5.19875 4.66168 4.4872 4.34736 4.1243 4.11511
+Proportion of Variance  0.3113  0.07413 0.01383 0.01188 0.01127 0.00906 0.0084 0.00788 0.0071 0.00706
+Cumulative Proportion   0.3113  0.38540 0.39924 0.41111 0.42239 0.43145 0.4399 0.44773 0.4548 0.46189
+
+Importance of components (158_cgdr_6792_raw):
+                           PC1     PC2     PC3    PC4     PC5     PC6     PC7     PC8    PC9    PC10
+Standard deviation     13.4742 11.2930 6.62435 2.7930 2.59261 2.54407 2.51833 2.46966 2.4219 2.34691
+Proportion of Variance  0.2444  0.1717 0.05907 0.0105 0.00905 0.00871 0.00854 0.00821 0.0079 0.00741
+Cumulative Proportion   0.2444  0.4160 0.47510 0.4856 0.49465 0.50336 0.51190 0.52011 0.5280 0.53542
+
+Importance of components (97_cg_6river_6792_raw_ZA): 5,706 loci
+                          PC1     PC2     PC3     PC4    PC5     PC6     PC7     PC8     PC9    PC10
+Standard deviation     6.0486 3.45172 3.26987 2.77266 2.6008 2.21288 2.16268 2.14461 2.11927 2.10287
+Proportion of Variance 0.1147 0.03734 0.03351 0.02409 0.0212 0.01535 0.01466 0.01441 0.01408 0.01386
+Cumulative Proportion  0.1147 0.15200 0.18550 0.20960 0.2308 0.24614 0.26080 0.27521 0.28929 0.30315
+
+Importance of components (cg_filled):
+                          PC1      PC2      PC3      PC4      PC5      PC6      PC7
+Standard deviation     41.279 23.52488 15.65012 14.64938 13.28883 12.77379 12.63308
+Proportion of Variance  0.122  0.03961  0.01753  0.01536  0.01264  0.01168  0.01142
+Cumulative Proportion   0.122  0.16156  0.17909  0.19445  0.20709  0.21877  0.23019
+
+
+Importance of components (cgdr_filled):
+                          PC1      PC2      PC3      PC4      PC5      PC6      PC7
+Standard deviation     45.593 36.08813 20.50285 12.51699 12.38586 12.00486 11.92457
+Proportion of Variance  0.153  0.09587  0.03095  0.01153  0.01129  0.01061  0.01047
+Cumulative Proportion   0.153  0.24890  0.27984  0.29138  0.30267  0.31328  0.32375
+
+> s.class(pca.cg$li, pop(cg),xax=1,yax=3, col=transp(col,.6), axesell=FALSE, cstar=0, cpoint=3, grid=FALSE)
+> add.scatter.eig(pca.cg$eig[1:50],3,1,3, ratio=.3) [optional!]
+> colorplot(pca.cg$li, pca.cg$li, transp=TRUE, cex=2, xlab="PC 1", ylab="PC 3")
+> title("PCA of Cyprogenia/PC1&3")
+
+> s.class(pca.cg$li, pop(cg),xax=2,yax=3, col=transp(col,.6), axesell=FALSE, cstar=0, cpoint=3, grid=FALSE)
+> colorplot(pca.cg$li, pca.cg$li, transp=TRUE, cex=2, xlab="PC 2", ylab="PC 3")
+> title("PCA of Cyprogenia/PC2&3")
+
+
+liSNPs = read.PLINK("/Users/Mac_kim/Desktop/Kevin Roe's lab/Project_Cyprogenia/CG_duplicate/plink/plink_323.raw")
+class(liSNPs)
+liSNPs
+table(liSNPs@pop)
+X <- tab(liSNPs, NA.method="mean")
+## make PCA
+pca1 <- dudi.pca(X,scannf=FALSE,scale=FALSE)
+temp <- as.integer(pop(liSNPs))
+myCol <- transp(c("blue","red"),.7)[temp]
+myPch <- c(15,17)[temp]
+## basic plot
+plot(pca1$li, col=myCol, cex=3, pch=myPch)
+## use wordcloud for non-overlapping labels
+library(wordcloud)
+textplot(pca1$li[,1], pca1$li[,2], words=rownames(X), cex=1.0, new=FALSE)
+## legend the axes by adding loadings
+abline(h=0,v=0,col="grey",lty=2)
+title("Principal Coordinate Analysis_plink_323")
+
+
+4Species_168_filled_P2S60
+Importance of components:
+                           PC1      PC2      PC3      PC4      PC5      PC6      PC7
+Standard deviation     43.9423 29.38525 19.18254 12.10540 11.66808 11.52293 11.19500
+Proportion of Variance  0.1583  0.07081  0.03018  0.01202  0.01116  0.01089  0.01028
+Cumulative Proportion   0.1583  0.22916  0.25934  0.27136  0.28252  0.29341  0.30369
+
+
+River_158_filled_P5S60
+Importance of components:
+                           PC1      PC2     PC3      PC4     PC5      PC6      PC7
+Standard deviation     36.7320 20.70615 14.1746 13.16649 11.6770 11.63406 11.25562
+Proportion of Variance  0.1148  0.03648  0.0171  0.01475  0.0116  0.01152  0.01078
+Cumulative Proportion   0.1148  0.15129  0.1684  0.18314  0.1947  0.20626  0.21704

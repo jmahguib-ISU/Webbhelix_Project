@@ -1,0 +1,54 @@
+# Stacks Pipeline: CStacks
+
+
+#####Useful tool for looking at UStacks output files listed from largest to smallest file size; file size can be used as a proxy for selecting which samples have the most reads, for when you want to select just a few samples per population in order to build a catalog from whole-study datasets that include multiple populations (you would want all populations represented evenly by samples with the highest number of reads from their respective population):
+
+ls -S -lh
+
+
+
+
+
+#####Example script for running CStacks as it should be entered into the terminal (11/30/2017):
+
+cstacks -b 1 -n 3 -p 15 -o ./jmahguib/CStacks_TGCP_10_outputs -s ./jmahguib/UStacks_outputs/WM2 -s ./jmahguib/UStacks_outputs/WM14 -s ./jmahguib/UStacks_outputs/WM20 -s ./jmahguib/UStacks_outputs/WM24 -s ./jmahguib/UStacks_outputs/WM12 -s ./jmahguib/UStacks_outputs/WM22 -s ./jmahguib/UStacks_outputs/WM23 -s ./jmahguib/UStacks_outputs/WM11 -s ./jmahguib/UStacks_outputs/WM19 -s ./jmahguib/UStacks_outputs/WM16
+
+
+
+
+
+#####Breakdown of the components of the above script for running CStacks, with annotations:
+
+cstacks ###Command to initiate the CStacks program within the Stacks module
+
+-b 1 ###Specifies a "database/batch ID for this catalog" (the default ID is 1; you're going to want to think about using an ID code specific to each population/location)
+
+-n 3 ###This option tells the program the "number of mismatches allowed between sample loci when build the catalog" (the default setting is 1)
+
+-p 15 ###Option to "enable parallel execution" with a specified number of computational threads
+
+-o ./jmahguib/CStacks_TGCP_10_outputs ###This is where you want CStacks to put it's output files into
+
+-s ./jmahguib/UStacks_outputs/WM2 ###This is describing the file path to your UStacks output files, which CStacks needs to read in order to build a catalog
+
+-s ./jmahguib/UStacks_outputs/WM14 
+-s ./jmahguib/UStacks_outputs/WM20 
+-s ./jmahguib/UStacks_outputs/WM24 
+-s ./jmahguib/UStacks_outputs/WM12 
+-s ./jmahguib/UStacks_outputs/WM22 
+-s ./jmahguib/UStacks_outputs/WM23 
+-s ./jmahguib/UStacks_outputs/WM11 
+-s ./jmahguib/UStacks_outputs/WM19 
+-s ./jmahguib/UStacks_outputs/WM16
+
+
+
+
+
+#####Additional CStacks scripts that have been run:
+
+###(11/30/2017)
+
+cstacks -b 1 -n 3 -p 15 -o ./jmahguib/CStacks_TGCP_24_outputs -s ./jmahguib/UStacks_outputs/WM1 -s ./jmahguib/UStacks_outputs/WM2 -s ./jmahguib/UStacks_outputs/WM3 -s ./jmahguib/UStacks_outputs/WM4 -s ./jmahguib/UStacks_outputs/WM5 -s ./jmahguib/UStacks_outputs/WM6 -s ./jmahguib/UStacks_outputs/WM7 -s ./jmahguib/UStacks_outputs/WM8 -s ./jmahguib/UStacks_outputs/WM9 -s ./jmahguib/UStacks_outputs/WM10 -s ./jmahguib/UStacks_outputs/WM11 -s ./jmahguib/UStacks_outputs/WM12 -s ./jmahguib/UStacks_outputs/WM13 -s ./jmahguib/UStacks_outputs/WM14 -s ./jmahguib/UStacks_outputs/WM15 -s ./jmahguib/UStacks_outputs/WM16 -s ./jmahguib/UStacks_outputs/WM17 -s ./jmahguib/UStacks_outputs/WM18 -s ./jmahguib/UStacks_outputs/WM19 -s ./jmahguib/UStacks_outputs/WM20 -s ./jmahguib/UStacks_outputs/WM21 -s ./jmahguib/UStacks_outputs/WM22 -s ./jmahguib/UStacks_outputs/WM23 -s ./jmahguib/UStacks_outputs/WM24
+
+

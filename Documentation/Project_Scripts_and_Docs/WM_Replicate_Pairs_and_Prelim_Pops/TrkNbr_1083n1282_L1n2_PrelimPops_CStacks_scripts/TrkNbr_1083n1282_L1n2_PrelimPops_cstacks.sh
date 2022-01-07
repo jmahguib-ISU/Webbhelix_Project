@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH --ntasks=60
+#SBATCH --partition=biocrunch
+#SBATCH --nodes=1
+#SBATCH --mem=120G
+#SBATCH --time=30-00:00:00
+#SBATCH --error=/work/LAS/kjroe-lab/jmahguib/CStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/TrkNbr_1083n1282_L1n2_PrelimPops.%J.err
+#SBATCH --output=/work/LAS/kjroe-lab/jmahguib/CStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/TrkNbr_1083n1282_L1n2_PrelimPops.%J.out
+
+cd
+module load gcc/7.3.0-xegsmw4
+module load stacks/1.46-uyma7zn
+cstacks -b 22540000 -n 4 -p 60 -o /work/LAS/kjroe-lab/jmahguib/CStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM2 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM8 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM14 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM16 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM20 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM24 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM199 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM200 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM201 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM204 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM205 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM206 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM485 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM498 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM499 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM500 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM503 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM504 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM736 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM739 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM740 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM742 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM743 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM744

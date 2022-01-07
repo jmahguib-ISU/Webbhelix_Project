@@ -1,0 +1,59 @@
+# Stacks Pipeline: UStacks
+
+
+#####Example script for running UStacks as it should be entered into the terminal (08/01/2017):
+
+#!/bin/bash
+files="WM10.fq WM12.fq WM14.fq WM16.fq WM18.fq WM1.fq WM21.fq WM23.fq WM2.fq WM4.fq WM6.fq WM8.fq WM11.fq WM13.fq WM15.fq WM17.fq WM19.fq WM20.fq WM22.fq WM24.fq WM3.fq WM5.fq WM7.fq WM9.fq"
+#
+i=1
+for file in $files
+do
+ustacks -i $i -f ./jmahguib/Stacks_Process_RadTags_outputs/TrkNbr-1083_UStacks_input/${file} -m 3 -M 2 --max_locus_stacks --alpha --bound_high 0.05 -r -d -o ./jmahguib/UStacks_outputs/ -t fastq -p 15
+let "i+=1";
+done
+
+
+
+
+
+#####Breakdown of the components of the above script for running UStacks, with annotations:
+
+#!/bin/bash
+files="WM10.fq WM12.fq WM14.fq WM16.fq WM18.fq WM1.fq WM21.fq WM23.fq WM2.fq WM4.fq WM6.fq WM8.fq WM11.fq WM13.fq WM15.fq WM17.fq WM19.fq WM20.fq WM22.fq WM24.fq WM3.fq WM5.fq WM7.fq WM9.fq"
+#
+i=1
+for file in $files
+do
+
+ustacks ###Command to initiate the UStacks program within the Stacks module
+
+-i $i ###Specifies a "unique integer ID to identify this sample;" this is related to the bit of code employed above (from "#!/bin/bash" to "do") and basically tells the program to run on the first sample in the "files=" list, then on the second sample, etc...
+
+-f ./jmahguib/Stacks_Process_RadTags_outputs/TrkNbr-1083_UStacks_input/${file} ###This specifies the file path input files for this program; again, the way this option is set up here, with that "${file}" at the end of the file path, is related to that bit of code above that's used to tell the program to run through the input files in the "files=" list one after the other
+
+-m 3 ###Specifies to the program the "minimum depth of coverage required to create a stack" (the default setting is 2)
+
+-M 2 ###This setting specifies the "maximum distance (in nucleotides) allowed between stacks" (the default setting is 2)
+
+--max_locus_stacks ###This option specifies the "maximum number of stacks at a single de novo locus" (the default setting is 3; if no number is explicitly specified for the option, then the default is used)
+
+--alpha ###Option to specify the "chi square significance level required to call a heterozygote or homozygote, either 0.1, 0.05 (default), 0.01, or 0.001" (if no number is explicitly specified for the option, then the default is used)
+
+--bound_high 0.05 ###Specifies the "upper bound for epsilon, the error rate, between 0 and 1.0" (default 1)
+
+-r ###
+
+-d ###Tells the program to enable the "Deleveraging algorithm, used for resolving over merged tags"
+
+-o ./jmahguib/UStacks_outputs/ ###Specifies a directory for the program to write its output to
+
+-t fastq ###Species the file type of the input files to be used for running the program (supported types: fasta, fastq, gzfasta, or gzfastq)
+
+-p 15 ###Option to "enable parallel execution" with a specified number of computational threads
+
+let "i+=1"; ###When you want to add additional data to continue a UStacks analysis, change "i+= " to the next number in the output folder; for example, if you analyze 24 samples the first analysis, and you want to add another 24, change "i+=1" to "i+=25", and if you wanted to add another 24 after that, change to "i+=49"
+
+done
+
+

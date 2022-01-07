@@ -1,0 +1,20 @@
+###New_Stacks_Version_TEST_script
+###Output path: /home/jmahguib/jmahguib/Stacks_Denovo_Map_outputs/New_Stacks_Version_TEST
+
+
+### 2 2 3 0
+
+denovo_map.pl -m 2 -M 2 -X "ustacks:-i 2230 --max_locus_stacks 3" -n 0 -T 10 -t -o /home/jmahguib/jmahguib/Stacks_Denovo_Map_outputs/New_Stacks_Version_TEST/ -X "populations:--plink --vcf" --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM35.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM35_r.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM63.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM63_r.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM123.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM123_r.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM361.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM361_r.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM421.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM421_r.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM481.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM481_r.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM325.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM325_r.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM781.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM781_r.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM841.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM841_r.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM961.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM961_r.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM1081.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM1081_r.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM1201.fq.gz --samples /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/WM1201_r.fq.gz
+
+#screen session designation: 
+
+
+### 2 2 3 0
+
+denovo_map.pl --samples /work/LAS/kjroe-lab/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_RepPairs_Denovo_Map_input/ --popmap /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMap_WM_RepPairs.txt -m 2 -M 2 -X "ustacks:-i 2230 --max_locus_stacks 3" -n 0 -T 10 -t -o /work/LAS/kjroe-lab/jmahguib/Stacks_Denovo_Map_outputs/New_Stacks_Version_TEST/ -X "populations:--plink --vcf"
+
+#screen session designation: 28940.pts-0.speedy [*NOTE: process start 8:25pm, 3/20/19*]
+#screen session designation: 75099.pts-10.speedy [*NOTE: process start 3:27pm, 3/21/19*]
+#screen session designation: 51077.pts-1.speedy [*NOTE: process start 12:29am, 3/22/19*]
+
+

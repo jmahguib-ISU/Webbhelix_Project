@@ -1,0 +1,135 @@
+#TGCP #STT #MPO #PTP
+
+S22_______________________________________________________________________________________
+
+rm WM1.* WM16.* WM198.* WM185.* WM492.* WM500.* WM726.* WM739.*    <- T1
+
+rm WM15.* WM1.* WM190.* WM199.* WM496.* WM485.* WM724.* WM723.*    <- T2
+
+rm WM18.* WM11.* WM188.* WM195.* WM499.* WM494.* WM742.* WM728.*    <- T3
+
+rm WM4.* WM9.* WM200.* WM203.* WM487.* WM485.* WM727.* WM742.*    <- T4
+
+rm WM18.* WM23.* WM197.* WM190.* WM493.* WM504.* WM739.* WM743.*    <- T5
+
+S20_______________________________________________________________________________________
+
+rm WM19.* WM17.* WM7.* WM20.* WM187.* WM199.* WM194.* WM197.* WM500.* WM484.* WM496.* WM482.* WM731.* WM737.* WM741.* WM728.*    <- T1
+
+rm WM1.* WM15.* WM9.* WM20.* WM206.* WM186.* WM205.* WM193.* WM486.* WM488.* WM505.* WM489.* WM734.* WM741.* WM732.* WM735.*    <- T2
+
+rm WM16.* WM22.* WM11.* WM15.* WM198.* WM189.* WM201.* WM202.* WM503.* WM498.* WM485.* WM486.* WM735.* WM725.* WM722.* WM729.*    <- T3
+
+rm WM17.* WM2.* WM8.* WM13.* WM185.* WM191.* WM206.* WM205.* WM490.* WM482.* WM492.* WM505.* WM735.* WM724.* WM738.* WM740.*    <- T4
+
+rm WM24.* WM13.* WM20.* WM15.* WM183.* WM198.* WM195.* WM188.* WM489.* WM492.* WM482.* WM500.* WM728.* WM733.* WM731.* WM721.*    <- T5
+
+S18_______________________________________________________________________________________
+
+rm WM6.* WM7.* WM10.* WM1.* WM21.* WM11.* WM205.* WM203.* WM191.* WM192.* WM199.* WM206.* WM504.* WM489.* WM494.* WM500.* WM503.* WM485.* WM730.* WM735.* WM722.* WM743.* WM742.* WM734.*    <- T1
+
+rm WM5.* WM3.* WM16.* WM14.* WM8.* WM12.* WM204.* WM185.* WM200.* WM183.* WM192.* WM187.* WM484.* WM494.* WM497.* WM498.* WM485.* WM490.* WM740.* WM721.* WM727.* WM726.* WM729.* WM739.*    <- T2
+
+rm WM11.* WM9.* WM7.* WM8.* WM21.* WM2.* WM194.* WM201.* WM205.* WM203.* WM192.* WM193.* WM483.* WM494.* WM502.* WM489.* WM486.* WM492.* WM735.* WM737.* WM736.* WM732.* WM742.* WM739.*    <- T3
+
+rm WM19.* WM12.* WM9.* WM1.* WM6.* WM24.* WM205.* WM201.* WM198.* WM203.* WM192.* WM200.* WM494.* WM483.* WM499.* WM493.* WM503.* WM496.* WM732.* WM740.* WM739.* WM727.* WM726.* WM736.*    <- T4
+
+rm WM16.* WM3.* WM19.* WM7.* WM15.* WM14.* WM191.* WM193.* WM204.* WM185.* WM192.* WM187.* WM493.* WM496.* WM500.* WM495.* WM489.* WM483.* WM732.* WM722.* WM743.* WM733.* WM736.* WM734.*    <- T5
+
+S16_______________________________________________________________________________________
+
+rm WM5.* WM16.* WM13.* WM10.* WM21.* WM24.* WM22.* WM11.* WM206.* WM200.* WM203.* WM196.* WM202.* WM193.* WM187.* WM189.* WM492.* WM495.* WM504.* WM502.* WM489.* WM499.* WM494.* WM505.* WM742.* WM731.* WM734.* WM721.* WM733.* WM744.* WM738.* WM743.*    <- T1
+
+rm WM7.* WM21.* WM20.* WM9.* WM11.* WM5.* WM1.* WM10.* WM187.* WM193.* WM198.* WM206.* WM195.* WM194.* WM183.* WM185.* WM496.* WM490.* WM482.* WM488.* WM483.* WM486.* WM497.* WM501.* WM725.* WM744.* WM738.* WM743.* WM723.* WM721.* WM730.* WM733.*    <- T2
+
+rm WM18.* WM5.* WM2.* WM14.* WM21.* WM6.* WM9.* WM19.* WM197.* WM203.* WM183.* WM199.* WM206.* WM184.* WM205.* WM198.* WM500.* WM484.* WM504.* WM494.* WM502.* WM490.* WM499.* WM495.* WM743.* WM724.* WM740.* WM726.* WM730.* WM725.* WM723.* WM729.*    <- T3
+
+rm WM22.* WM19.* WM10.* WM21.* WM24.* WM9.* WM23.* WM3.* WM192.* WM206.* WM187.* WM188.* WM202.* WM186.* WM189.* WM205.* WM495.* WM485.* WM484.* WM501.* WM491.* WM500.* WM489.* WM496.* WM734.* WM739.* WM741.* WM722.* WM727.* WM723.* WM743.* WM733.*    <- T4
+
+rm WM18.* WM19.* WM16.* WM15.* WM23.* WM10.* WM14.* WM2.* WM200.* WM196.* WM193.* WM202.* WM205.* WM198.* WM201.* WM194.* WM499.* WM500.* WM486.* WM503.* WM494.* WM489.* WM487.* WM505.* WM721.* WM722.* WM738.* WM732.* WM725.* WM724.* WM734.* WM743.*    <- T5
+
+S14_______________________________________________________________________________________
+
+rm WM23.* WM12.* WM20.* WM16.* WM2.* WM21.* WM3.* WM9.* WM15.* WM5.* WM190.* WM192.* WM186.* WM198.* WM189.* WM193.* WM191.* WM205.* WM203.* WM201.* WM484.* WM498.* WM503.* WM489.* WM504.* WM486.* WM502.* WM490.* WM491.* WM495.* WM731.* WM741.* WM739.* WM729.* WM732.* WM743.* WM733.* WM722.* WM727.* WM742.*    <- T1
+
+rm WM14.* WM6.* WM2.* WM23.* WM9.* WM8.* WM7.* WM12.* WM20.* WM15.* WM201.* WM183.* WM187.* WM198.* WM203.* WM193.* WM199.* WM190.* WM195.* WM194.* WM499.* WM494.* WM495.* WM484.* WM483.* WM496.* WM504.* WM501.* WM503.* WM498.* WM736.* WM743.* WM724.* WM742.* WM739.* WM738.* WM729.* WM727.* WM744.* WM735.*    <- T2
+
+rm WM15.* WM10.* WM7.* WM3.* WM23.* WM11.* WM20.* WM19.* WM8.* WM24.* WM188.* WM191.* WM201.* WM192.* WM183.* WM205.* WM200.* WM198.* WM186.* WM189.* WM505.* WM503.* WM488.* WM499.* WM484.* WM493.* WM504.* WM483.* WM487.* WM489.* WM741.* WM736.* WM744.* WM722.* WM723.* WM728.* WM731.* WM729.* WM737.* WM727.*    <- T3
+
+rm WM23.* WM4.* WM18.* WM8.* WM22.* WM7.* WM24.* WM14.* WM21.* WM2.* WM199.* WM183.* WM185.* WM189.* WM187.* WM197.* WM202.* WM184.* WM191.* WM203.* WM504.* WM484.* WM495.* WM494.* WM492.* WM498.* WM505.* WM497.* WM487.* WM482.* WM730.* WM744.* WM741.* WM737.* WM731.* WM735.* WM739.* WM728.* WM736.* WM725.*    <- T4
+
+rm WM1.* WM17.* WM15.* WM7.* WM14.* WM8.* WM20.* WM22.* WM4.* WM18.* WM186.* WM196.* WM201.* WM188.* WM183.* WM202.* WM184.* WM198.* WM193.* WM200.* WM494.* WM498.* WM501.* WM488.* WM484.* WM495.* WM482.* WM496.* WM485.* WM492.* WM727.* WM735.* WM744.* WM728.* WM741.* WM737.* WM722.* WM740.* WM736.* WM724.*    <- T5
+
+S12_______________________________________________________________________________________
+
+rm WM20.* WM8.* WM18.* WM11.* WM23.* WM22.* WM9.* WM6.* WM5.* WM3.* WM10.* WM19.* WM194.* WM206.* WM199.* WM193.* WM192.* WM186.* WM198.* WM197.* WM203.* WM189.* WM205.* WM187.* WM504.* WM482.* WM503.* WM487.* WM498.* WM483.* WM501.* WM497.* WM486.* WM502.* WM484.* WM495.* WM729.* WM721.* WM727.* WM734.* WM736.* WM731.* WM722.* WM735.* WM744.* WM726.* WM737.* WM741.*    <- T1
+
+rm WM2.* WM17.* WM9.* WM16.* WM11.* WM22.* WM6.* WM19.* WM4.* WM3.* WM10.* WM18.* WM193.* WM206.* WM184.* WM190.* WM188.* WM196.* WM203.* WM183.* WM202.* WM195.* WM204.* WM191.* WM492.* WM493.* WM495.* WM504.* WM490.* WM494.* WM487.* WM496.* WM484.* WM485.* WM486.* WM483.* WM743.* WM736.* WM731.* WM744.* WM725.* WM735.* WM721.* WM739.* WM740.* WM722.* WM729.* WM738.*    <- T2
+
+rm WM1.* WM3.* WM18.* WM24.* WM11.* WM12.* WM16.* WM4.* WM2.* WM17.* WM20.* WM19.* WM185.* WM190.* WM189.* WM206.* WM188.* WM204.* WM198.* WM196.* WM192.* WM184.* WM183.* WM187.* WM499.* WM502.* WM491.* WM504.* WM498.* WM482.* WM503.* WM495.* WM483.* WM490.* WM501.* WM497.* WM723.* WM744.* WM742.* WM734.* WM731.* WM738.* WM730.* WM736.* WM739.* WM722.* WM741.* WM733.*    <- T3
+
+rm WM11.* WM10.* WM23.* WM17.* WM9.* WM5.* WM20.* WM7.* WM2.* WM19.* WM12.* WM15.* WM187.* WM195.* WM200.* WM192.* WM193.* WM188.* WM186.* WM190.* WM199.* WM204.* WM198.* WM184.* WM484.* WM482.* WM505.* WM499.* WM495.* WM498.* WM491.* WM489.* WM503.* WM493.* WM486.* WM504.* WM724.* WM726.* WM730.* WM737.* WM729.* WM741.* WM727.* WM735.* WM743.* WM740.* WM732.* WM736.*    <- T4
+
+rm WM7.* WM24.* WM16.* WM18.* WM19.* WM23.* WM1.* WM3.* WM13.* WM5.* WM6.* WM14.* WM195.* WM206.* WM205.* WM192.* WM199.* WM185.* WM194.* WM184.* WM187.* WM200.* WM197.* WM204.* WM490.* WM489.* WM486.* WM494.* WM497.* WM484.* WM500.* WM502.* WM485.* WM493.* WM492.* WM498.* WM734.* WM741.* WM726.* WM724.* WM735.* WM739.* WM732.* WM728.* WM743.* WM722.* WM742.* WM730.*    <- T5
+
+S10_______________________________________________________________________________________
+
+ln -sr batch* WM15.* WM10.* WM1.* WM17.* WM7.* WM18.* WM5.* WM3.* WM4.* WM13.* WM199.* WM184.* WM196.* WM204.* WM192.* WM202.* WM188.* WM203.* WM185.* WM190.* WM501.* WM486.* WM497.* WM483.* WM489.* WM482.* WM498.* WM500.* WM485.* WM494.* WM734.* WM736.* WM725.* WM727.* WM724.* WM735.* WM723.* WM739.* WM733.* WM738.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S10_T1    <- T1
+
+ln -sr batch* WM5.* WM20.* WM2.* WM3.* WM24.* WM14.* WM7.* WM17.* WM4.* WM9.* WM201.* WM206.* WM196.* WM189.* WM185.* WM187.* WM202.* WM198.* WM205.* WM200.* WM497.* WM494.* WM505.* WM485.* WM502.* WM489.* WM492.* WM499.* WM504.* WM490.* WM732.* WM725.* WM742.* WM722.* WM731.* WM737.* WM735.* WM727.* WM724.* WM744.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S10_T2    <- T2
+
+ln -sr batch* WM12.* WM17.* WM9.* WM15.* WM6.* WM10.* WM14.* WM23.* WM11.* WM2.* WM192.* WM202.* WM196.* WM187.* WM198.* WM206.* WM193.* WM203.* WM188.* WM195.* WM499.* WM493.* WM501.* WM503.* WM488.* WM496.* WM482.* WM502.* WM491.* WM492.* WM723.* WM737.* WM740.* WM729.* WM721.* WM743.* WM724.* WM730.* WM727.* WM722.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S10_T3    <- T3
+
+ln -sr batch* WM22.* WM8.* WM24.* WM20.* WM4.* WM7.* WM2.* WM1.* WM16.* WM13.* WM186.* WM202.* WM192.* WM195.* WM198.* WM189.* WM193.* WM194.* WM184.* WM205.* WM502.* WM492.* WM493.* WM488.* WM498.* WM485.* WM505.* WM504.* WM496.* WM490.* WM727.* WM735.* WM725.* WM733.* WM738.* WM722.* WM740.* WM730.* WM737.* WM729.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S10_T4    <- T4
+
+ln -sr batch* WM17.* WM2.* WM12.* WM5.* WM1.* WM23.* WM7.* WM6.* WM16.* WM9.* WM189.* WM197.* WM192.* WM184.* WM202.* WM205.* WM196.* WM185.* WM199.* WM204.* WM491.* WM500.* WM494.* WM486.* WM483.* WM482.* WM502.* WM503.* WM489.* WM492.* WM735.* WM738.* WM731.* WM742.* WM730.* WM739.* WM740.* WM725.* WM734.* WM741.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S10_T5    <- T5
+
+S08_______________________________________________________________________________________
+
+ln -sr batch* WM4.* WM1.* WM13.* WM12.* WM2.* WM14.* WM24.* WM9.* WM191.* WM184.* WM202.* WM189.* WM187.* WM194.* WM198.* WM195.* WM491.* WM494.* WM501.* WM489.* WM495.* WM500.* WM485.* WM487.* WM742.* WM723.* WM728.* WM727.* WM725.* WM731.* WM732.* WM726.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S08_T1    <- T1
+
+ln -sr batch* WM1.* WM6.* WM21.* WM11.* WM14.* WM15.* WM3.* WM19.* WM185.* WM194.* WM192.* WM200.* WM183.* WM197.* WM190.* WM189.* WM501.* WM504.* WM490.* WM497.* WM488.* WM482.* WM498.* WM492.* WM731.* WM744.* WM721.* WM741.* WM733.* WM740.* WM742.* WM737.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S08_T2    <- T2
+
+ln -sr batch* WM6.* WM16.* WM15.* WM2.* WM21.* WM14.* WM9.* WM23.* WM191.* WM200.* WM203.* WM199.* WM206.* WM185.* WM188.* WM190.* WM495.* WM489.* WM483.* WM492.* WM503.* WM491.* WM494.* WM490.* WM738.* WM744.* WM731.* WM741.* WM737.* WM729.* WM721.* WM726.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S08_T3    <- T3
+
+ln -sr batch* WM16.* WM7.* WM24.* WM15.* WM19.* WM4.* WM5.* WM11.* WM206.* WM185.* WM187.* WM183.* WM203.* WM186.* WM200.* WM189.* WM485.* WM502.* WM495.* WM500.* WM505.* WM490.* WM492.* WM482.* WM736.* WM723.* WM744.* WM722.* WM724.* WM730.* WM741.* WM726.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S08_T4    <- T4
+
+ln -sr batch* WM20.* WM10.* WM16.* WM12.* WM14.* WM2.* WM4.* WM23.* WM201.* WM202.* WM193.* WM183.* WM191.* WM186.* WM200.* WM185.* WM503.* WM487.* WM485.* WM490.* WM492.* WM500.* WM483.* WM484.* WM740.* WM735.* WM741.* WM737.* WM724.* WM734.* WM743.* WM727.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S08_T5    <- T5
+
+S06_______________________________________________________________________________________
+
+ln -sr batch* WM23.* WM2.* WM11.* WM21.* WM9.* WM19.* WM186.* WM194.* WM183.* WM188.* WM203.* WM187.* WM482.* WM493.* WM492.* WM495.* WM488.* WM494.* WM726.* WM723.* WM724.* WM731.* WM738.* WM743.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S06_T1    <- T1
+
+ln -sr batch* WM13.* WM14.* WM11.* WM6.* WM15.* WM18.* WM186.* WM198.* WM192.* WM193.* WM188.* WM187.* WM505.* WM483.* WM496.* WM498.* WM485.* WM482.* WM740.* WM738.* WM742.* WM726.* WM722.* WM734.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S06_T2    <- T2
+
+ln -sr batch* WM16.* WM7.* WM24.* WM2.* WM15.* WM21.* WM185.* WM194.* WM198.* WM200.* WM195.* WM199.* WM494.* WM486.* WM482.* WM499.* WM496.* WM501.* WM731.* WM727.* WM733.* WM730.* WM723.* WM725.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S06_T3    <- T3
+
+ln -sr batch* WM23.* WM12.* WM4.* WM7.* WM15.* WM16.* WM193.* WM204.* WM185.* WM183.* WM198.* WM190.* WM486.* WM488.* WM482.* WM499.* WM501.* WM491.* WM725.* WM744.* WM733.* WM740.* WM742.* WM735.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S06_T4    <- T4
+
+ln -sr batch* WM20.* WM9.* WM8.* WM2.* WM13.* WM7.* WM199.* WM194.* WM183.* WM205.* WM195.* WM186.* WM504.* WM496.* WM488.* WM482.* WM490.* WM486.* WM725.* WM742.* WM740.* WM739.* WM722.* WM729.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S06_T5    <- T5
+
+S04_______________________________________________________________________________________
+
+ln -sr batch* WM8.* WM9.* WM21.* WM11.* WM185.* WM186.* WM197.* WM201.* WM495.* WM504.* WM482.* WM483.* WM735.* WM729.* WM724.* WM730.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S04_T1    <- T1
+
+ln -sr batch* WM8.* WM19.* WM7.* WM16.* WM205.* WM194.* WM204.* WM188.* WM497.* WM484.* WM504.* WM503.* WM733.* WM721.* WM726.* WM732.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S04_T2    <- T2
+
+ln -sr batch* WM8.* WM17.* WM5.* WM13.* WM190.* WM188.* WM186.* WM184.* WM500.* WM482.* WM499.* WM487.* WM721.* WM740.* WM734.* WM728.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S04_T3    <- T3
+
+ln -sr batch* WM10.* WM22.* WM9.* WM18.* WM192.* WM204.* WM190.* WM188.* WM486.* WM488.* WM492.* WM490.* WM731.* WM740.* WM742.* WM730.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S04_T4    <- T4
+
+ln -sr batch* WM17.* WM16.* WM8.* WM23.* WM204.* WM189.* WM194.* WM203.* WM492.* WM499.* WM482.* WM493.* WM731.* WM726.* WM727.* WM722.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S04_T5    <- T5
+
+S02_______________________________________________________________________________________
+
+ln -sr batch* WM9.* WM5.* WM187.* WM184.* WM483.* WM500.* WM721.* WM734.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S02_T1    <- T1
+
+ln -sr batch* WM6.* WM8.* WM190.* WM188.* WM496.* WM491.* WM727.* WM739.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S02_T2    <- T2
+
+ln -sr batch* WM18.* WM15.* WM204.* WM193.* WM485.* WM501.* WM723.* WM729.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S02_T3    <- T3
+
+ln -sr batch* WM2.* WM23.* WM194.* WM205.* WM500.* WM493.* WM735.* WM730.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S02_T4    <- T4
+
+ln -sr batch* WM2.* WM3.* WM195.* WM185.* WM495.* WM482.* WM736.* WM727.* /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S02_T5    <- T5
+
+

@@ -1,0 +1,2 @@
+x<- sample(721:744,2,rep=FALSE)
+x

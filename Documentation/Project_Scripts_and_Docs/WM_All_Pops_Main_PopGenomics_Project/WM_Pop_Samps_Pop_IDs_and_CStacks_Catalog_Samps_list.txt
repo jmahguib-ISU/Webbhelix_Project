@@ -1,0 +1,325 @@
+Pop_Samps					Pop_IDs		CStacks_Catalog_Samps (based on largest file size)
+---------					-------		--------------------------------------------------
+WM1-10						TGCP		WM2		WM1		WM9
+WM123-130					MRLP		WM123	WM124	WM125
+WM183-192					STT			WM183	WM189	WM184
+WM241-250					FSSP		WM250	WM243	WM241
+WM301-310					HNL			WM306	WM305	WM309
+WM482-491					MPO			WM485	WM483	WM482
+WM541-550					OICP		WM549	WM544	WM550
+WM601-610					IRO			WM608	WM609	WM604
+WM661-670					HGRF		WM665	WM667	WM664
+WM721-730					PTP			WM722	WM721	WM729
+WM782-791					RRL			WM791	WM790	WM788
+WM842-851					RRO			WM842	WM844	WM843
+WM901-910					CPS			WM910	WM905	WM904
+WM962-971					PPNP		WM962	WM964	WM966
+WM1021-1030					FPPI		WM1026	WM1021	WM1030
+WM1082_1084-1090_1092_1093	CRWA		WM1092	WM1087	WM1093
+WM1141-1150					PCRA		WM1150	WM1149	WM1148
+WM1202-1211					DHFA		WM1209	WM1207	WM1210
+
+
+__________________________________________________________________________________________
+
+
+[jmahguib@pronto ~]$ cd /work/LAS/kjroe-lab/jmahguib/
+[jmahguib@pronto jmahguib]$ ls
+Barcodes               PopMaps                       Raw_GBS_Data          SStacks_outputs                 TESTING_TESTING
+CStacks_corr_outputs   Pronto_sbatch_error_reports   RXCSStacks_outputs    Stacks_Denovo_Map_outputs       UCSStacks_outputs
+CStacks_outputs        Pronto_sbatch_output_reports  RXStacks_outputs      Stacks_Populations_outputs      UStacks_outputs
+Plink_Program_outputs  Pronto_sbatch_scripts         SStacks_corr_outputs  Stacks_Process_RadTags_outputs  VCF_Tools_outputs
+[jmahguib@pronto jmahguib]$ cd Stacks_Process_RadTags_outputs
+[jmahguib@pronto Stacks_Process_RadTags_outputs]$ ls
+Cg_practice_8replicates                         TrkNbr_1083_UStacks_input  TrkNbr_1282_L2_I4                         TrkNbr-1524_L1_I4   TrkNbr-1524_L3_I12
+TrkNbr_1083_I12                                 TrkNbr_1282_L1_I12         TrkNbr_1282_L2_I6                         TrkNbr-1524_L1_I6   TrkNbr-1524_L3_I4
+TrkNbr_1083_I4                                  TrkNbr_1282_L1_I4          TrkNbr_1282_L2_RepPairs_Denovo_Map_input  TrkNbr-1524_L2_I12  TrkNbr-1524_L3_I6
+TrkNbr_1083_I6                                  TrkNbr_1282_L1_I6          TrkNbr_1282_L2_RepPairs_UStacks_input     TrkNbr-1524_L2_I4   TrkNbr-1524n1282n1083_UStacks_input
+TrkNbr_1083n1282_L1n2_PrelimPops_UStacks_input  TrkNbr_1282_L2_I12         TrkNbr-1524_L1_I12                        TrkNbr-1524_L2_I6
+[jmahguib@pronto Stacks_Process_RadTags_outputs]$ cd TrkNbr-1524n1282n1083_UStacks_input
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ ls
+WM1021-1030__FPPI                 WM1-10__TGCP       WM1202-1211__DHFA  WM183-192__STT   WM301-310__HNL  WM541-550__OICP  WM661-670__HGRF  WM782-791__RRL  WM901-910__CPS
+WM1082_1084-1090_1092_1093__CRWA  WM1141-1150__PCRA  WM123-130__MRLP    WM241-250__FSSP  WM482-491__MPO  WM601-610__IRO   WM721-730__PTP   WM842-851__RRO  WM962-971__PPNP
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM1-10__TGCP
+[jmahguib@pronto WM1-10__TGCP]$ ls -lhS
+total 2.3G
+-rwx------. 1 jmahguib domain users 335M Jul 14  2019 WM2.fq.gz
+-rwx------. 1 jmahguib domain users 275M Jul 14  2019 WM1.fq.gz
+-rwx------. 1 jmahguib domain users 264M Jul 14  2019 WM9.fq.gz
+-rwx------. 1 jmahguib domain users 237M Jul 14  2019 WM5.fq.gz
+-rwx------. 1 jmahguib domain users 219M Jul 14  2019 WM7.fq.gz
+-rwx------. 1 jmahguib domain users 217M Jul 14  2019 WM10.fq.gz
+-rwx------. 1 jmahguib domain users 213M Jul 14  2019 WM3.fq.gz
+-rwx------. 1 jmahguib domain users 199M Jul 14  2019 WM6.fq.gz
+-rwx------. 1 jmahguib domain users 198M Jul 14  2019 WM8.fq.gz
+-rwx------. 1 jmahguib domain users 191M Jul 14  2019 WM4.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM123-130__MRLP
+[jmahguib@pronto WM123-130__MRLP]$ ls -lhS
+total 1.3G
+-rwx------. 1 jmahguib domain users 191M Jul  7  2019 WM123.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 168M Aug 16 15:32 WM124.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 166M Aug 16 15:32 WM125.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 165M Aug 16 15:32 WM127.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 164M Aug 16 15:32 WM128.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 158M Aug 16 15:32 WM126.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 147M Aug 16 15:32 WM129.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 141M Aug 16 15:32 WM130.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM183-192__STT
+[jmahguib@pronto WM183-192__STT]$ ls -lhS
+total 1.5G
+-rw-r--r--. 1 jmahguib domain users 206M Feb 23  2019 WM183.fq.gz
+-rw-r--r--. 1 jmahguib domain users 205M Feb 23  2019 WM189.fq.gz
+-rw-r--r--. 1 jmahguib domain users 200M Feb 23  2019 WM184.fq.gz
+-rw-r--r--. 1 jmahguib domain users 197M Feb 23  2019 WM188.fq.gz
+-rw-r--r--. 1 jmahguib domain users 129M Feb 23  2019 WM191.fq.gz
+-rw-r--r--. 1 jmahguib domain users 123M Feb 23  2019 WM187.fq.gz
+-rw-r--r--. 1 jmahguib domain users 122M Feb 23  2019 WM192.fq.gz
+-rw-r--r--. 1 jmahguib domain users 107M Feb 23  2019 WM190.fq.gz
+-rw-r--r--. 1 jmahguib domain users 105M Feb 23  2019 WM186.fq.gz
+-rw-r--r--. 1 jmahguib domain users  96M Feb 23  2019 WM185.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM241-250__FSSP
+[jmahguib@pronto WM241-250__FSSP]$ ls -lhS
+total 1.3G
+-rw-rw-r--. 1 jmahguib domain users 160M Aug 16 16:03 WM250.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 138M Aug 16 15:32 WM243.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 137M Aug 16 15:32 WM241.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 137M Aug 16 15:32 WM247.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 129M Aug 16 15:32 WM248.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 124M Aug 16 15:32 WM249.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 122M Aug 16 15:32 WM246.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 117M Aug 16 15:32 WM242.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 114M Aug 16 15:32 WM244.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 102M Aug 16 15:32 WM245.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM301-310__HNL
+[jmahguib@pronto WM301-310__HNL]$ ls -lhS
+total 2.5G
+-rw-rw-r--. 1 jmahguib domain users 369M Aug 16 16:03 WM306.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 303M Aug 16 16:03 WM305.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 281M Aug 16 16:03 WM309.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 276M Aug 16 16:03 WM303.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 263M Aug 16 16:03 WM302.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 262M Aug 16 16:03 WM304.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 244M Aug 16 16:03 WM308.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 243M Aug 16 16:03 WM307.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 179M Aug 16 16:03 WM301.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 136M Aug 16 16:03 WM310.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM482-491__MPO
+[jmahguib@pronto WM482-491__MPO]$ ls -lhS
+total 1.5G
+-rw-r--r--. 1 jmahguib domain users 301M Feb 23  2019 WM485.fq.gz
+-rw-r--r--. 1 jmahguib domain users 178M Feb 23  2019 WM483.fq.gz
+-rw-r--r--. 1 jmahguib domain users 173M Feb 23  2019 WM482.fq.gz
+-rw-r--r--. 1 jmahguib domain users 173M Feb 23  2019 WM489.fq.gz
+-rw-r--r--. 1 jmahguib domain users 153M Feb 23  2019 WM484.fq.gz
+-rw-r--r--. 1 jmahguib domain users 116M Feb 23  2019 WM491.fq.gz
+-rw-r--r--. 1 jmahguib domain users 114M Feb 23  2019 WM490.fq.gz
+-rw-r--r--. 1 jmahguib domain users  98M Feb 23  2019 WM488.fq.gz
+-rw-r--r--. 1 jmahguib domain users  95M Feb 23  2019 WM486.fq.gz
+-rw-r--r--. 1 jmahguib domain users  89M Feb 23  2019 WM487.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM541-550__OICP
+[jmahguib@pronto WM541-550__OICP]$ ls -lhS
+total 2.3G
+-rw-rw-r--. 1 jmahguib domain users 288M Aug 16 16:02 WM549.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 259M Aug 16 16:03 WM544.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 250M Aug 16 16:02 WM550.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 249M Aug 16 16:02 WM545.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 243M Aug 16 16:02 WM546.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 241M Aug 16 16:03 WM542.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 234M Aug 16 16:03 WM543.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 193M Aug 16 16:02 WM548.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 185M Aug 16 16:03 WM541.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 184M Aug 16 16:02 WM547.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM601-610__IRO
+[jmahguib@pronto WM601-610__IRO]$ ls -lhS
+total 2.2G
+-rw-rw-r--. 1 jmahguib domain users 316M Aug 16 16:02 WM608.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 310M Aug 16 16:02 WM609.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 232M Aug 16 16:02 WM604.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 226M Aug 16 16:02 WM602.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 222M Aug 16 16:02 WM605.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 220M Aug 16 16:02 WM601.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 218M Aug 16 16:02 WM603.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 217M Aug 16 16:02 WM607.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 155M Aug 16 16:02 WM606.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 116M Aug 16 15:45 WM610.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM661-670__HGRF
+[jmahguib@pronto WM661-670__HGRF]$ ls -lhS
+total 1.4G
+-rw-rw-r--. 1 jmahguib domain users 273M Aug 16 15:45 WM665.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 145M Aug 16 15:45 WM667.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 138M Aug 16 15:45 WM664.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 128M Aug 16 15:45 WM663.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 127M Aug 16 15:45 WM669.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 126M Aug 16 15:45 WM668.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 126M Aug 16 15:45 WM661.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 121M Aug 16 15:45 WM662.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 112M Aug 16 15:45 WM666.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 101M Aug 16 15:45 WM670.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM721-730__PTP
+[jmahguib@pronto WM721-730__PTP]$ ls -lhS
+total 972M
+-rw-r--r--. 1 jmahguib domain users 156M Feb 23  2019 WM722.fq.gz
+-rw-r--r--. 1 jmahguib domain users 131M Feb 23  2019 WM721.fq.gz
+-rw-r--r--. 1 jmahguib domain users 109M Feb 23  2019 WM729.fq.gz
+-rw-r--r--. 1 jmahguib domain users 104M Feb 23  2019 WM730.fq.gz
+-rw-r--r--. 1 jmahguib domain users  90M Feb 23  2019 WM728.fq.gz
+-rw-r--r--. 1 jmahguib domain users  83M Feb 23  2019 WM727.fq.gz
+-rw-r--r--. 1 jmahguib domain users  83M Feb 23  2019 WM724.fq.gz
+-rw-r--r--. 1 jmahguib domain users  77M Feb 23  2019 WM726.fq.gz
+-rw-r--r--. 1 jmahguib domain users  74M Feb 23  2019 WM725.fq.gz
+-rw-r--r--. 1 jmahguib domain users  68M Feb 23  2019 WM723.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM782-791__RRL
+[jmahguib@pronto WM782-791__RRL]$ ls -lhS
+total 2.6G
+-rw-rw-r--. 1 jmahguib domain users 419M Aug 16 16:01 WM791.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 364M Aug 16 16:01 WM790.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 328M Aug 16 16:01 WM788.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 320M Aug 16 16:01 WM789.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 271M Aug 16 16:01 WM787.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 266M Aug 16 15:45 WM786.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 254M Aug 16 15:45 WM785.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 198M Aug 16 15:45 WM784.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 130M Aug 16 15:45 WM783.fq.gz
+-rw-rw-r--. 1 jmahguib domain users  91M Aug 16 15:45 WM782.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM842-851__RRO
+[jmahguib@pronto WM842-851__RRO]$ ls -lhS
+total 2.0G
+-rw-rw-r--. 1 jmahguib domain users 347M Aug 16 16:01 WM842.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 248M Aug 16 16:01 WM844.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 235M Aug 16 16:01 WM843.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 218M Aug 16 16:01 WM845.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 185M Aug 16 16:01 WM851.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 176M Aug 16 16:01 WM850.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 170M Aug 16 16:01 WM847.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 168M Aug 16 16:01 WM849.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 142M Aug 16 16:01 WM848.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 136M Aug 16 16:01 WM846.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM901-910__CPS
+[jmahguib@pronto WM901-910__CPS]$ ls -lhS
+total 1.9G
+-rw-rw-r--. 1 jmahguib domain users 234M Aug 16 15:54 WM910.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 221M Aug 16 15:54 WM905.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 215M Aug 16 15:54 WM904.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 214M Aug 16 15:54 WM901.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 200M Aug 16 15:54 WM909.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 183M Aug 16 15:54 WM902.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 182M Aug 16 15:54 WM906.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 180M Aug 16 15:54 WM903.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 176M Aug 16 15:54 WM908.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 138M Aug 16 15:54 WM907.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM962-971__PPNP
+[jmahguib@pronto WM962-971__PPNP]$ ls -lhS
+total 2.2G
+-rw-rw-r--. 1 jmahguib domain users 328M Aug 16 15:54 WM962.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 326M Aug 16 15:54 WM964.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 234M Aug 16 15:54 WM966.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 213M Aug 16 15:54 WM963.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 212M Aug 16 15:54 WM965.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 195M Aug 16 15:45 WM970.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 188M Aug 16 15:45 WM971.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 176M Aug 16 15:45 WM969.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 156M Aug 16 15:45 WM968.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 153M Aug 16 15:45 WM967.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM1021-1030__FPPI
+[jmahguib@pronto WM1021-1030__FPPI]$ ls -lhS
+total 1.6G
+-rw-rw-r--. 1 jmahguib domain users 226M Aug 16 15:45 WM1026.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 176M Aug 16 15:45 WM1021.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 166M Aug 16 15:45 WM1030.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 165M Aug 16 15:45 WM1022.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 163M Aug 16 15:45 WM1028.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 162M Aug 16 15:45 WM1029.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 161M Aug 16 15:45 WM1025.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 159M Aug 16 15:45 WM1023.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 146M Aug 16 15:45 WM1024.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 114M Aug 16 15:45 WM1027.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM1082_1084-1090_1092_1093__CRWA
+[jmahguib@pronto WM1082_1084-1090_1092_1093__CRWA]$ ls -lhS
+total 2.1G
+-rw-rw-r--. 1 jmahguib domain users 348M Aug 16 15:53 WM1092.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 273M Aug 16 15:53 WM1087.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 271M Aug 16 15:53 WM1093.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 253M Aug 16 15:53 WM1090.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 194M Aug 16 15:53 WM1088.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 170M Aug 16 15:53 WM1085.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 167M Aug 16 15:53 WM1089.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 164M Aug 16 15:53 WM1082.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 139M Aug 16 15:53 WM1084.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 124M Aug 16 15:53 WM1086.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM1141-1150__PCRA
+[jmahguib@pronto WM1141-1150__PCRA]$ ls -lhS
+total 2.3G
+-rw-rw-r--. 1 jmahguib domain users 346M Aug 16 16:04 WM1150.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 291M Aug 16 16:04 WM1149.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 262M Aug 16 16:04 WM1148.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 246M Aug 16 15:53 WM1143.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 246M Aug 16 15:53 WM1144.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 219M Aug 16 15:53 WM1141.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 190M Aug 16 15:53 WM1142.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 183M Aug 16 16:04 WM1146.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 182M Aug 16 16:04 WM1147.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 162M Aug 16 15:53 WM1145.fq.gz
+#
+#
+#
+[jmahguib@pronto TrkNbr-1524n1282n1083_UStacks_input]$ cd WM1202-1211__DHFA
+[jmahguib@pronto WM1202-1211__DHFA]$ ls -lhS
+total 3.1G
+-rw-rw-r--. 1 jmahguib domain users 398M Aug 16 16:04 WM1209.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 385M Aug 16 16:04 WM1207.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 371M Aug 16 16:04 WM1210.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 310M Aug 16 16:04 WM1206.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 305M Aug 16 16:04 WM1211.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 297M Aug 16 16:04 WM1202.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 275M Aug 16 16:04 WM1203.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 273M Aug 16 16:04 WM1205.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 267M Aug 16 16:04 WM1204.fq.gz
+-rw-rw-r--. 1 jmahguib domain users 260M Aug 16 16:04 WM1208.fq.gz

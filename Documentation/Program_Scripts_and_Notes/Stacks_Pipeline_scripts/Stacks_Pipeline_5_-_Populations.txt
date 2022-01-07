@@ -1,0 +1,30 @@
+# Stacks Pipeline: Populations
+
+
+#####Example script for running the Populations program in Stacks, as it should be entered into the terminal (12/01/2017):
+
+populations -P ./jmahguib/UStacks_outputs/WM_TGCP/ -M ./jmahguib/PopMaps/PopMap_TGCP.txt -b 1 -p 1 -r 0.85 -t 16 --min_maf 0.05 --structure --genepop --write_single_snp --vcf --plink
+
+
+
+
+
+#####Example notes you should record from the Terminal after each run of the 'Populations' program:
+
+###Populating observed haplotypes for 24 samples, 514411 loci.
+###Removing 404802 loci that did not pass sample/population constraints... retained 109609 loci.
+###-r 70%: 89821 loci
+
+
+
+###Populating observed haplotypes for 24 samples, 514411 loci.
+###Removing 449317 loci that did not pass sample/population constraints... retained 65094 loci.
+###-r 85%: 52138 loci
+
+
+
+###Populating observed haplotypes for 24 samples, 514411 loci.
+###Removing 480583 loci that did not pass sample/population constraints... retained 33828 loci.
+###-r 100%: 26175 loci
+
+

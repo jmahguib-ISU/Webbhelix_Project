@@ -1,0 +1,87 @@
+Input file for Arlequin
+GenAlEx or PGDspider
+
+Input file for GenoDive 
+Genepop file from Stacks
+GenoDive file from GenAlEx 
+
+PGDSpider: open PGDSpider2.jar
+
+populations -P ./kkim/cgdr_out_238_corr_snp/ -O ./kkim/cgdr_corr_snp_197_ind -M ./kkim/popmap/popmap_cg_dr_184-dro_ind.txt -b 1 -p 130 -t 8 --phylip_var
+popmap_cg_dr_197_ind.txt
+popmap_cg_dr_184-dro_ind.txt
+
+for File conversion
+http://sing.ei.uvigo.es/ALTER/ 
+from .phylip to .nex file for MrBayes
+
+IQtree
+Usage: bin/iqtree-omp -s <alignment> [OPTIONS]
+Mac-KIMs-MacBook-Pro:iqtree-omp-1.5.6-MacOSX Mac_kim$ bin/iqtree-omp -s example.phy -nt AUTO
+bin/iqtree-omp -s 168.phy -bb 1000 -nm 10000 -m TVM+R3+ASC -nt AUTO
+bin/iqtree-omp -s 168.phy -bb 1000 -nm 10000 -m TVM+R3 -nt AUTO
+bin/iqtree-omp -s Cg_158_P120.phy -bb 1000 -nm 10000 -nt AUTO
+
+
+-t Specify a file containing a set of trees.
+-con Compute consensus tree of the trees passed via -t. Resulting consensus
+tree is written to .contree file.
+iqtree -con mytrees
+To build a majority-rule consensus tree, simply set the minimum support threshold to
+0.5:
+iqtree -con mytrees -minsup 0.5
+
+Data analysis for GBS
+
+Phylogenetic tree: 
+program: IQTree for Maximum Likelihood tree, input: phylip from stacks
+program: MrBayes, Bayesian inference, input: nexus (.nex) file
+FigTree (for tree view)
+Mac-KIMs-MacBook-Pro:iqtree-omp-1.5.6-MacOSX Mac_kim$ bin/iqtree-omp -s Cg_duplicate_520.phy -bb 1000 -nm 10000 -nt AUTO
+
+AMOVA:
+Program: GenoDive
+Input file: genepop of stacks
+
+Genetic diversity
+Program: Stacks, GenoDive
+Input file: genepop of stacks
+
+Structure analysis
+Program: Bayesian model based clustering (Structure), AMOVA based k-mean clustering (GenoDive)
+Input file: using GenoDive or PGDspider from genepop of stacks
+
+Principal component analysis
+Program: Adegenet in R
+Input file: Filled genepop or fstat file using Genodive from genepop of stacks
+
+Pairwise Fst
+Program: Arlequin or genepop
+Input file: using GenoDive or PGDspider from genepop of stacks
+
+Discover loci under selection
+Program: Lositan Bayescan
+Input file: Genepop of stacks: be sure to change from "," to ",space" 
+
+For input file for Bayescan
+Mac-KIMs-MacBook-Pro:~ Mac_kim$ cd /Users/Mac_kim/Desktop/BayeScan2/BayeScan2.1/PGDSpider_2.1.1.2 
+Mac-KIMs-MacBook-Pro:PGDSpider_2.1.1.2 Mac_kim$ java -Xmx1024m -Xms512m -jar PGDSpider2.jar
+
+Read depth of coverage
+Program: vcftools
+Input file: .vcf file of stacks
+
+Effective population size
+Program: vcftools
+Input file: .vcf file of stacks
+
+Error rate of SNP
+Program: Plink
+Input file: Plink files of stacks
+
+Estimation of effective population size
+Program: NeEstimator  [Open: NeEstimator 2.01.jar]
+Input file: Genepop/Fstat file of GenoDive or stacks
+
+
+d <- read.table("plink.raw",header=T)

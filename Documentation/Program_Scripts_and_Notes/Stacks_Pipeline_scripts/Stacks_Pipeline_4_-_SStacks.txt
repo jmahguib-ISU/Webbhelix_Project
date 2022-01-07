@@ -1,0 +1,46 @@
+# Stacks Pipeline: SStacks
+
+
+#####Note: SStacks requires output files from both UStacks AND CStacks, so you should put output files from UStacks and CStacks into the same folder before proceeding!
+
+
+
+
+
+#####Example script for running SStacks as it should be entered into the terminal (11/30/2017):
+
+#!/bin/bash
+files="WM1 WM2 WM3 WM4 WM5 WM6 WM7 WM8 WM9 WM10 WM11 WM12 WM13 WM14 WM15 WM16 WM17 WM18 WM19 WM20 WM21 WM22 WM23 WM24"
+#
+for file in $files
+do
+sstacks -b 1 -c ./jmahguib/UStacks_outputs/batch_1 -s ./jmahguib/UStacks_outputs/$file -o ./jmahguib/UStacks_outputs -p 15
+done
+
+
+
+
+
+#####Breakdown of the components of the above script for running SStacks, with annotations:
+
+#!/bin/bash
+files="WM1 WM2 WM3 WM4 WM5 WM6 WM7 WM8 WM9 WM10 WM11 WM12 WM13 WM14 WM15 WM16 WM17 WM18 WM19 WM20 WM21 WM22 WM23 WM24" 
+#
+for file in $files
+do
+
+sstacks ###Command to initiate the SStacks program within the Stacks module
+
+-b 1 ###Specifies a "database/batch ID for this catalog" (the default ID is 1; you're going to want to match the ID used here to what you used in CStacks)
+
+-c ./jmahguib/UStacks_outputs/batch_1 ###Tells SStacks to read the CStacks output files
+
+-s ./jmahguib/UStacks_outputs/$file ###Tells SStacks to read the UStacks sample output files
+
+-o ./jmahguib/UStacks_outputs ###This is where you want SStacks to put the output files in
+
+-p 15 ###Option to "enable parallel execution" with a specified number of computational threads
+
+done
+
+

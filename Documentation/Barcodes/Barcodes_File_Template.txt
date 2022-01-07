@@ -1,0 +1,20 @@
+ATCACG	PA1
+CGATGT	PA2
+TTAGGC	PA3
+TGACCA	PA4
+ACAGTG	PA5
+GCCAAT	PA6
+CTTGA	PA15
+TCACC	PA16
+CTAGC	PA17
+ACAAA	PA18
+TTCTC	PA19
+AGCCC	PA20
+ATGAAAC	PA27
+AAAAGTT	PA28
+GAATTCA	PA29
+GGACCTA	PA30
+
+
+
+#####***NOTE: Replace 'PA#' designations above with your own sample ID's corresponding to the primer adaptor (PA) that was used for each sample; use only as many primer adaptors above as were utilized in the ligation step of the relevant GBS protocol***#####

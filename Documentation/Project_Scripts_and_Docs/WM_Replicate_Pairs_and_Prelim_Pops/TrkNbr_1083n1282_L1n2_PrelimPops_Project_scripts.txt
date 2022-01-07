@@ -1,0 +1,340 @@
+#####STACKS pipeline scripts used to process sequence data from Tracking Number 1282, Lanes 1 & 2 (Webbhelix replicate pairs and preliminary populations)
+
+
+
+#***NOTE: In order to load the Stacks module in ISU's Speedy server, you'll need to load the GCC module then the Stacks module as follows...
+
+module load gcc/7.3.0-xegsmw4
+module load stacks/1.46-uyma7zn
+...or...
+module load stacks/2.3b-2aionaj
+
+
+_______________________________________________________________________________________
+_______________________________________________________________________________________
+
+#####Process_RadTags
+
+
+###Lane 1, Index 4
+
+process_radtags -p /home/jmahguib/jmahguib/Raw_GBS_Data/TrkNbr_1282_L1_I4/ -o /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L1_I4/ -b /home/jmahguib/jmahguib/Barcodes/Barcodes_TrkNbr_1282_L1/Barcodes_TrkNbr_1282_L1_I4.txt -e pstI -E phred33 -r -c -q -D -t 90
+
+#screen session designation: 82677.pts-13.speedy
+
+
+###Lane 1, Index 6
+
+process_radtags -p /home/jmahguib/jmahguib/Raw_GBS_Data/TrkNbr_1282_L1_I6/ -o /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L1_I6/ -b /home/jmahguib/jmahguib/Barcodes/Barcodes_TrkNbr_1282_L1/Barcodes_TrkNbr_1282_L1_I6.txt -e pstI -E phred33 -r -c -q -D -t 90
+
+#screen session designation: 83998.pts-13.speedy
+
+
+###Lane 1, Index 12
+
+process_radtags -p /home/jmahguib/jmahguib/Raw_GBS_Data/TrkNbr_1282_L1_I12/ -o /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L1_I12/ -b /home/jmahguib/jmahguib/Barcodes/Barcodes_TrkNbr_1282_L1/Barcodes_TrkNbr_1282_L1_I12.txt -e pstI -E phred33 -r -c -q -D -t 90
+
+#screen session designation: 84263.pts-13.speedy
+
+
+###Lane 2, Index 4
+
+process_radtags -p /home/jmahguib/jmahguib/Raw_GBS_Data/TrkNbr_1282_L2_I4/ -o /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_I4/ -b /home/jmahguib/jmahguib/Barcodes/Barcodes_TrkNbr_1282_L2/Barcodes_TrkNbr_1282_L2_I4.txt -e pstI -E phred33 -r -c -q -D -t 90
+
+#screen session designation: 84514.pts-13.speedy
+
+
+###Lane 2, Index 6
+
+process_radtags -p /home/jmahguib/jmahguib/Raw_GBS_Data/TrkNbr_1282_L2_I6/ -o /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_I6/ -b /home/jmahguib/jmahguib/Barcodes/Barcodes_TrkNbr_1282_L2/Barcodes_TrkNbr_1282_L2_I6.txt -e pstI -E phred33 -r -c -q -D -t 90
+
+#screen session designation: 84750.pts-13.speedy
+
+
+###Lane 2, Index 12
+
+process_radtags -p /home/jmahguib/jmahguib/Raw_GBS_Data/TrkNbr_1282_L2_I12/ -o /home/jmahguib/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1282_L2_I12/ -b /home/jmahguib/jmahguib/Barcodes/Barcodes_TrkNbr_1282_L2/Barcodes_TrkNbr_1282_L2_I12.txt -e pstI -E phred33 -r -c -q -D -t 90
+
+#screen session designation: 85001.pts-13.speedy
+
+
+_______________________________________________________________________________________
+_______________________________________________________________________________________
+
+#####UStacks
+
+#!/bin/bash
+#SBATCH --ntasks=70
+#SBATCH --partition=biocrunch
+#SBATCH --nodes=1
+#SBATCH --mem=140G
+#SBATCH --time=30-00:00:00
+#SBATCH --error=/work/LAS/kjroe-lab/jmahguib/Pronto_sbatch_error_reports/TrkNbr_1083n1282_L1n2_PrelimPops_UStacks_error_reports/TrkNbr_1083n1282_L1n2_PrelimPops.%J.err
+#SBATCH --output=/work/LAS/kjroe-lab/jmahguib/Pronto_sbatch_output_reports/TrkNbr_1083n1282_L1n2_PrelimPops_UStacks_output_reports/TrkNbr_1083n1282_L1n2_PrelimPops.%J.out
+
+cd
+module load gcc/7.3.0-xegsmw4
+module load stacks/1.46-uyma7zn
+#!/bin/bash
+files="WM10.fq.gz WM186.fq.gz WM196.fq.gz WM205.fq.gz WM484.fq.gz WM495.fq.gz WM505.fq.gz WM729.fq.gz WM740.fq.gz WM11.fq.gz WM187.fq.gz WM197.fq.gz WM206.fq.gz WM485.fq.gz WM496.fq.gz WM5.fq.gz WM730.fq.gz WM741.fq.gz WM12.fq.gz WM188.fq.gz WM198.fq.gz WM20.fq.gz WM486.fq.gz WM497.fq.gz WM6.fq.gz WM731.fq.gz WM742.fq.gz WM13.fq.gz WM189.fq.gz WM199.fq.gz WM21.fq.gz WM487.fq.gz WM498.fq.gz WM721.fq.gz WM732.fq.gz WM743.fq.gz WM14.fq.gz WM18.fq.gz WM19.fq.gz WM22.fq.gz WM488.fq.gz WM499.fq.gz WM722.fq.gz WM733.fq.gz WM744.fq.gz WM15.fq.gz WM190.fq.gz WM1.fq.gz WM23.fq.gz WM489.fq.gz WM4.fq.gz WM723.fq.gz WM734.fq.gz WM7.fq.gz WM16.fq.gz WM191.fq.gz WM200.fq.gz WM24.fq.gz WM490.fq.gz WM500.fq.gz WM724.fq.gz WM735.fq.gz WM8.fq.gz WM17.fq.gz WM192.fq.gz WM201.fq.gz WM2.fq.gz WM491.fq.gz WM501.fq.gz WM725.fq.gz WM736.fq.gz WM9.fq.gz WM183.fq.gz WM193.fq.gz WM202.fq.gz WM3.fq.gz WM492.fq.gz WM502.fq.gz WM726.fq.gz WM737.fq.gz WM184.fq.gz WM194.fq.gz WM203.fq.gz WM482.fq.gz WM493.fq.gz WM503.fq.gz WM727.fq.gz WM738.fq.gz WM185.fq.gz WM195.fq.gz WM204.fq.gz WM483.fq.gz WM494.fq.gz WM504.fq.gz WM728.fq.gz WM739.fq.gz"
+#
+i=1
+for file in $files
+do
+ustacks -i $i -f /work/LAS/kjroe-lab/jmahguib/Stacks_Process_RadTags_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_UStacks_input/${file} -m 2 -M 2 --max_locus_stacks 5 --model_type snp --alpha 0.05 -d -o /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/ -t gzfastq -p 70
+let "i+=1";
+done
+
+
+_______________________________________________________________________________________
+_______________________________________________________________________________________
+
+#####CStacks
+
+#!/bin/bash
+#SBATCH --ntasks=60
+#SBATCH --partition=biocrunch
+#SBATCH --nodes=1
+#SBATCH --mem=120G
+#SBATCH --time=30-00:00:00
+#SBATCH --error=/work/LAS/kjroe-lab/jmahguib/CStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/TrkNbr_1083n1282_L1n2_PrelimPops.%J.err
+#SBATCH --output=/work/LAS/kjroe-lab/jmahguib/CStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/TrkNbr_1083n1282_L1n2_PrelimPops.%J.out
+
+cd
+module load gcc/7.3.0-xegsmw4
+module load stacks/1.46-uyma7zn
+cstacks -b 22540000 -n 4 -p 60 -o /work/LAS/kjroe-lab/jmahguib/CStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM2 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM8 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM14 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM16 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM20 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM24 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM199 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM200 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM201 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM204 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM205 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM206 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM485 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM498 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM499 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM500 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM503 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM504 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM736 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM739 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM740 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM742 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM743 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM744
+
+
+_______________________________________________________________________________________
+_______________________________________________________________________________________
+
+#####SStacks
+
+#!/bin/bash
+#SBATCH --ntasks=60
+#SBATCH --partition=biocrunch
+#SBATCH --nodes=1
+#SBATCH --mem=120G
+#SBATCH --time=30-00:00:00
+#SBATCH --error=/work/LAS/kjroe-lab/jmahguib/SStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/TrkNbr_1083n1282_L1n2_PrelimPops.%J.err
+#SBATCH --output=/work/LAS/kjroe-lab/jmahguib/SStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/TrkNbr_1083n1282_L1n2_PrelimPops.%J.out
+
+cd
+module load gcc/7.3.0-xegsmw4
+module load stacks/1.46-uyma7zn
+#!/bin/bash
+files="WM10 WM186 WM196 WM205 WM484 WM495 WM505 WM729 WM740 WM11 WM187 WM197 WM206 WM485 WM496 WM5 WM730 WM741 WM12 WM188 WM198 WM20 WM486 WM497 WM6 WM731 WM742 WM13 WM189 WM199 WM21 WM487 WM498 WM721 WM732 WM743 WM14 WM18 WM19 WM22 WM488 WM499 WM722 WM733 WM744 WM15 WM190 WM1 WM23 WM489 WM4 WM723 WM734 WM7 WM16 WM191 WM200 WM24 WM490 WM500 WM724 WM735 WM8 WM17 WM192 WM201 WM2 WM491 WM501 WM725 WM736 WM9 WM183 WM193 WM202 WM3 WM492 WM502 WM726 WM737 WM184 WM194 WM203 WM482 WM493 WM503 WM727 WM738 WM185 WM195 WM204 WM483 WM494 WM504 WM728 WM739"
+#
+for file in $files
+do
+sstacks -b 22540000 -c /work/LAS/kjroe-lab/jmahguib/CStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/batch_22540000 -s /work/LAS/kjroe-lab/jmahguib/UStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/$file -o /work/LAS/kjroe-lab/jmahguib/SStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/ -p 60
+done
+
+
+_______________________________________________________________________________________
+_______________________________________________________________________________________
+
+#####Populations
+
+#!/bin/bash
+#SBATCH --ntasks=20
+#SBATCH --partition=biocrunch
+#SBATCH --nodes=1
+#SBATCH --mem=40G
+#SBATCH --time=30-00:00:00
+#SBATCH --error=/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_p1r070_MinSampSizeRuns.%J.err
+#SBATCH --output=/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_p1r070_MinSampSizeRuns.%J.out
+
+
+cd
+module load gcc/7.3.0-xegsmw4
+module load stacks/1.46-uyma7zn
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S24_T1 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S24.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S24_T2 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S24.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S24_T3 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S24.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S24_T4 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S24.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S24_T5 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S24.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S22_T1 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S22_T1 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S22_T1.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S22_T2 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S22_T2 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S22_T2.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S22_T3 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S22_T3 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S22_T3.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S22_T4 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S22_T4 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S22_T4.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S22_T5 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S22_T5 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S22_T5.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S20_T1 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S20_T1 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S20_T1.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S20_T2 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S20_T2 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S20_T2.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S20_T3 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S20_T3 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S20_T3.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S20_T4 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S20_T4 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S20_T4.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S20_T5 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S20_T5 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S20_T5.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S18_T1 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S18_T1 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S18_T1.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S18_T2 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S18_T2 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S18_T2.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S18_T3 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S18_T3 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S18_T3.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S18_T4 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S18_T4 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S18_T4.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S18_T5 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S18_T5 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S18_T5.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S16_T1 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S16_T1 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S16_T1.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S16_T2 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S16_T2 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S16_T2.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S16_T3 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S16_T3 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S16_T3.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S16_T4 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S16_T4 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S16_T4.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S16_T5 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S16_T5 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S16_T5.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S14_T1 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S14_T1 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S14_T1.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S14_T2 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S14_T2 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S14_T2.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S14_T3 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S14_T3 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S14_T3.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S14_T4 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S14_T4 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S14_T4.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S14_T5 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S14_T5 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S14_T5.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S12_T1 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S12_T1 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S12_T1.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S12_T2 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S12_T2 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S12_T2.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S12_T3 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S12_T3 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S12_T3.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S12_T4 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S12_T4 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S12_T4.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S12_T5 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S12_T5 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S12_T5.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S10_T1 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S10_T1 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S10_T1.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S10_T2 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S10_T2 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S10_T2.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S10_T3 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S10_T3 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S10_T3.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S10_T4 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S10_T4 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S10_T4.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S10_T5 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S10_T5 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S10_T5.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S08_T1 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S08_T1 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S08_T1.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S08_T2 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S08_T2 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S08_T2.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S08_T3 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S08_T3 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S08_T3.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S08_T4 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S08_T4 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S08_T4.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S08_T5 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S08_T5 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S08_T5.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S06_T1 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S06_T1 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S06_T1.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S06_T2 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S06_T2 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S06_T2.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S06_T3 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S06_T3 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S06_T3.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S06_T4 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S06_T4 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S06_T4.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S06_T5 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S06_T5 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S06_T5.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S04_T1 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S04_T1 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S04_T1.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S04_T2 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S04_T2 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S04_T2.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S04_T3 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S04_T3 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S04_T3.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S04_T4 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S04_T4 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S04_T4.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S04_T5 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S04_T5 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S04_T5.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S02_T1 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S02_T1 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S02_T1.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S02_T2 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S02_T2 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S02_T2.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S02_T3 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S02_T3 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S02_T3.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S02_T4 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S02_T4 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S02_T4.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S02_T5 -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_S02_T5 -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMaps_TrkNbr_1083n1282_L1n2_PrelimPops_MinSampSizeRuns/PopMap_TrkNbr_1083n1282_L1n2_PrelimPops_S02_T5.txt -b 22540000 -t 20 -k -p 1 -r 0.70 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+
+
+_______________________________________________________________________________________
+_______________________________________________________________________________________
+
+
+
+
