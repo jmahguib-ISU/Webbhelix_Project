@@ -1,0 +1,306 @@
+
+The following have been reloaded with a version change:
+  1) zlib/1.2.11-vhzh5cf => zlib/1.2.11-ldu43ta
+
+populations parameters selected:
+  Fst kernel smoothing: on
+  Bootstrap resampling: off
+  Percent samples limit per population: 0.8
+  Locus Population limit: 2
+  Minimum stack depth: 0
+  Log liklihood filtering: off; threshold: 0
+  Minor allele frequency cutoff: 0
+  Maximum observed heterozygosity cutoff: 1
+  Applying Fst correction: none.
+
+Parsing population map...
+The population map contained 96 samples, 4 population(s), 1 group(s).
+Reading the catalog...
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/batch_22540000.catalog.tags.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/batch_22540000.catalog.snps.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/batch_22540000.catalog.alleles.tsv.gz
+Reading matches to the catalog...
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM1.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM10.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM11.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM12.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM13.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM14.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM15.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM16.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM17.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM18.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM19.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM2.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM20.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM21.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM22.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM23.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM24.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM3.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM4.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM5.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM6.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM7.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM8.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM9.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM183.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM184.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM185.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM186.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM187.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM188.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM189.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM190.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM191.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM192.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM193.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM194.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM195.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM196.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM197.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM198.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM199.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM200.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM201.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM202.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM203.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM204.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM205.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM206.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM482.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM483.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM484.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM485.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM486.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM487.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM488.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM489.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM490.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM491.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM492.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM493.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM494.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM495.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM496.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM497.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM498.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM499.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM500.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM501.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM502.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM503.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM504.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM505.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM721.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM722.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM723.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM724.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM725.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM726.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM727.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM728.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM729.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM730.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM731.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM732.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM733.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM734.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM735.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM736.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM737.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM738.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM739.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM740.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM741.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM742.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM743.matches.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM744.matches.tsv.gz
+Catalog is not reference aligned, arbitrarily ordering catalog loci.
+Working on 96 samples.
+Working on 4 population(s):
+    TGCP: WM1, WM10, WM11, WM12, WM13, WM14, WM15, WM16, WM17, WM18, WM19, WM2, WM20, WM21, WM22, WM23, WM24, WM3, WM4, WM5, WM6, WM7, WM8, WM9
+    STT: WM183, WM184, WM185, WM186, WM187, WM188, WM189, WM190, WM191, WM192, WM193, WM194, WM195, WM196, WM197, WM198, WM199, WM200, WM201, WM202, WM203, WM204, WM205, WM206
+    MPO: WM482, WM483, WM484, WM485, WM486, WM487, WM488, WM489, WM490, WM491, WM492, WM493, WM494, WM495, WM496, WM497, WM498, WM499, WM500, WM501, WM502, WM503, WM504, WM505
+    PTP: WM721, WM722, WM723, WM724, WM725, WM726, WM727, WM728, WM729, WM730, WM731, WM732, WM733, WM734, WM735, WM736, WM737, WM738, WM739, WM740, WM741, WM742, WM743, WM744
+Working on 1 group(s) of populations:
+    defaultgrp: TGCP, STT, MPO, PTP
+Populating observed haplotypes for 96 samples, 1183659 loci.
+Removing 1104414 loci that did not pass sample/population constraints... retained 79245 loci.
+Loading model outputs for 96 samples, 79245 loci.
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM1.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM10.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM11.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM12.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM13.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM14.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM15.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM16.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM17.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM18.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM19.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM2.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM20.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM21.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM22.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM23.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM24.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM3.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM4.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM5.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM6.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM7.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM8.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM9.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM183.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM184.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM185.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM186.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM187.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM188.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM189.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM190.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM191.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM192.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM193.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM194.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM195.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM196.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM197.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM198.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM199.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM200.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM201.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM202.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM203.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM204.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM205.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM206.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM482.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM483.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM484.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM485.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM486.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM487.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM488.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM489.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM490.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM491.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM492.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM493.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM494.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM495.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM496.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM497.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM498.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM499.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM500.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM501.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM502.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM503.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM504.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM505.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM721.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM722.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM723.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM724.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM725.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM726.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM727.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM728.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM729.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM730.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM731.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM732.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM733.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM734.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM735.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM736.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM737.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM738.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM739.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM740.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM741.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM742.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM743.models.tsv.gz
+  Parsing /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr_1083n1282_L1n2_PrelimPops/WM744.models.tsv.gz
+Generating nucleotide-level summary statistics for population 'TGCP'
+Population 'TGCP' contained 44 incompatible loci -- more than two alleles present.
+Generating nucleotide-level summary statistics for population 'STT'
+Population 'STT' contained 9315 incompatible loci -- more than two alleles present.
+Generating nucleotide-level summary statistics for population 'MPO'
+Population 'MPO' contained 9435 incompatible loci -- more than two alleles present.
+Generating nucleotide-level summary statistics for population 'PTP'
+Population 'PTP' contained 7659 incompatible loci -- more than two alleles present.
+Tallying loci across populations...done.
+Pruned 26268 variant sites due to filter constraints (more with --verbose).
+Removing 22565 additional loci for which all variant sites were filtered... retained 56680 loci.
+Regenerating nucleotide-level summary statistics for population 'TGCP'
+Population 'TGCP' contained 0 incompatible loci -- more than two alleles present.
+Regenerating nucleotide-level summary statistics for population 'STT'
+Population 'STT' contained 0 incompatible loci -- more than two alleles present.
+Regenerating nucleotide-level summary statistics for population 'MPO'
+Population 'MPO' contained 0 incompatible loci -- more than two alleles present.
+Regenerating nucleotide-level summary statistics for population 'PTP'
+Population 'PTP' contained 0 incompatible loci -- more than two alleles present.
+Re-tallying loci across populations...done.
+Notice: Smoothing was requested (-k), but will not be performed as the loci are not ordered.
+Generating haplotype-level summary statistics for population 'TGCP'
+Generating haplotype-level summary statistics for population 'STT'
+Generating haplotype-level summary statistics for population 'MPO'
+Generating haplotype-level summary statistics for population 'PTP'
+Calculating haplotype F statistics across all populations/groups...
+  Generating haplotype F statistics for un...done.
+done.
+Writing haplotype F statistics... wrote 22200 loci to haplotype Phi_st file, '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.phistats.tsv'
+Calculating pairwise haplotype F statistics...
+  Processing populations 'TGCP' and 'STT'
+    Generating pairwise haplotype F statistics for un...done.
+done.
+Writing haplotype F statistics... wrote 5629 loci to pairwise haplotype file, '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.phistats_TGCP-STT.tsv'
+  Processing populations 'TGCP' and 'MPO'
+    Generating pairwise haplotype F statistics for un...done.
+done.
+Writing haplotype F statistics... wrote 5355 loci to pairwise haplotype file, '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.phistats_TGCP-MPO.tsv'
+  Processing populations 'TGCP' and 'PTP'
+    Generating pairwise haplotype F statistics for un...done.
+done.
+Writing haplotype F statistics... wrote 4190 loci to pairwise haplotype file, '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.phistats_TGCP-PTP.tsv'
+  Processing populations 'STT' and 'MPO'
+    Generating pairwise haplotype F statistics for un...done.
+done.
+Writing haplotype F statistics... wrote 14534 loci to pairwise haplotype file, '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.phistats_STT-MPO.tsv'
+  Processing populations 'STT' and 'PTP'
+    Generating pairwise haplotype F statistics for un...done.
+done.
+Writing haplotype F statistics... wrote 14937 loci to pairwise haplotype file, '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.phistats_STT-PTP.tsv'
+  Processing populations 'MPO' and 'PTP'
+    Generating pairwise haplotype F statistics for un...done.
+done.
+Writing haplotype F statistics... wrote 14843 loci to pairwise haplotype file, '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.phistats_MPO-PTP.tsv'
+Writing 56680 loci to summary statistics file, '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.sumstats.tsv'
+Writing 56680 loci to observed haplotype file, '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.haplotypes.tsv'
+Writing population data to GenePop file '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.genepop'
+Writing population data to Structure file '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.structure.tsv'...done.
+Writing population data to PLINK files...done.
+Writing population data to Phylip file '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.phylip'; logging nucleotide positions to '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.phylip.log'...done.
+Writing population data to VCF file '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.vcf'
+Calculating Fst for populations 'TGCP' and 'STT' and writing it to file, '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.fst_TGCP-STT.tsv'
+Pop 1: TGCP; Pop 2: STT; mean Fst: 0.169751
+Pooled populations 'TGCP' and 'STT' contained: 4 incompatible loci; 0 nucleotides covered by more than one RAD locus.
+Calculating Fst for populations 'TGCP' and 'MPO' and writing it to file, '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.fst_TGCP-MPO.tsv'
+Pop 1: TGCP; Pop 2: MPO; mean Fst: 0.17264
+Pooled populations 'TGCP' and 'MPO' contained: 4 incompatible loci; 0 nucleotides covered by more than one RAD locus.
+Calculating Fst for populations 'TGCP' and 'PTP' and writing it to file, '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.fst_TGCP-PTP.tsv'
+Pop 1: TGCP; Pop 2: PTP; mean Fst: 0.123511
+Pooled populations 'TGCP' and 'PTP' contained: 0 incompatible loci; 0 nucleotides covered by more than one RAD locus.
+Calculating Fst for populations 'STT' and 'MPO' and writing it to file, '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.fst_STT-MPO.tsv'
+Pop 1: STT; Pop 2: MPO; mean Fst: 0.0411448
+Pooled populations 'STT' and 'MPO' contained: 1 incompatible loci; 0 nucleotides covered by more than one RAD locus.
+Calculating Fst for populations 'STT' and 'PTP' and writing it to file, '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.fst_STT-PTP.tsv'
+Pop 1: STT; Pop 2: PTP; mean Fst: 0.239781
+Pooled populations 'STT' and 'PTP' contained: 5 incompatible loci; 0 nucleotides covered by more than one RAD locus.
+Calculating Fst for populations 'MPO' and 'PTP' and writing it to file, '/work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.fst_MPO-PTP.tsv'
+Pop 1: MPO; Pop 2: PTP; mean Fst: 0.234793
+Pooled populations 'MPO' and 'PTP' contained: 5 incompatible loci; 0 nucleotides covered by more than one RAD locus.
+Populations is done.
