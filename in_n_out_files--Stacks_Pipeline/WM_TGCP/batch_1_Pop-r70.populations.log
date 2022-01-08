@@ -1,0 +1,120 @@
+populations -P ./jmahguib/UStacks_outputs/WM_TGCP/ -M ./jmahguib/PopMaps/PopMap_TGCP.txt -b 1 -p 1 -r 0.7 -t 16 --min_maf 0.05 --structure --genepop --write_single_snp --vcf --plink
+populations version 1.46 executed 2018-03-27 08:34:57
+
+# Distribution of population loci.
+# Distribution of valid loci matched to catalog locus.
+# Valid samples at locus	Count
+0	1204
+1	115382
+2	37502
+3	28290
+4	23866
+5	21155
+6	19268
+7	18309
+8	17366
+9	16721
+10	16391
+11	16243
+12	15844
+13	15024
+14	14876
+15	14199
+16	13162
+17	12328
+18	11501
+19	10498
+20	10188
+21	9674
+22	9839
+23	11753
+24	33828
+# Distribution of confounded loci at catalog locus.
+# Confounded samples at locus	Count
+0	483782
+1	8061
+2	4074
+3	2738
+4	1994
+5	1567
+6	1391
+7	1141
+8	1085
+9	902
+10	824
+11	735
+12	697
+13	582
+14	592
+15	539
+16	460
+17	449
+18	450
+19	395
+20	454
+21	408
+22	458
+23	633
+# Distribution of missing loci at catalog loci.
+# Absent samples at locus	Count
+0	483782
+1	8061
+2	4074
+3	2738
+4	1994
+5	1567
+6	1391
+7	1141
+8	1085
+9	902
+10	824
+11	735
+12	697
+13	582
+14	592
+15	539
+16	460
+17	449
+18	450
+19	395
+20	454
+21	408
+22	458
+23	633
+# Distribution of population loci after applying locus constraints.
+# Distribution of valid loci matched to catalog locus.
+# Valid samples at locus	Count
+17	12328
+18	11501
+19	10498
+20	10188
+21	9674
+22	9839
+23	11753
+24	33828
+# Distribution of confounded loci at catalog locus.
+# Confounded samples at locus	Count
+0	102072
+1	2860
+2	1616
+3	1100
+4	760
+5	566
+6	400
+7	235
+# Distribution of missing loci at catalog loci.
+# Absent samples at locus	Count
+0	102072
+1	2860
+2	1616
+3	1100
+4	760
+5	566
+6	400
+7	235
+Population TGCP contained 914 incompatible loci -- more than two alleles present.
+Population TGCP contained 0 incompatible loci -- more than two alleles present.
+# Distribution of the number of SNPs per locus.
+#n_snps	n_loci
+0	53727
+1	36094
