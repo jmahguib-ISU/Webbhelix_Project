@@ -1,0 +1,40 @@
+PLINK v1.90b5.3 64-bit (21 Feb 2018)
+Options in effect:
+  --allow-extra-chr
+  --allow-no-sex
+  --file ./jmahguib/Stacks_Populations_outputs/TrkNbr-1524n1282n1083_AllPops_Stacks_Populations_p18_r080_output/batch_22540000.plink
+  --indep-pairwise 50 5 0.5
+  --make-bed
+  --out TrkNbr-1524n1282n1083_AllPops_Plink_p18_r080_LD_SNPs
+
+Hostname: bigram.las.iastate.edu
+Working directory: /work/LAS/kjroe-lab
+Start time: Tue Oct 13 15:13:36 2020
+
+Random number seed: 1602620016
+1547878 MB RAM detected; reserving 773939 MB for main workspace.
+Scanning .ped file... done.
+Performing single-pass .bed write (471 variants, 178 people).
+--file: TrkNbr-1524n1282n1083_AllPops_Plink_p18_r080_LD_SNPs-temporary.bed +
+TrkNbr-1524n1282n1083_AllPops_Plink_p18_r080_LD_SNPs-temporary.bim +
+TrkNbr-1524n1282n1083_AllPops_Plink_p18_r080_LD_SNPs-temporary.fam written.
+471 variants loaded from .bim file.
+178 people (0 males, 0 females, 178 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to
+TrkNbr-1524n1282n1083_AllPops_Plink_p18_r080_LD_SNPs.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 178 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.953768.
+471 variants and 178 people pass filters and QC.
+Note: No phenotypes present.
+--make-bed to TrkNbr-1524n1282n1083_AllPops_Plink_p18_r080_LD_SNPs.bed +
+TrkNbr-1524n1282n1083_AllPops_Plink_p18_r080_LD_SNPs.bim +
+TrkNbr-1524n1282n1083_AllPops_Plink_p18_r080_LD_SNPs.fam ... done.
+Pruned 139 variants from chromosome 27, leaving 332.
+Pruning complete.  139 of 471 variants removed.
+Marker lists written to
+TrkNbr-1524n1282n1083_AllPops_Plink_p18_r080_LD_SNPs.prune.in and
+TrkNbr-1524n1282n1083_AllPops_Plink_p18_r080_LD_SNPs.prune.out .
+
+End time: Tue Oct 13 15:13:36 2020

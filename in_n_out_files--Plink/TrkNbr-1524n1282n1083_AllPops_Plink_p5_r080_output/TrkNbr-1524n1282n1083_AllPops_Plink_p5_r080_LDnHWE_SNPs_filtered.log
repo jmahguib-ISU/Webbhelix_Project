@@ -1,0 +1,49 @@
+PLINK v1.90b5.3 64-bit (21 Feb 2018)
+Options in effect:
+  --allow-extra-chr
+  --allow-no-sex
+  --extract TrkNbr-1524n1282n1083_AllPops_Plink_p5_r080_LD_SNPs.prune.in
+  --file ./jmahguib/Stacks_Populations_outputs/TrkNbr-1524n1282n1083_AllPops_Stacks_Populations_p5_r080_output/batch_22540000.plink
+  --hwe 0.001 midp
+  --make-bed
+  --out TrkNbr-1524n1282n1083_AllPops_Plink_p5_r080_LDnHWE_SNPs_filtered
+  --recode vcf
+
+Hostname: bigram.las.iastate.edu
+Working directory: /work/LAS/kjroe-lab
+Start time: Tue Oct 13 14:54:50 2020
+
+Random number seed: 1602618890
+1547878 MB RAM detected; reserving 773939 MB for main workspace.
+Scanning .ped file... done.
+Performing single-pass .bed write (75978 variants, 178 people).
+--file:
+TrkNbr-1524n1282n1083_AllPops_Plink_p5_r080_LDnHWE_SNPs_filtered-temporary.bed
++
+TrkNbr-1524n1282n1083_AllPops_Plink_p5_r080_LDnHWE_SNPs_filtered-temporary.bim
++
+TrkNbr-1524n1282n1083_AllPops_Plink_p5_r080_LDnHWE_SNPs_filtered-temporary.fam
+written.
+75978 variants loaded from .bim file.
+178 people (0 males, 0 females, 178 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to
+TrkNbr-1524n1282n1083_AllPops_Plink_p5_r080_LDnHWE_SNPs_filtered.nosex .
+--extract: 47052 variants remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 178 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.508925.
+Warning: --hwe observation counts vary by more than 10%.  Consider using
+--geno, and/or applying different p-value thresholds to distinct subsets of
+your data.
+--hwe: 15310 variants removed due to Hardy-Weinberg exact test.
+31742 variants and 178 people pass filters and QC.
+Note: No phenotypes present.
+--make-bed to
+TrkNbr-1524n1282n1083_AllPops_Plink_p5_r080_LDnHWE_SNPs_filtered.bed +
+TrkNbr-1524n1282n1083_AllPops_Plink_p5_r080_LDnHWE_SNPs_filtered.bim +
+TrkNbr-1524n1282n1083_AllPops_Plink_p5_r080_LDnHWE_SNPs_filtered.fam ... done.
+--recode vcf to
+TrkNbr-1524n1282n1083_AllPops_Plink_p5_r080_LDnHWE_SNPs_filtered.vcf ... done.
+
+End time: Tue Oct 13 14:54:51 2020

@@ -1,0 +1,29 @@
+PLINK v1.90b5.3 64-bit (21 Feb 2018)
+Options in effect:
+  --allow-extra-chr
+  --allow-no-sex
+  --file ./jmahguib/Stacks_Denovo_Map_outputs/TrkNbr_1282_L2_RepPairs_redo/5230/batch_5230.plink
+  --recode A
+
+Hostname: speedy2.ent.iastate.edu
+Working directory: /work/LAS/kjroe-lab
+Start time: Thu Jun  6 15:50:43 2019
+
+Random number seed: 1559854243
+257665 MB RAM detected; reserving 128832 MB for main workspace.
+Scanning .ped file... done.
+Performing single-pass .bed write (497679 variants, 24 people).
+--file: plink-temporary.bed + plink-temporary.bim + plink-temporary.fam
+written.
+497679 variants loaded from .bim file.
+24 people (0 males, 0 females, 24 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to plink.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 24 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.190586.
+497679 variants and 24 people pass filters and QC.
+Note: No phenotypes present.
+--recode A to plink.raw ... done.
+
+End time: Thu Jun  6 15:50:44 2019

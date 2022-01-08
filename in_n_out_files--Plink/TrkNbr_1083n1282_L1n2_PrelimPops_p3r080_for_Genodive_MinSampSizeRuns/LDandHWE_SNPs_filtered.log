@@ -1,0 +1,41 @@
+PLINK v1.90b5.3 64-bit (21 Feb 2018)
+Options in effect:
+  --allow-extra-chr
+  --allow-no-sex
+  --extract LD_SNP_lists.prune.in
+  --file ./jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p3r080_for_Genodive_MinSampSizeRuns/batch_22540000.plink
+  --hwe 0.001 midp
+  --make-bed
+  --out LDandHWE_SNPs_filtered
+  --recode vcf
+
+Hostname: rit1.las.iastate.edu
+Working directory: /work/LAS/kjroe-lab
+Start time: Tue Dec  3 14:51:11 2019
+
+Random number seed: 1575406271
+128742 MB RAM detected; reserving 64371 MB for main workspace.
+Scanning .ped file... done.
+Performing single-pass .bed write (10506 variants, 96 people).
+--file: LDandHWE_SNPs_filtered-temporary.bed +
+LDandHWE_SNPs_filtered-temporary.bim + LDandHWE_SNPs_filtered-temporary.fam
+written.
+10506 variants loaded from .bim file.
+96 people (0 males, 0 females, 96 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to LDandHWE_SNPs_filtered.nosex .
+--extract: 8177 variants remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 96 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.716984.
+Warning: --hwe observation counts vary by more than 10%.  Consider using
+--geno, and/or applying different p-value thresholds to distinct subsets of
+your data.
+--hwe: 1334 variants removed due to Hardy-Weinberg exact test.
+6843 variants and 96 people pass filters and QC.
+Note: No phenotypes present.
+--make-bed to LDandHWE_SNPs_filtered.bed + LDandHWE_SNPs_filtered.bim +
+LDandHWE_SNPs_filtered.fam ... done.
+--recode vcf to LDandHWE_SNPs_filtered.vcf ... done.
+
+End time: Tue Dec  3 14:51:18 2019
