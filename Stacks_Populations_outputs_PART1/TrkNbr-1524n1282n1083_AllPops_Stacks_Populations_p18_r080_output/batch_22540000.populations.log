@@ -1,0 +1,687 @@
+populations -P /work/LAS/kjroe-lab/jmahguib/UCSStacks_outputs/TrkNbr-1524n1282n1083_AllPops_UCSStacks_outputs -O /work/LAS/kjroe-lab/jmahguib/Stacks_Populations_outputs/TrkNbr-1524n1282n1083_AllPops_Stacks_Populations_p18_r080_output -M /work/LAS/kjroe-lab/jmahguib/PopMaps/Webbhelix/PopMap_TrkNbr-1524n1282n1083_AllPops.txt -b 22540000 -t 10 -k -p 18 -r 0.80 --write_single_snp --fstats --plink --structure --genepop --vcf --phylip_var
+populations version 1.46 executed 2020-10-04 14:24:34
+
+# Distribution of population loci.
+# Distribution of valid loci matched to catalog locus.
+# Valid samples at locus	Count
+0	1087
+1	1095846
+2	156739
+3	92035
+4	66854
+5	53369
+6	43922
+7	36902
+8	32902
+9	29515
+10	27472
+11	23215
+12	21518
+13	20261
+14	19401
+15	18744
+16	16182
+17	15211
+18	14421
+19	13966
+20	13446
+21	12850
+22	12424
+23	12096
+24	11841
+25	11684
+26	11540
+27	11341
+28	11191
+29	11345
+30	10947
+31	10409
+32	10289
+33	10171
+34	10403
+35	10441
+36	10676
+37	10651
+38	10961
+39	11186
+40	11372
+41	10357
+42	10964
+43	11269
+44	11677
+45	10646
+46	8321
+47	8368
+48	8355
+49	8106
+50	7479
+51	6720
+52	5564
+53	5357
+54	5503
+55	5220
+56	5445
+57	5187
+58	5219
+59	4886
+60	5160
+61	4949
+62	5062
+63	4920
+64	4972
+65	4843
+66	4611
+67	4536
+68	4234
+69	3926
+70	3726
+71	3335
+72	3029
+73	2851
+74	2790
+75	2678
+76	2633
+77	2556
+78	2521
+79	2443
+80	2317
+81	2319
+82	2255
+83	2244
+84	2285
+85	2129
+86	2119
+87	2013
+88	2125
+89	1998
+90	1872
+91	1944
+92	1890
+93	1869
+94	1792
+95	1818
+96	1809
+97	1700
+98	1749
+99	1789
+100	1693
+101	1776
+102	1622
+103	1650
+104	1606
+105	1624
+106	1637
+107	1539
+108	1665
+109	1659
+110	1639
+111	1649
+112	1635
+113	1554
+114	1551
+115	1673
+116	1609
+117	1701
+118	1620
+119	1577
+120	1569
+121	1587
+122	1621
+123	1556
+124	1603
+125	1628
+126	1534
+127	1466
+128	1447
+129	1426
+130	1439
+131	1363
+132	1361
+133	1351
+134	1361
+135	1337
+136	1326
+137	1290
+138	1383
+139	1363
+140	1480
+141	1403
+142	1379
+143	1386
+144	1421
+145	1456
+146	1402
+147	1495
+148	1448
+149	1476
+150	1498
+151	1514
+152	1551
+153	1655
+154	1633
+155	1649
+156	1757
+157	1631
+158	1636
+159	1653
+160	1634
+161	1602
+162	1558
+163	1498
+164	1298
+165	1204
+166	935
+167	706
+168	546
+169	420
+170	386
+171	319
+172	274
+173	231
+174	191
+175	149
+176	91
+177	43
+178	17
+# Distribution of confounded loci at catalog locus.
+# Confounded samples at locus	Count
+0	2241554
+1	45287
+2	19446
+3	12512
+4	9116
+5	6740
+6	5584
+7	4576
+8	4056
+9	3419
+10	3061
+11	2621
+12	2437
+13	2208
+14	2017
+15	1838
+16	1657
+17	1547
+18	1470
+19	1296
+20	1298
+21	1167
+22	1137
+23	970
+24	993
+25	857
+26	863
+27	816
+28	815
+29	750
+30	685
+31	719
+32	600
+33	614
+34	593
+35	583
+36	563
+37	521
+38	503
+39	479
+40	444
+41	412
+42	422
+43	421
+44	429
+45	398
+46	354
+47	352
+48	343
+49	281
+50	292
+51	243
+52	228
+53	216
+54	222
+55	194
+56	226
+57	217
+58	202
+59	194
+60	167
+61	175
+62	174
+63	177
+64	178
+65	173
+66	157
+67	148
+68	157
+69	139
+70	138
+71	139
+72	121
+73	118
+74	121
+75	132
+76	117
+77	116
+78	116
+79	117
+80	115
+81	97
+82	112
+83	118
+84	100
+85	109
+86	91
+87	110
+88	90
+89	81
+90	88
+91	97
+92	90
+93	85
+94	94
+95	87
+96	76
+97	81
+98	92
+99	78
+100	76
+101	71
+102	81
+103	80
+104	74
+105	73
+106	68
+107	63
+108	54
+109	79
+110	58
+111	63
+112	65
+113	61
+114	62
+115	57
+116	65
+117	68
+118	68
+119	59
+120	59
+121	49
+122	60
+123	67
+124	52
+125	49
+126	51
+127	63
+128	47
+129	52
+130	46
+131	40
+132	47
+133	48
+134	49
+135	59
+136	47
+137	50
+138	48
+139	49
+140	47
+141	43
+142	50
+143	36
+144	45
+145	38
+146	40
+147	26
+148	39
+149	37
+150	47
+151	35
+152	41
+153	31
+154	55
+155	29
+156	41
+157	40
+158	42
+159	42
+160	38
+161	32
+162	39
+163	45
+164	36
+165	47
+166	41
+167	56
+168	81
+169	36
+170	20
+171	24
+172	18
+173	11
+174	18
+175	13
+176	13
+177	17
+# Distribution of missing loci at catalog loci.
+# Absent samples at locus	Count
+0	2241554
+1	45287
+2	19446
+3	12512
+4	9116
+5	6740
+6	5584
+7	4576
+8	4056
+9	3419
+10	3061
+11	2621
+12	2437
+13	2208
+14	2017
+15	1838
+16	1657
+17	1547
+18	1470
+19	1296
+20	1298
+21	1167
+22	1137
+23	970
+24	993
+25	857
+26	863
+27	816
+28	815
+29	750
+30	685
+31	719
+32	600
+33	614
+34	593
+35	583
+36	563
+37	521
+38	503
+39	479
+40	444
+41	412
+42	422
+43	421
+44	429
+45	398
+46	354
+47	352
+48	343
+49	281
+50	292
+51	243
+52	228
+53	216
+54	222
+55	194
+56	226
+57	217
+58	202
+59	194
+60	167
+61	175
+62	174
+63	177
+64	178
+65	173
+66	157
+67	148
+68	157
+69	139
+70	138
+71	139
+72	121
+73	118
+74	121
+75	132
+76	117
+77	116
+78	116
+79	117
+80	115
+81	97
+82	112
+83	118
+84	100
+85	109
+86	91
+87	110
+88	90
+89	81
+90	88
+91	97
+92	90
+93	85
+94	94
+95	87
+96	76
+97	81
+98	92
+99	78
+100	76
+101	71
+102	81
+103	80
+104	74
+105	73
+106	68
+107	63
+108	54
+109	79
+110	58
+111	63
+112	65
+113	61
+114	62
+115	57
+116	65
+117	68
+118	68
+119	59
+120	59
+121	49
+122	60
+123	67
+124	52
+125	49
+126	51
+127	63
+128	47
+129	52
+130	46
+131	40
+132	47
+133	48
+134	49
+135	59
+136	47
+137	50
+138	48
+139	49
+140	47
+141	43
+142	50
+143	36
+144	45
+145	38
+146	40
+147	26
+148	39
+149	37
+150	47
+151	35
+152	41
+153	31
+154	55
+155	29
+156	41
+157	40
+158	42
+159	42
+160	38
+161	32
+162	39
+163	45
+164	36
+165	47
+166	41
+167	56
+168	81
+169	36
+170	20
+171	24
+172	18
+173	11
+174	18
+175	13
+176	13
+177	17
+# Distribution of population loci after applying locus constraints.
+# Distribution of valid loci matched to catalog locus.
+# Valid samples at locus	Count
+158	1
+159	2
+160	1
+161	6
+162	7
+163	16
+164	26
+165	22
+166	34
+167	47
+168	101
+169	126
+170	162
+171	173
+172	171
+173	193
+174	177
+175	144
+176	91
+177	43
+178	17
+# Distribution of confounded loci at catalog locus.
+# Confounded samples at locus	Count
+0	1321
+1	148
+2	41
+3	20
+4	13
+5	7
+6	7
+8	3
+# Distribution of missing loci at catalog loci.
+# Absent samples at locus	Count
+0	1321
+1	148
+2	41
+3	20
+4	13
+5	7
+6	7
+8	3
+Population TGCP contained 4 incompatible loci -- more than two alleles present.
+Population MRLP contained 4 incompatible loci -- more than two alleles present.
+Population STT contained 0 incompatible loci -- more than two alleles present.
+Population FSSP contained 1 incompatible loci -- more than two alleles present.
+Population HNL contained 4 incompatible loci -- more than two alleles present.
+Population MPO contained 1 incompatible loci -- more than two alleles present.
+Population OICP contained 1 incompatible loci -- more than two alleles present.
+Population IRO contained 4 incompatible loci -- more than two alleles present.
+Population HGRF contained 0 incompatible loci -- more than two alleles present.
+Population PTP contained 1 incompatible loci -- more than two alleles present.
+Population RRL contained 6 incompatible loci -- more than two alleles present.
+Population RRO contained 3 incompatible loci -- more than two alleles present.
+Population CPS contained 2 incompatible loci -- more than two alleles present.
+Population PPNP contained 2 incompatible loci -- more than two alleles present.
+Population FPPI contained 2 incompatible loci -- more than two alleles present.
+Population CRWA contained 3 incompatible loci -- more than two alleles present.
+Population PCRA contained 4 incompatible loci -- more than two alleles present.
+Population DHFA contained 3 incompatible loci -- more than two alleles present.
+Population TGCP contained 0 incompatible loci -- more than two alleles present.
+Population MRLP contained 0 incompatible loci -- more than two alleles present.
+Population STT contained 0 incompatible loci -- more than two alleles present.
+Population FSSP contained 0 incompatible loci -- more than two alleles present.
+Population HNL contained 0 incompatible loci -- more than two alleles present.
+Population MPO contained 0 incompatible loci -- more than two alleles present.
+Population OICP contained 0 incompatible loci -- more than two alleles present.
+Population IRO contained 0 incompatible loci -- more than two alleles present.
+Population HGRF contained 0 incompatible loci -- more than two alleles present.
+Population PTP contained 0 incompatible loci -- more than two alleles present.
+Population RRL contained 0 incompatible loci -- more than two alleles present.
+Population RRO contained 0 incompatible loci -- more than two alleles present.
+Population CPS contained 0 incompatible loci -- more than two alleles present.
+Population PPNP contained 0 incompatible loci -- more than two alleles present.
+Population FPPI contained 0 incompatible loci -- more than two alleles present.
+Population CRWA contained 0 incompatible loci -- more than two alleles present.
+Population PCRA contained 0 incompatible loci -- more than two alleles present.
+Population DHFA contained 0 incompatible loci -- more than two alleles present.
+# Distribution of the number of SNPs per locus.
+#n_snps	n_loci
+0	136
+1	478
+between_population	incompatible_locus	104016	un	9361383	31	TGCP	HNL
+between_population	incompatible_locus	259100	un	23318962	50	TGCP	HNL
+between_population	incompatible_locus	104016	un	9361383	31	TGCP	PPNP
+between_population	incompatible_locus	259100	un	23318962	50	TGCP	PPNP
+between_population	incompatible_locus	104016	un	9361383	31	TGCP	FPPI
+between_population	incompatible_locus	259100	un	23318962	50	TGCP	FPPI
+between_population	incompatible_locus	104016	un	9361383	31	TGCP	DHFA
+between_population	incompatible_locus	259100	un	23318962	50	TGCP	DHFA
+between_population	incompatible_locus	104016	un	9361383	31	MRLP	HNL
+between_population	incompatible_locus	124649	un	11218330	8	MRLP	HNL
+between_population	incompatible_locus	104016	un	9361383	31	MRLP	PPNP
+between_population	incompatible_locus	139625	un	12566172	10	MRLP	PPNP
+between_population	incompatible_locus	104016	un	9361383	31	MRLP	FPPI
+between_population	incompatible_locus	124649	un	11218330	8	MRLP	FPPI
+between_population	incompatible_locus	139625	un	12566172	10	MRLP	FPPI
+between_population	incompatible_locus	104016	un	9361383	31	MRLP	DHFA
+between_population	incompatible_locus	124649	un	11218330	8	MRLP	DHFA
+between_population	incompatible_locus	170367	un	15332976	34	STT	HNL
+between_population	incompatible_locus	170367	un	15332976	34	STT	DHFA
+between_population	incompatible_locus	104016	un	9361383	31	FSSP	HNL
+between_population	incompatible_locus	104016	un	9361383	31	FSSP	PPNP
+between_population	incompatible_locus	104016	un	9361383	31	FSSP	FPPI
+between_population	incompatible_locus	104016	un	9361383	31	FSSP	DHFA
+between_population	incompatible_locus	104016	un	9361383	31	HNL	IRO
+between_population	incompatible_locus	104016	un	9361383	31	HNL	HGRF
+between_population	incompatible_locus	104016	un	9361383	31	HNL	RRL
+between_population	incompatible_locus	259100	un	23318962	50	HNL	RRL
+between_population	incompatible_locus	104016	un	9361383	31	HNL	CPS
+between_population	incompatible_locus	104016	un	9361383	31	HNL	CRWA
+between_population	incompatible_locus	18075	un	1626712	50	HNL	PCRA
+between_population	incompatible_locus	104016	un	9361383	31	HNL	PCRA
+between_population	incompatible_locus	259100	un	23318962	50	HNL	PCRA
+between_population	incompatible_locus	104016	un	9361383	31	IRO	PPNP
+between_population	incompatible_locus	104016	un	9361383	31	IRO	FPPI
+between_population	incompatible_locus	104016	un	9361383	31	IRO	DHFA
+between_population	incompatible_locus	104016	un	9361383	31	HGRF	PPNP
+between_population	incompatible_locus	104016	un	9361383	31	HGRF	FPPI
+between_population	incompatible_locus	104016	un	9361383	31	HGRF	DHFA
+between_population	incompatible_locus	104016	un	9361383	31	RRL	PPNP
+between_population	incompatible_locus	259100	un	23318962	50	RRL	PPNP
+between_population	incompatible_locus	104016	un	9361383	31	RRL	FPPI
+between_population	incompatible_locus	259100	un	23318962	50	RRL	FPPI
+between_population	incompatible_locus	104016	un	9361383	31	RRL	DHFA
+between_population	incompatible_locus	259100	un	23318962	50	RRL	DHFA
+between_population	incompatible_locus	104016	un	9361383	31	CPS	PPNP
+between_population	incompatible_locus	36776	un	3309773	21	CPS	FPPI
+between_population	incompatible_locus	104016	un	9361383	31	CPS	FPPI
+between_population	incompatible_locus	104016	un	9361383	31	CPS	DHFA
+between_population	incompatible_locus	104016	un	9361383	31	PPNP	CRWA
+between_population	incompatible_locus	104016	un	9361383	31	PPNP	PCRA
+between_population	incompatible_locus	259100	un	23318962	50	PPNP	PCRA
+between_population	incompatible_locus	104016	un	9361383	31	FPPI	CRWA
+between_population	incompatible_locus	104016	un	9361383	31	FPPI	PCRA
+between_population	incompatible_locus	259100	un	23318962	50	FPPI	PCRA
+between_population	incompatible_locus	104016	un	9361383	31	CRWA	DHFA
+between_population	incompatible_locus	18075	un	1626712	50	PCRA	DHFA
+between_population	incompatible_locus	104016	un	9361383	31	PCRA	DHFA
+between_population	incompatible_locus	259100	un	23318962	50	PCRA	DHFA
