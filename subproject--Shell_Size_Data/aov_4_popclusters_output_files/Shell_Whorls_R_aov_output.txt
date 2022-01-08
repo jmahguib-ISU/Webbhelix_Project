@@ -1,0 +1,147 @@
+> ##########Running an ANalysis Of VAriance and a Kruskal-Wallis test in R##########
+> 
+> 
+> ###Manually load the 'dplyr' library package before running this script###
+> 
+> 
+> ###Set the working directory as the directory where your input files are stored
+> 
+> setwd("~/Desktop/Shell_Size/aov_4_popclusters_input_files")
+> 
+> 
+> ###Import tab delimited .txt file and assign it to object "my_data"
+> 
+> my_data <- read.delim("Shell_Whorls_R_aov_input_data.txt", header = TRUE, sep = "\t", quote = "")
+> 
+> 
+> ###Have the 'dplyr' R package take a random sampling of your data and print it to the console so you can check that your using the correct input file and that it's formatted appropriately
+> 
+> set.seed(1234)
+> dplyr::sample_n(my_data, 10)
+    Shell_Whorls Population
+40          4.75   Cluster1
+218         5.00   Cluster2
+213         5.00   Cluster2
+217         5.25   Cluster2
+298         5.00   Cluster4
+221         5.00   Cluster2
+4           5.00   Cluster1
+80          4.75   Cluster1
+228         4.75   Cluster2
+176         5.00   Cluster2
+> 
+> 
+> ###Print your data's group names (called by R "levels") to check they appear in desired order
+> 
+> levels(my_data$Population)
+[1] "Cluster1" "Cluster2" "Cluster3" "Cluster4"
+> 
+> 
+> ###Calculate and output summary statistics for your data, including datum counts, data mean and standard deviation
+> 
+> group_by(my_data, Population) %>%
++   summarise(
++     count = n(),
++     mean = mean(Shell_Whorls, na.rm = TRUE),
++     sd = sd(Shell_Whorls, na.rm = TRUE)
++   )
+# A tibble: 4 x 4
+  Population count  mean    sd
+  <fct>      <int> <dbl> <dbl>
+1 Cluster1     166  4.90 0.197
+2 Cluster2     105  5.05 0.183
+3 Cluster3      21  5.11 0.203
+4 Cluster4      58  5.01 0.169
+> 
+> 
+> 
+> ###Assign the command for running an analysis of variance (aov) to an object, in this case called "res.aov;" the portion of the aov command that is in parentheses consists of the column header for the column containing your dependant variable (your data), followed by a '~' and then the column header for the column containing your independent variable (your group assignments for each data point), followed by designation of your previously established data object to 'data =' (in this case "my_data")
+> 
+> res.aov <- aov(Shell_Whorls ~ Population, data = my_data)
+> 
+> 
+> ###Print a summary of the results of the ANOVA analyses designated by the previous command
+> 
+> summary(res.aov)
+             Df Sum Sq Mean Sq F value   Pr(>F)    
+Population    3  1.981  0.6604   18.56 3.45e-11 ***
+Residuals   346 12.310  0.0356                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> 
+> 
+> ###Run a Tukey multiple pairwise comparisons test on the fitted ANOVA from the previous command, and output the results to check which pairwise group comparisons are statistically significantly different from each other
+> 
+> TukeyHSD(res.aov)
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = Shell_Whorls ~ Population, data = my_data)
+
+$Population
+                         diff         lwr        upr     p adj
+Cluster2-Cluster1  0.14915376  0.08843769 0.20986982 0.0000000
+Cluster3-Cluster1  0.21105852  0.09828042 0.32383662 0.0000121
+Cluster4-Cluster1  0.11253635  0.03826461 0.18680810 0.0006361
+Cluster3-Cluster2  0.06190476 -0.05449407 0.17830360 0.5171953
+Cluster4-Cluster2 -0.03661741 -0.11627970 0.04304489 0.6357121
+Cluster4-Cluster3 -0.09852217 -0.22253241 0.02548808 0.1715703
+
+> 
+> 
+> ###Plot first the Residuals vs Fitted values from the fitted ANOVA in order to check for homogeneity of variance (which is an assumption of ANOVA), then plot a normality plot of residuals to check that the data are normally distributed (another assumption of ANOVA); the quantiles of the residuals are plotted against the quantiles of the normal distribution
+> 
+> plot(res.aov, 1)
+> plot(res.aov, 2)
+> 
+> 
+> ###Perform a Shapiro-Wilk test as an additional check for normality of the data
+> 
+> aov_residuals <- residuals(object = res.aov )
+> shapiro.test(x = aov_residuals )
+
+	Shapiro-Wilk normality test
+
+data:  aov_residuals
+W = 0.96796, p-value = 5.693e-07
+
+> 
+> 
+> ###In the case that either or both tests for the assumptions of an ANOVA are not passed, a non-parametric test for comparison of group means is performed here in the form of a Kruskal-Wallis rank sum test
+> 
+> kruskal.test(Shell_Whorls ~ Population, data = my_data)
+
+	Kruskal-Wallis rank sum test
+
+data:  Shell_Whorls by Population
+Kruskal-Wallis chi-squared = 45.548, df = 3, p-value = 7.075e-10
+
+> 
+> 
+> ###As a follow-up to the Kruskal-Wallis to check which specific group pairs are statistically significantly different from each other, a pairwise t-test is done here with corrections for multiple testing
+> 
+> pairwise.t.test(my_data$Shell_Whorls, my_data$Population,
++                 p.adjust.method = "BH")
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  my_data$Shell_Whorls and my_data$Population 
+
+         Cluster1 Cluster2 Cluster3
+Cluster2 4.3e-09  -        -       
+Cluster3 6.1e-06  0.20479  -       
+Cluster4 0.00022  0.23619  0.06153 
+
+P value adjustment method: BH 
+> 
+> 
+> 
+> 
+> #####Example commands for making histogram plots to check data distributions, using R built-in hist() function and the ggplot2 package#####
+> 
+> hist(my_data$Shell_Whorls)
+> qplot(my_data$Shell_Whorls, geom="histogram")
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+> #ggplot(data=my_data, aes(my_data$Shell_Whorls)) + geom_histogram()
+> 
