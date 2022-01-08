@@ -1,0 +1,11 @@
+Input file preparation for DIYABC
+
+1. Make .vcf file from Stacks populations command
+2. Change .vcf file to .snp file using phyton script (vcf2diyabc.py) implemented in the DIYABC program
+Type: python vcf2diyabc.py
+Then, provide input.vcf
+3. Remove any monomorphic locus from the .snp using Excel: see HandlingMonomorphicLoci.exel
+4. .snp file is input file for DIYABC
+
+
+We have written a small computer program to convert a vcf format SNP datafile (which corresponds to a widely use file format for SNP) into a DIYABC format SNP datafile. The program is a Python 3.x script which can be run under linux and windows operating system. This tool, together with a readme file and example files, is freely available at https://github.com/loire/vcf2DIYABC.snp.
