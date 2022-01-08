@@ -1,0 +1,1 @@
+#The batch_22540000.phylip.log file is larger than 100 MB, which exceeds GitHub's file size limit. This file may be provided through other means upon request (jmahguib@iastate.edu).
