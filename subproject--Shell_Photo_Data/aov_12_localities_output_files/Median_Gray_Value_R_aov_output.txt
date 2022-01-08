@@ -1,0 +1,224 @@
+> ##########Running an ANalysis Of VAriance and a Kruskal-Wallis test in R##########
+> 
+> 
+> ###Manually load the 'dplyr' library package before running this script###
+> 
+> 
+> ###Set the working directory as the directory where your input files are stored
+> 
+> setwd("~/Desktop/Shell_Photo_Project_Data/aov_input_files")
+> 
+> 
+> ###Import tab delimited .txt file and assign it to object "my_data"
+> 
+> my_data <- read.delim("Median_Gray_Value_R_aov_input_data.txt", header = TRUE, sep = "\t", quote = "")
+> 
+> 
+> ###Have the 'dplyr' R package take a random sampling of your data and print it to the console so you can check that your using the correct input file and that it's formatted appropriately
+> 
+> set.seed(1234)
+> dplyr::sample_n(my_data, 10)
+    Median_Gray_Value Population
+31                111       CRWA
+166                96       PCRA
+162               105       PCRA
+165               102       PCRA
+227                83        RRL
+168                93       PCRA
+3                 114        CPS
+61                 97       DHFA
+173                97       PCRA
+133               121       OICP
+> 
+> 
+> ###Print your data's group names (called by R "levels") to check they appear in desired order
+> 
+> levels(my_data$Population)
+ [1] "CPS"  "CRWA" "DHFA" "FPPI" "HGRF" "IRO"  "OICP" "PCRA" "PPNP" "PTP"  "RRL"  "RRO" 
+> 
+> 
+> ###Calculate and output summary statistics for your data, including datum counts, data mean and standard deviation
+> 
+> group_by(my_data, Population) %>%
++   summarise(
++     count = n(),
++     mean = mean(Median_Gray_Value, na.rm = TRUE),
++     sd = sd(Median_Gray_Value, na.rm = TRUE)
++   )
+# A tibble: 12 x 4
+   Population count  mean    sd
+   <fct>      <int> <dbl> <dbl>
+ 1 CPS           23 100.   9.72
+ 2 CRWA          25 103.  12.7 
+ 3 DHFA          22 101.   6.60
+ 4 FPPI          20 104.  11.1 
+ 5 HGRF          21 103.   8.93
+ 6 IRO           18 106.   9.05
+ 7 OICP          23 107.  10.3 
+ 8 PCRA          21  99.9  5.14
+ 9 PPNP          27  97.8  9.61
+10 PTP           21  99.0 18.3 
+11 RRL           25  93.4  8.47
+12 RRO           21  97.8  9.20
+> 
+> 
+> 
+> ###Assign the command for running an analysis of variance (aov) to an object, in this case called "res.aov;" the portion of the aov command that is in parentheses consists of the column header for the column containing your dependant variable (your data), followed by a '~' and then the column header for the column containing your independent variable (your group assignments for each data point), followed by designation of your previously established data object to 'data =' (in this case "my_data")
+> 
+> res.aov <- aov(Median_Gray_Value ~ Population, data = my_data)
+> 
+> 
+> ###Print a summary of the results of the ANOVA analyses designated by the previous command
+> 
+> summary(res.aov)
+             Df Sum Sq Mean Sq F value   Pr(>F)    
+Population   11   3837   348.9   3.228 0.000388 ***
+Residuals   255  27563   108.1                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> 
+> 
+> ###Run a Tukey multiple pairwise comparisons test on the fitted ANOVA from the previous command, and output the results to check which pairwise group comparisons are statistically significantly different from each other
+> 
+> TukeyHSD(res.aov)
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = Median_Gray_Value ~ Population, data = my_data)
+
+$Population
+                   diff        lwr        upr     p adj
+CRWA-CPS    3.276521739  -6.632475 13.1855189 0.9948635
+DHFA-CPS    0.729249012  -9.498357 10.9568554 1.0000000
+FPPI-CPS    4.156521739  -6.329200 14.6422433 0.9775561
+HGRF-CPS    2.908902692  -7.442418 13.2602238 0.9987931
+IRO-CPS     6.012077295  -4.780739 16.8048931 0.7956720
+OICP-CPS    7.173913043  -2.939415 17.2872409 0.4511844
+PCRA-CPS   -0.138716356 -10.490037 10.2126047 1.0000000
+PPNP-CPS   -2.228663446 -11.960218  7.5028908 0.9998276
+PTP-CPS    -0.995859213 -11.347180  9.3554619 1.0000000
+RRL-CPS    -6.683478261 -16.592475  3.2255189 0.5331589
+RRO-CPS    -2.233954451 -12.585276  8.1173667 0.9999039
+DHFA-CRWA  -2.547272727 -12.572878  7.4783323 0.9995302
+FPPI-CRWA   0.880000000  -9.408789 11.1687890 1.0000000
+HGRF-CRWA  -0.367619048 -10.519401  9.7841627 1.0000000
+IRO-CRWA    2.735555556  -7.866034 13.3371449 0.9994561
+OICP-CRWA   3.897391304  -6.011606 13.8063885 0.9788596
+PCRA-CRWA  -3.415238095 -13.567020  6.7365436 0.9940483
+PPNP-CRWA  -5.505185185 -15.024217  4.0138470 0.7534181
+PTP-CRWA   -4.272380952 -14.424163  5.8794008 0.9649038
+RRL-CRWA   -9.960000000 -19.660363 -0.2596367 0.0382686
+RRO-CRWA   -5.510476190 -15.662258  4.6413056 0.8218009
+FPPI-DHFA   3.427272727  -7.168712 14.0232572 0.9957528
+HGRF-DHFA   2.179653680  -8.283347 12.6426542 0.9999324
+IRO-DHFA    5.282828283  -5.617144 16.1828010 0.9082345
+OICP-DHFA   6.444664032  -3.782942 16.6722704 0.6384637
+PCRA-DHFA  -0.867965368 -11.330966  9.5950352 1.0000000
+PPNP-DHFA  -2.957912458 -12.808175  6.8923505 0.9977949
+PTP-DHFA   -1.725108225 -12.188109  8.7378923 0.9999938
+RRL-DHFA   -7.412727273 -17.438332  2.6128778 0.3838957
+RRO-DHFA   -2.963203463 -13.426204  7.4997971 0.9987038
+HGRF-FPPI  -1.247619048 -11.963066  9.4678279 0.9999998
+IRO-FPPI    1.855555556  -9.286968 12.9980790 0.9999931
+OICP-FPPI   3.017391304  -7.468330 13.5031128 0.9985001
+PCRA-FPPI  -4.295238095 -15.010685  6.4202089 0.9755658
+PPNP-FPPI  -6.385185185 -16.503194  3.7328237 0.6362502
+PTP-FPPI   -5.152380952 -15.867828  5.5630660 0.9127285
+RRL-FPPI  -10.840000000 -21.128789 -0.5512110 0.0289969
+RRO-FPPI   -6.390476190 -17.105923  4.3249708 0.7150197
+IRO-HGRF    3.103174603  -7.912965 14.1193137 0.9987661
+OICP-HGRF   4.265010352  -6.086311 14.6163315 0.9699664
+PCRA-HGRF  -3.047619048 -13.631583  7.5363451 0.9984913
+PPNP-HGRF  -5.137566138 -15.116223  4.8410909 0.8675738
+PTP-HGRF   -3.904761905 -14.488726  6.6792022 0.9872277
+RRL-HGRF   -9.592380952 -19.744163  0.5594008 0.0840176
+RRO-HGRF   -5.142857143 -15.726821  5.4411070 0.9067398
+OICP-IRO    1.161835749  -9.630980 11.9546516 0.9999999
+PCRA-IRO   -6.150793651 -17.166933  4.8653455 0.7931983
+PPNP-IRO   -8.240740741 -18.676670  2.1951886 0.2825749
+PTP-IRO    -7.007936508 -18.024076  4.0082026 0.6243317
+RRL-IRO   -12.695555556 -23.297145 -2.0939662 0.0056071
+RRO-IRO    -8.246031746 -19.262171  2.7701074 0.3642578
+PCRA-OICP  -7.312629400 -17.663951  3.0386917 0.4578997
+PPNP-OICP  -9.402576490 -19.134131  0.3289778 0.0691007
+PTP-OICP   -8.169772257 -18.521093  2.1815488 0.2833173
+RRL-OICP  -13.857391304 -23.766388 -3.9483941 0.0003855
+RRO-OICP   -9.407867495 -19.759189  0.9434536 0.1151804
+PPNP-PCRA  -2.089947090 -12.068604  7.8887100 0.9999287
+PTP-PCRA   -0.857142857 -11.441107  9.7268213 1.0000000
+RRL-PCRA   -6.544761905 -16.696544  3.6070198 0.6041611
+RRO-PCRA   -2.095238095 -12.679202  8.4887260 0.9999595
+PTP-PPNP    1.232804233  -8.745853 11.2114613 0.9999997
+RRL-PPNP   -4.454814815 -13.973847  5.0642173 0.9267408
+RRO-PPNP   -0.005291005  -9.983948  9.9733661 1.0000000
+RRL-PTP    -5.687619048 -15.839401  4.4641627 0.7895282
+RRO-PTP    -1.238095238 -11.822059  9.3458689 0.9999998
+RRO-RRL     4.449523810  -5.702258 14.6013056 0.9530684
+
+> 
+> 
+> ###Plot first the Residuals vs Fitted values from the fitted ANOVA in order to check for homogeneity of variance (which is an assumption of ANOVA), then plot a normality plot of residuals to check that the data are normally distributed (another assumption of ANOVA); the quantiles of the residuals are plotted against the quantiles of the normal distribution
+> 
+> plot(res.aov, 1)
+> plot(res.aov, 2)
+> 
+> 
+> ###Perform a Shapiro-Wilk test as an additional check for normality of the data
+> 
+> aov_residuals <- residuals(object = res.aov )
+> shapiro.test(x = aov_residuals )
+
+	Shapiro-Wilk normality test
+
+data:  aov_residuals
+W = 0.93902, p-value = 4.595e-09
+
+> 
+> 
+> ###In the case that either or both tests for the assumptions of an ANOVA are not passed, a non-parametric test for comparison of group means is performed here in the form of a Kruskal-Wallis rank sum test
+> 
+> kruskal.test(Median_Gray_Value ~ Population, data = my_data)
+
+	Kruskal-Wallis rank sum test
+
+data:  Median_Gray_Value by Population
+Kruskal-Wallis chi-squared = 39.824, df = 11, p-value = 3.834e-05
+
+> 
+> 
+> ###As a follow-up to the Kruskal-Wallis to check which specific group pairs are statistically significantly different from each other, a pairwise t-test is done here with corrections for multiple testing
+> 
+> pairwise.t.test(my_data$Median_Gray_Value, my_data$Population,
++                 p.adjust.method = "BH")
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  my_data$Median_Gray_Value and my_data$Population 
+
+     CPS     CRWA    DHFA    FPPI    HGRF    IRO     OICP    PCRA    PPNP    PTP     RRL    
+CRWA 0.48007 -       -       -       -       -       -       -       -       -       -      
+DHFA 0.85301 0.56555 -       -       -       -       -       -       -       -       -      
+FPPI 0.36893 0.84051 0.48568 -       -       -       -       -       -       -       -      
+HGRF 0.52037 0.93329 0.63746 0.81196 -       -       -       -       -       -       -      
+IRO  0.19310 0.56555 0.26858 0.71744 0.52037 -       -       -       -       -       -      
+OICP 0.10442 0.36893 0.14172 0.52037 0.36154 0.82250 -       -       -       -       -      
+PCRA 0.97962 0.47832 0.84051 0.36893 0.52037 0.19310 0.10442 -       -       -       -      
+PPNP 0.61967 0.18989 0.52037 0.14172 0.23933 0.07163 0.02133 0.63746 -       -       -      
+PTP  0.84036 0.35398 0.71744 0.26858 0.41199 0.14172 0.07163 0.84051 0.81196 -       -      
+RRL  0.12709 0.01350 0.09246 0.01318 0.02240 0.00334 0.00041 0.14172 0.28194 0.19310 -      
+RRO  0.63746 0.20500 0.52037 0.17449 0.26858 0.09246 0.02815 0.65280 0.99861 0.81196 0.32879
+
+P value adjustment method: BH 
+> 
+> 
+> 
+> 
+> #####Example commands for making histogram plots to check data distributions, using R built-in hist() function and the ggplot2 package#####
+> 
+> hist(my_data$Median_Gray_Value)
+> qplot(my_data$Median_Gray_Value, geom="histogram")
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+> ggplot(data=my_data, aes(my_data$Median_Gray_Value)) + geom_histogram()
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+> 

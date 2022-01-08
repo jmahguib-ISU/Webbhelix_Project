@@ -1,0 +1,224 @@
+> ##########Running an ANalysis Of VAriance and a Kruskal-Wallis test in R##########
+> 
+> 
+> ###Manually load the 'dplyr' library package before running this script###
+> 
+> 
+> ###Set the working directory as the directory where your input files are stored
+> 
+> setwd("~/Desktop/Shell_Photo_Project_Data/aov_input_files")
+> 
+> 
+> ###Import tab delimited .txt file and assign it to object "my_data"
+> 
+> my_data <- read.delim("Shell_Transect_Ferets_Diameter_R_aov_input_data.txt", header = TRUE, sep = "\t", quote = "")
+> 
+> 
+> ###Have the 'dplyr' R package take a random sampling of your data and print it to the console so you can check that your using the correct input file and that it's formatted appropriately
+> 
+> set.seed(1234)
+> dplyr::sample_n(my_data, 10)
+    Ferets_Diameter Population
+31             0.85       CRWA
+166            0.91       PCRA
+162            0.87       PCRA
+165            1.00       PCRA
+227            0.98        RRL
+168            0.95       PCRA
+3              0.84        CPS
+61             0.97       DHFA
+173            0.72       PCRA
+133            0.81       OICP
+> 
+> 
+> ###Print your data's group names (called by R "levels") to check they appear in desired order
+> 
+> levels(my_data$Population)
+ [1] "CPS"  "CRWA" "DHFA" "FPPI" "HGRF" "IRO"  "OICP" "PCRA" "PPNP" "PTP"  "RRL"  "RRO" 
+> 
+> 
+> ###Calculate and output summary statistics for your data, including datum counts, data mean and standard deviation
+> 
+> group_by(my_data, Population) %>%
++   summarise(
++     count = n(),
++     mean = mean(Ferets_Diameter, na.rm = TRUE),
++     sd = sd(Ferets_Diameter, na.rm = TRUE)
++   )
+# A tibble: 12 x 4
+   Population count  mean     sd
+   <fct>      <int> <dbl>  <dbl>
+ 1 CPS           23 0.850 0.0474
+ 2 CRWA          25 0.836 0.0345
+ 3 DHFA          22 0.920 0.0438
+ 4 FPPI          20 0.860 0.101 
+ 5 HGRF          21 0.747 0.0450
+ 6 IRO           18 0.861 0.113 
+ 7 OICP          23 0.802 0.0402
+ 8 PCRA          21 0.879 0.0775
+ 9 PPNP          27 0.757 0.0855
+10 PTP           21 0.714 0.101 
+11 RRL           25 0.896 0.0838
+12 RRO           21 0.874 0.0460
+> 
+> 
+> 
+> ###Assign the command for running an analysis of variance (aov) to an object, in this case called "res.aov;" the portion of the aov command that is in parentheses consists of the column header for the column containing your dependant variable (your data), followed by a '~' and then the column header for the column containing your independent variable (your group assignments for each data point), followed by designation of your previously established data object to 'data =' (in this case "my_data")
+> 
+> res.aov <- aov(Ferets_Diameter ~ Population, data = my_data)
+> 
+> 
+> ###Print a summary of the results of the ANOVA analyses designated by the previous command
+> 
+> summary(res.aov)
+             Df Sum Sq Mean Sq F value Pr(>F)    
+Population   11  1.016 0.09241   17.73 <2e-16 ***
+Residuals   255  1.329 0.00521                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> 
+> 
+> ###Run a Tukey multiple pairwise comparisons test on the fitted ANOVA from the previous command, and output the results to check which pairwise group comparisons are statistically significantly different from each other
+> 
+> TukeyHSD(res.aov)
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = Ferets_Diameter ~ Population, data = my_data)
+
+$Population
+                   diff           lwr         upr     p adj
+CRWA-CPS  -1.356522e-02 -0.0823737850  0.05524335 0.9999611
+DHFA-CPS   7.088933e-02 -0.0001316779  0.14191033 0.0509162
+FPPI-CPS   1.093478e-02 -0.0618785876  0.08374815 0.9999976
+HGRF-CPS  -1.028986e-01 -0.1747786377 -0.03101846 0.0002388
+IRO-CPS    1.099034e-02 -0.0639555100  0.08593619 0.9999982
+OICP-CPS  -4.782609e-02 -0.1180535372  0.02240136 0.5176200
+PCRA-CPS   2.948240e-02 -0.0423976853  0.10136249 0.9709618
+PPNP-CPS  -9.252818e-02 -0.1601045759 -0.02495178 0.0005835
+PTP-CPS   -1.357557e-01 -0.2076357805 -0.06387561 0.0000001
+RRL-CPS    4.683478e-02 -0.0219737850  0.11564335 0.5184837
+RRO-CPS    2.424431e-02 -0.0476357805  0.09612439 0.9939162
+DHFA-CRWA  8.445455e-02  0.0148362469  0.15407284 0.0046249
+FPPI-CRWA  2.450000e-02 -0.0469458612  0.09594586 0.9930034
+HGRF-CRWA -8.933333e-02 -0.1598278091 -0.01883886 0.0023218
+IRO-CRWA   2.455556e-02 -0.0490624067  0.09817352 0.9944662
+OICP-CRWA -3.426087e-02 -0.1030694372  0.03454770 0.8915294
+PCRA-CRWA  4.304762e-02 -0.0274468567  0.11354209 0.6832724
+PPNP-CRWA -7.896296e-02 -0.1450635941 -0.01286233 0.0058117
+PTP-CRWA  -1.221905e-01 -0.1926849519 -0.05169600 0.0000020
+RRL-CRWA   6.040000e-02 -0.0069598039  0.12775980 0.1275691
+RRO-CRWA   3.780952e-02 -0.0326849519  0.10830400 0.8330510
+FPPI-DHFA -5.995455e-02 -0.1335335873  0.01362450 0.2383930
+HGRF-DHFA -1.737879e-01 -0.2464434733 -0.10113228 0.0000000
+IRO-DHFA  -5.989899e-02 -0.1355889408  0.01579096 0.2794049
+OICP-DHFA -1.187154e-01 -0.1897364210 -0.04769441 0.0000056
+PCRA-DHFA -4.140693e-02 -0.1140625210  0.03124867 0.7705710
+PPNP-DHFA -1.634175e-01 -0.2318182229 -0.09501679 0.0000000
+PTP-DHFA  -2.066450e-01 -0.2793006162 -0.13398943 0.0000000
+RRL-DHFA  -2.405455e-02 -0.0936728440  0.04556375 0.9925450
+RRO-DHFA  -4.664502e-02 -0.1193006162  0.02601057 0.6105293
+HGRF-FPPI -1.138333e-01 -0.1882419283 -0.03942474 0.0000543
+IRO-FPPI   5.555556e-05 -0.0773186796  0.07742979 1.0000000
+OICP-FPPI -5.876087e-02 -0.1315742397  0.01405250 0.2516191
+PCRA-FPPI  1.854762e-02 -0.0558609759  0.09295621 0.9996085
+PPNP-FPPI -1.034630e-01 -0.1737229184 -0.03320301 0.0001300
+PTP-FPPI  -1.466905e-01 -0.2210990712 -0.07228188 0.0000000
+RRL-FPPI   3.590000e-02 -0.0355458612  0.10734586 0.8853639
+RRO-FPPI   1.330952e-02 -0.0610990712  0.08771812 0.9999855
+IRO-HGRF   1.138889e-01  0.0373922727  0.19038551 0.0001018
+OICP-HGRF  5.507246e-02 -0.0168076232  0.12695255 0.3278669
+PCRA-HGRF  1.323810e-01  0.0588853809  0.20587652 0.0000006
+PPNP-HGRF  1.037037e-02 -0.0589219190  0.07966266 0.9999977
+PTP-HGRF  -3.285714e-02 -0.1063527144  0.04063843 0.9461432
+RRL-HGRF   1.497333e-01  0.0792388576  0.22022781 0.0000000
+RRO-HGRF   1.271429e-01  0.0536472856  0.20063843 0.0000021
+OICP-IRO  -5.881643e-02 -0.1337622733  0.01612942 0.2916452
+PCRA-IRO   1.849206e-02 -0.0580045527  0.09498868 0.9997085
+PPNP-IRO  -1.035185e-01 -0.1759861293 -0.03105091 0.0002497
+PTP-IRO   -1.467460e-01 -0.2232426479 -0.07024942 0.0000001
+RRL-IRO    3.584444e-02 -0.0377735178  0.10946241 0.9055436
+RRO-IRO    1.325397e-02 -0.0632426479  0.08975058 0.9999896
+PCRA-OICP  7.730849e-02  0.0054284017  0.14918858 0.0229448
+PPNP-OICP -4.470209e-02 -0.1122784889  0.02287430 0.5641316
+PTP-OICP  -8.792961e-02 -0.1598096936 -0.01604952 0.0040729
+RRL-OICP   9.466087e-02  0.0258523019  0.16346944 0.0005327
+RRO-OICP   7.207039e-02  0.0001903064  0.14395048 0.0487161
+PPNP-PCRA -1.220106e-01 -0.1913028714 -0.05271829 0.0000012
+PTP-PCRA  -1.652381e-01 -0.2387336668 -0.09174252 0.0000000
+RRL-PCRA   1.735238e-02 -0.0531420948  0.08784686 0.9996530
+RRO-PCRA  -5.238095e-03 -0.0787336668  0.06825748 1.0000000
+PTP-PPNP  -4.322751e-02 -0.1125198026  0.02606478 0.6530743
+RRL-PPNP   1.393630e-01  0.0732623318  0.20546359 0.0000000
+RRO-PPNP   1.167725e-01  0.0474801974  0.18606478 0.0000044
+RRL-PTP    1.825905e-01  0.1120960004  0.25308495 0.0000000
+RRO-PTP    1.600000e-01  0.0865044285  0.23349557 0.0000000
+RRO-RRL   -2.259048e-02 -0.0930849519  0.04790400 0.9960824
+
+> 
+> 
+> ###Plot first the Residuals vs Fitted values from the fitted ANOVA in order to check for homogeneity of variance (which is an assumption of ANOVA), then plot a normality plot of residuals to check that the data are normally distributed (another assumption of ANOVA); the quantiles of the residuals are plotted against the quantiles of the normal distribution
+> 
+> plot(res.aov, 1)
+> plot(res.aov, 2)
+> 
+> 
+> ###Perform a Shapiro-Wilk test as an additional check for normality of the data
+> 
+> aov_residuals <- residuals(object = res.aov )
+> shapiro.test(x = aov_residuals )
+
+	Shapiro-Wilk normality test
+
+data:  aov_residuals
+W = 0.92751, p-value = 3.912e-10
+
+> 
+> 
+> ###In the case that either or both tests for the assumptions of an ANOVA are not passed, a non-parametric test for comparison of group means is performed here in the form of a Kruskal-Wallis rank sum test
+> 
+> kruskal.test(Ferets_Diameter ~ Population, data = my_data)
+
+	Kruskal-Wallis rank sum test
+
+data:  Ferets_Diameter by Population
+Kruskal-Wallis chi-squared = 128.85, df = 11, p-value < 2.2e-16
+
+> 
+> 
+> ###As a follow-up to the Kruskal-Wallis to check which specific group pairs are statistically significantly different from each other, a pairwise t-test is done here with corrections for multiple testing
+> 
+> pairwise.t.test(my_data$Ferets_Diameter, my_data$Population,
++                 p.adjust.method = "BH")
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  my_data$Ferets_Diameter and my_data$Population 
+
+     CPS     CRWA    DHFA    FPPI    HGRF    IRO     OICP    PCRA    PPNP    PTP     RRL    
+CRWA 0.57729 -       -       -       -       -       -       -       -       -       -      
+DHFA 0.00241 0.00020 -       -       -       -       -       -       -       -       -      
+FPPI 0.64864 0.32878 0.01533 -       -       -       -       -       -       -       -      
+HGRF 1.2e-05 0.00011 1.6e-12 3.1e-06 -       -       -       -       -       -       -      
+IRO  0.64864 0.33273 0.01806 0.99811 5.6e-06 -       -       -       -       -       -      
+OICP 0.04333 0.14284 3.3e-07 0.01603 0.02158 0.01867 -       -       -       -       -      
+PCRA 0.23397 0.06910 0.09188 0.48348 5.1e-08 0.48469 0.00105 -       -       -       -      
+PPNP 2.6e-05 0.00025 1.6e-12 6.8e-06 0.64864 1.2e-05 0.04952 9.5e-08 -       -       -      
+PTP  1.1e-08 1.4e-07 2.4e-16 3.0e-09 0.19061 7.3e-09 0.00018 2.4e-11 0.06383 -       -      
+RRL  0.04333 0.00699 0.32878 0.14152 2.0e-10 0.15053 2.5e-05 0.48348 2.4e-10 4.0e-14 -      
+RRO  0.33239 0.11446 0.05660 0.61125 1.4e-07 0.61470 0.00237 0.82684 2.8e-07 8.3e-11 0.34976
+
+P value adjustment method: BH 
+> 
+> 
+> 
+> 
+> #####Example commands for making histogram plots to check data distributions, using R built-in hist() function and the ggplot2 package#####
+> 
+> hist(my_data$Ferets_Diameter)
+> qplot(my_data$Ferets_Diameter, geom="histogram")
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+> ggplot(data=my_data, aes(my_data$Ferets_Diameter)) + geom_histogram()
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+> 

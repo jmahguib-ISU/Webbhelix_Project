@@ -1,0 +1,147 @@
+> ##########Running an ANalysis Of VAriance and a Kruskal-Wallis test in R##########
+> 
+> 
+> ###Manually load the 'dplyr' library package before running this script###
+> 
+> 
+> ###Set the working directory as the directory where your input files are stored
+> 
+> setwd("~/Desktop/Shell_Color/aov_4_popclusters_input_files")
+> 
+> 
+> ###Import tab delimited .txt file and assign it to object "my_data"
+> 
+> my_data <- read.delim("Median_Gray_Value_R_aov_input_data.txt", header = TRUE, sep = "\t", quote = "")
+> 
+> 
+> ###Have the 'dplyr' R package take a random sampling of your data and print it to the console so you can check that your using the correct input file and that it's formatted appropriately
+> 
+> set.seed(1234)
+> dplyr::sample_n(my_data, 10)
+    Median_Gray_Value Population
+31                102   Cluster1
+166                84   Cluster2
+162                92   Cluster2
+165                98   Cluster2
+227                90   Cluster3
+168                95   Cluster2
+3                 112   Cluster1
+61                 96   Cluster1
+173                84   Cluster2
+133               100   Cluster2
+> 
+> 
+> ###Print your data's group names (called by R "levels") to check they appear in desired order
+> 
+> levels(my_data$Population)
+[1] "Cluster1" "Cluster2" "Cluster3" "Cluster4"
+> 
+> 
+> ###Calculate and output summary statistics for your data, including datum counts, data mean and standard deviation
+> 
+> group_by(my_data, Population) %>%
++   summarise(
++     count = n(),
++     mean = mean(Median_Gray_Value, na.rm = TRUE),
++     sd = sd(Median_Gray_Value, na.rm = TRUE)
++   )
+# A tibble: 4 x 4
+  Population count  mean    sd
+  <fct>      <int> <dbl> <dbl>
+1 Cluster1      90 103.  13.1 
+2 Cluster2     108  99.0  9.26
+3 Cluster3      47 101.  10.6 
+4 Cluster4      22 101.   6.60
+> 
+> 
+> 
+> ###Assign the command for running an analysis of variance (aov) to an object, in this case called "res.aov;" the portion of the aov command that is in parentheses consists of the column header for the column containing your dependant variable (your data), followed by a '~' and then the column header for the column containing your independent variable (your group assignments for each data point), followed by designation of your previously established data object to 'data =' (in this case "my_data")
+> 
+> res.aov <- aov(Median_Gray_Value ~ Population, data = my_data)
+> 
+> 
+> ###Print a summary of the results of the ANOVA analyses designated by the previous command
+> 
+> summary(res.aov)
+             Df Sum Sq Mean Sq F value Pr(>F)  
+Population    3    871   290.4   2.501 0.0598 .
+Residuals   263  30530   116.1                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> 
+> 
+> ###Run a Tukey multiple pairwise comparisons test on the fitted ANOVA from the previous command, and output the results to check which pairwise group comparisons are statistically significantly different from each other
+> 
+> TukeyHSD(res.aov)
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = Median_Gray_Value ~ Population, data = my_data)
+
+$Population
+                        diff       lwr        upr     p adj
+Cluster2-Cluster1 -4.1962963 -8.172159 -0.2204334 0.0340710
+Cluster3-Cluster1 -2.7014184 -7.714699  2.3118625 0.5047090
+Cluster4-Cluster1 -2.4606061 -9.085949  4.1647368 0.7721103
+Cluster3-Cluster2  1.4948779 -3.372970  6.3627256 0.8571357
+Cluster4-Cluster2  1.7356902 -4.780300  8.2516801 0.9013483
+Cluster4-Cluster3  0.2408124 -6.955272  7.4368963 0.9997673
+
+> 
+> 
+> ###Plot first the Residuals vs Fitted values from the fitted ANOVA in order to check for homogeneity of variance (which is an assumption of ANOVA), then plot a normality plot of residuals to check that the data are normally distributed (another assumption of ANOVA); the quantiles of the residuals are plotted against the quantiles of the normal distribution
+> 
+> plot(res.aov, 1)
+> plot(res.aov, 2)
+> 
+> 
+> ###Perform a Shapiro-Wilk test as an additional check for normality of the data
+> 
+> aov_residuals <- residuals(object = res.aov )
+> shapiro.test(x = aov_residuals )
+
+	Shapiro-Wilk normality test
+
+data:  aov_residuals
+W = 0.95935, p-value = 8.004e-07
+
+> 
+> 
+> ###In the case that either or both tests for the assumptions of an ANOVA are not passed, a non-parametric test for comparison of group means is performed here in the form of a Kruskal-Wallis rank sum test
+> 
+> kruskal.test(Median_Gray_Value ~ Population, data = my_data)
+
+	Kruskal-Wallis rank sum test
+
+data:  Median_Gray_Value by Population
+Kruskal-Wallis chi-squared = 6.113, df = 3, p-value = 0.1062
+
+> 
+> 
+> ###As a follow-up to the Kruskal-Wallis to check which specific group pairs are statistically significantly different from each other, a pairwise t-test is done here with corrections for multiple testing
+> 
+> pairwise.t.test(my_data$Median_Gray_Value, my_data$Population,
++                 p.adjust.method = "BH")
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  my_data$Median_Gray_Value and my_data$Population 
+
+         Cluster1 Cluster2 Cluster3
+Cluster2 0.041    -        -       
+Cluster3 0.494    0.590    -       
+Cluster4 0.590    0.590    0.931   
+
+P value adjustment method: BH 
+> 
+> 
+> 
+> 
+> #####Example commands for making histogram plots to check data distributions, using R built-in hist() function and the ggplot2 package#####
+> 
+> hist(my_data$Median_Gray_Value)
+> qplot(my_data$Median_Gray_Value, geom="histogram")
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+> #ggplot(data=my_data, aes(my_data$Median_Gray_Value)) + geom_histogram()
+> 

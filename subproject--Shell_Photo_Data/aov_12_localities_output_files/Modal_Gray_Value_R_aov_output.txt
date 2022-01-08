@@ -1,0 +1,224 @@
+> ##########Running an ANalysis Of VAriance and a Kruskal-Wallis test in R##########
+> 
+> 
+> ###Manually load the 'dplyr' library package before running this script###
+> 
+> 
+> ###Set the working directory as the directory where your input files are stored
+> 
+> setwd("~/Desktop/Shell_Photo_Project_Data/aov_input_files")
+> 
+> 
+> ###Import tab delimited .txt file and assign it to object "my_data"
+> 
+> my_data <- read.delim("Modal_Gray_Value_R_aov_input_data.txt", header = TRUE, sep = "\t", quote = "")
+> 
+> 
+> ###Have the 'dplyr' R package take a random sampling of your data and print it to the console so you can check that your using the correct input file and that it's formatted appropriately
+> 
+> set.seed(1234)
+> dplyr::sample_n(my_data, 10)
+    Modal_Gray_Value Population
+31               107       CRWA
+166               88       PCRA
+162               97       PCRA
+165              117       PCRA
+227               84        RRL
+168              100       PCRA
+3                114        CPS
+61                99       DHFA
+173              104       PCRA
+133              118       OICP
+> 
+> 
+> ###Print your data's group names (called by R "levels") to check they appear in desired order
+> 
+> levels(my_data$Population)
+ [1] "CPS"  "CRWA" "DHFA" "FPPI" "HGRF" "IRO"  "OICP" "PCRA" "PPNP" "PTP"  "RRL"  "RRO" 
+> 
+> 
+> ###Calculate and output summary statistics for your data, including datum counts, data mean and standard deviation
+> 
+> group_by(my_data, Population) %>%
++   summarise(
++     count = n(),
++     mean = mean(Modal_Gray_Value, na.rm = TRUE),
++     sd = sd(Modal_Gray_Value, na.rm = TRUE)
++   )
+# A tibble: 12 x 4
+   Population count  mean    sd
+   <fct>      <int> <dbl> <dbl>
+ 1 CPS           23 103.  13.1 
+ 2 CRWA          25 103.  16.8 
+ 3 DHFA          22 103.  11.0 
+ 4 FPPI          20 109.  15.7 
+ 5 HGRF          21 100.  17.4 
+ 6 IRO           18 108.  13.2 
+ 7 OICP          23 106.  12.3 
+ 8 PCRA          21  99.3  8.67
+ 9 PPNP          27  99.4 12.5 
+10 PTP           21  95.1 22.1 
+11 RRL           25  92.2 13.5 
+12 RRO           21  97.1 12.3 
+> 
+> 
+> 
+> ###Assign the command for running an analysis of variance (aov) to an object, in this case called "res.aov;" the portion of the aov command that is in parentheses consists of the column header for the column containing your dependant variable (your data), followed by a '~' and then the column header for the column containing your independent variable (your group assignments for each data point), followed by designation of your previously established data object to 'data =' (in this case "my_data")
+> 
+> res.aov <- aov(Modal_Gray_Value ~ Population, data = my_data)
+> 
+> 
+> ###Print a summary of the results of the ANOVA analyses designated by the previous command
+> 
+> summary(res.aov)
+             Df Sum Sq Mean Sq F value Pr(>F)   
+Population   11   6113   555.8   2.683 0.0028 **
+Residuals   255  52827   207.2                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> 
+> 
+> ###Run a Tukey multiple pairwise comparisons test on the fitted ANOVA from the previous command, and output the results to check which pairwise group comparisons are statistically significantly different from each other
+> 
+> TukeyHSD(res.aov)
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = Modal_Gray_Value ~ Population, data = my_data)
+
+$Population
+                 diff        lwr        upr     p adj
+CRWA-CPS    0.1791304 -13.538999 13.8972594 1.0000000
+DHFA-CPS   -0.6245059 -14.783721 13.5347093 1.0000000
+FPPI-CPS    6.0891304  -8.427422 20.6056832 0.9657402
+HGRF-CPS   -2.8799172 -17.210404 11.4505701 0.9999528
+IRO-CPS     4.2391304 -10.702567 19.1808281 0.9986825
+OICP-CPS    2.4782609 -11.522746 16.4792676 0.9999870
+PCRA-CPS   -3.9751553 -18.305643 10.3553320 0.9989294
+PPNP-CPS   -3.8534622 -17.325937  9.6190129 0.9985808
+PTP-CPS    -8.1656315 -22.496119  6.1648558 0.7707685
+RRL-CPS   -11.0608696 -24.778999  2.6572594 0.2528432
+RRO-CPS    -6.1180124 -20.448500  8.2124749 0.9610690
+DHFA-CRWA  -0.8036364 -14.683199 13.0759259 1.0000000
+FPPI-CRWA   5.9100000  -8.333917 20.1539172 0.9683741
+HGRF-CRWA  -3.0590476 -17.113290 10.9951951 0.9998955
+IRO-CRWA    4.0600000 -10.616962 18.7369616 0.9989564
+OICP-CRWA   2.2991304 -11.418999 16.0172594 0.9999926
+PCRA-CRWA  -4.1542857 -18.208528  9.8999570 0.9980865
+PPNP-CRWA  -4.0325926 -17.210850  9.1456644 0.9973904
+PTP-CRWA   -8.3447619 -22.399005  5.7094808 0.7207371
+RRL-CRWA  -11.2400000 -24.669294  2.1892939 0.2034738
+RRO-CRWA   -6.2971429 -20.351386  7.7570999 0.9453116
+FPPI-DHFA   6.7136364  -7.955566 21.3828385 0.9368279
+HGRF-DHFA  -2.2554113 -16.740509 12.2296863 0.9999966
+IRO-DHFA    4.8636364 -10.226410 19.9536832 0.9958812
+OICP-DHFA   3.1027668 -11.056448 17.2619821 0.9998882
+PCRA-DHFA  -3.3506494 -17.835747 11.1344482 0.9998099
+PPNP-DHFA  -3.2289562 -16.865773 10.4078605 0.9997614
+PTP-DHFA   -7.5411255 -22.026223  6.9439721 0.8587724
+RRL-DHFA  -10.4363636 -24.315926  3.4431986 0.3571294
+RRO-DHFA   -5.4935065 -19.978604  8.9915911 0.9840853
+HGRF-FPPI  -8.9690476 -23.803635  5.8655397 0.6968578
+IRO-FPPI   -1.8500000 -17.275837 13.5758368 0.9999998
+OICP-FPPI  -3.6108696 -18.127422 10.9056832 0.9996164
+PCRA-FPPI -10.0642857 -24.898873  4.7703016 0.5237599
+PPNP-FPPI  -9.9425926 -23.950080  4.0648946 0.4501405
+PTP-FPPI  -14.2547619 -29.089349  0.5798254 0.0725764
+RRL-FPPI  -17.1500000 -31.393917 -2.9060828 0.0051758
+RRO-FPPI  -12.2071429 -27.041730  2.6274444 0.2252654
+IRO-HGRF    7.1190476  -8.131821 22.3699166 0.9279605
+OICP-HGRF   5.3581781  -8.972309 19.6886654 0.9857829
+PCRA-HGRF  -1.0952381 -15.747799 13.5573228 1.0000000
+PPNP-HGRF  -0.9735450 -14.788112 12.8410220 1.0000000
+PTP-HGRF   -5.2857143 -19.938275  9.3668466 0.9893535
+RRL-HGRF   -8.1809524 -22.235195  5.8732903 0.7455891
+RRO-HGRF   -3.2380952 -17.890656 11.4144657 0.9998785
+OICP-IRO   -1.7608696 -16.702567 13.1808281 0.9999998
+PCRA-IRO   -8.2142857 -23.465155  7.0365832 0.8291543
+PPNP-IRO   -8.0925926 -22.540213  6.3550273 0.7897686
+PTP-IRO   -12.4047619 -27.655631  2.8461070 0.2408110
+RRL-IRO   -15.3000000 -29.976962 -0.6230384 0.0325723
+RRO-IRO   -10.3571429 -25.608012  4.8937261 0.5221323
+PCRA-OICP  -6.4534161 -20.783903  7.8770711 0.9433865
+PPNP-OICP  -6.3317230 -19.804198  7.1407520 0.9246830
+PTP-OICP  -10.6438923 -24.974380  3.6865950 0.3766281
+RRL-OICP  -13.5391304 -27.257259  0.1789985 0.0567587
+RRO-OICP   -8.5962733 -22.926761  5.7342140 0.7073820
+PPNP-PCRA   0.1216931 -13.692874 13.9362601 1.0000000
+PTP-PCRA   -4.1904762 -18.843037 10.4620847 0.9985824
+RRL-PCRA   -7.0857143 -21.139957  6.9685284 0.8830255
+RRO-PCRA   -2.1428571 -16.795418 12.5097038 0.9999982
+PTP-PPNP   -4.3121693 -18.126736  9.5023976 0.9968881
+RRL-PPNP   -7.2074074 -20.385664  5.9708495 0.8144475
+RRO-PPNP   -2.2645503 -16.079117 11.5500167 0.9999941
+RRL-PTP    -2.8952381 -16.949481 11.1590046 0.9999395
+RRO-PTP     2.0476190 -12.604942 16.7001800 0.9999989
+RRO-RRL     4.9428571  -9.111386 18.9970999 0.9913589
+
+> 
+> 
+> ###Plot first the Residuals vs Fitted values from the fitted ANOVA in order to check for homogeneity of variance (which is an assumption of ANOVA), then plot a normality plot of residuals to check that the data are normally distributed (another assumption of ANOVA); the quantiles of the residuals are plotted against the quantiles of the normal distribution
+> 
+> plot(res.aov, 1)
+> plot(res.aov, 2)
+> 
+> 
+> ###Perform a Shapiro-Wilk test as an additional check for normality of the data
+> 
+> aov_residuals <- residuals(object = res.aov )
+> shapiro.test(x = aov_residuals )
+
+	Shapiro-Wilk normality test
+
+data:  aov_residuals
+W = 0.9764, p-value = 0.0002086
+
+> 
+> 
+> ###In the case that either or both tests for the assumptions of an ANOVA are not passed, a non-parametric test for comparison of group means is performed here in the form of a Kruskal-Wallis rank sum test
+> 
+> kruskal.test(Modal_Gray_Value ~ Population, data = my_data)
+
+	Kruskal-Wallis rank sum test
+
+data:  Modal_Gray_Value by Population
+Kruskal-Wallis chi-squared = 31.686, df = 11, p-value = 0.0008562
+
+> 
+> 
+> ###As a follow-up to the Kruskal-Wallis to check which specific group pairs are statistically significantly different from each other, a pairwise t-test is done here with corrections for multiple testing
+> 
+> pairwise.t.test(my_data$Modal_Gray_Value, my_data$Population,
++                 p.adjust.method = "BH")
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  my_data$Modal_Gray_Value and my_data$Population 
+
+     CPS    CRWA   DHFA   FPPI   HGRF   IRO    OICP   PCRA   PPNP   PTP    RRL   
+CRWA 0.9768 -      -      -      -      -      -      -      -      -      -     
+DHFA 0.9121 0.8891 -      -      -      -      -      -      -      -      -     
+FPPI 0.3668 0.3668 0.3315 -      -      -      -      -      -      -      -     
+HGRF 0.6447 0.6249 0.7165 0.2114 -      -      -      -      -      -      -     
+IRO  0.5435 0.5435 0.5293 0.7676 0.3296 -      -      -      -      -      -     
+OICP 0.6971 0.7070 0.6249 0.6053 0.4371 0.7676 -      -      -      -      -     
+PCRA 0.5435 0.5435 0.6249 0.1324 0.8690 0.2414 0.3315 -      -      -      -     
+PPNP 0.5435 0.5435 0.6248 0.1199 0.8690 0.2286 0.3296 0.9768 -      -      -     
+PTP  0.2248 0.2114 0.2614 0.0282 0.4565 0.0686 0.0987 0.5435 0.5425 -      -     
+RRL  0.0686 0.0686 0.0987 0.0061 0.2172 0.0225 0.0282 0.2798 0.2389 0.6437 -     
+RRO  0.3647 0.3315 0.4371 0.0686 0.6249 0.1324 0.2114 0.7294 0.7070 0.7342 0.4659
+
+P value adjustment method: BH 
+> 
+> 
+> 
+> 
+> #####Example commands for making histogram plots to check data distributions, using R built-in hist() function and the ggplot2 package#####
+> 
+> hist(my_data$Modal_Gray_Value)
+> qplot(my_data$Modal_Gray_Value, geom="histogram")
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+> ggplot(data=my_data, aes(my_data$Modal_Gray_Value)) + geom_histogram()
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+> 
