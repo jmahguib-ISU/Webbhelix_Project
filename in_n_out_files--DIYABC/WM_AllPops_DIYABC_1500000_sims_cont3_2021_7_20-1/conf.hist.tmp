@@ -1,0 +1,46 @@
+3 scenarios: 9 10 10 
+scenario 1 [0.33333] (6)
+C1 C2 C3 C4
+0 sample 1
+0 sample 2
+0 sample 3
+0 sample 4
+t2 merge 4 1
+t2 merge 4 2
+t2 merge 4 3
+t2 varNe 4 CA2
+scenario 2 [0.33333] (8)
+C1 C2 C3 C4
+0 sample 1
+0 sample 2
+0 sample 3
+0 sample 4
+t1 merge 2 1
+t1 merge 2 3
+t1 varNe 2 CA1
+t2 merge 4 2
+t2 varNe 4 CA2
+scenario 3 [0.33333] (8)
+C1 C2 C3 C4
+0 sample 1
+0 sample 2
+0 sample 3
+0 sample 4
+t1 merge 2 1
+t1 varNe 2 CA1
+t2 merge 4 2
+t2 merge 4 3
+t2 varNe 4 CA2
+
+historical parameters priors (8,1)
+C1 N UN[10.0,10000.0,0.0,0.0] False
+C2 N UN[10.0,10000.0,0.0,0.0] True
+C3 N UN[10.0,10000.0,0.0,0.0] True
+C4 N UN[10.0,10000.0,0.0,0.0] True
+t2 T UN[10.0,5000.0,0.0,0.0] False
+CA2 N UN[10.0,10000.0,0.0,0.0] True
+t1 T UN[10.0,5000.0,0.0,0.0] True
+CA1 N UN[10.0,10000.0,0.0,0.0] True
+t1<t2
+DRAW UNTIL
+

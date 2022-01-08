@@ -1,0 +1,30 @@
+2 scenarios: 9 9 
+scenario 1 [0.5] (6)
+C1 C2 C3 C4
+0 sample 1
+0 sample 2
+0 sample 3
+0 sample 4
+t2 merge 4 1
+t2 merge 4 2
+t2 merge 4 3
+t2 varNe 4 CA2
+scenario 2 [0.5] (6)
+C1 C2 C3 C4
+0 sample 1
+0 sample 2
+0 sample 3
+0 sample 4
+t2 merge 2 1
+t2 merge 2 3
+t2 merge 2 4
+t2 varNe 2 CA2
+
+historical parameters priors (6,0)
+C1 N UN[10.0,10000.0,0.0,0.0] False
+C2 N UN[10.0,10000.0,0.0,0.0] False
+C3 N UN[10.0,10000.0,0.0,0.0] False
+C4 N UN[10.0,10000.0,0.0,0.0] False
+t2 T UN[10.0,8000.0,0.0,0.0] False
+CA2 N UN[10.0,10000.0,0.0,0.0] False
+
