@@ -1,0 +1,44 @@
+GenoDive 3.01, 2021-04-28 00:58:55 +0000
+File: TrkNbr-1524n1282n1083_AllPops_PGDSpider_p14_r080_LDnHWEx__genepopRF.txt
+___________________________________________________________________
+
+Genetic Diversity: Nei 1987.
+178 individuals included, 8480 SNP loci included
+
+– Summary of indices of genetic diversity
+
+Statistic	Value	Std.Dev.	c.i.2.5%	c.i.97.5%	Description
+Num		2.000	0.000		2.000		2.000		Number of alleles
+Eff_num		1.027	0.000		1.027		1.028		Effective number of alleles
+Ho		0.025	0.000		0.025		0.026		Observed Heterozygosity
+Hs		0.027	0.000		0.027		0.028		Heterozygosity Within Populations
+Ht		0.032	0.000		0.031		0.033		Total Heterozygosity
+H't		0.032	0.000		0.032		0.033		Corrected total Heterozygosity
+Gis		0.076	0.005		0.067		0.085		Inbreeding coefficient
+
+Standard deviations of F-statistics were obtained through jackknifing over loci.
+95% confidence intervals of F-statistics were obtained through bootstrapping over loci.
+
+– Indices of genetic diversity per population
+
+Population	Num	Eff_num	Ho	Hs	Gis
+TGCP		1.102	1.035	0.027	0.025	-0.079
+MRLP		1.113	1.032	0.021	0.025	0.176
+STT		1.078	1.025	0.018	0.018	0.045
+FSSP		1.087	1.027	0.018	0.020	0.131
+HNL		1.181	1.070	0.046	0.049	0.072
+MPO		1.072	1.023	0.016	0.017	0.069
+OICP		1.058	1.024	0.016	0.017	0.007
+IRO		1.171	1.043	0.031	0.034	0.080
+HGRF		1.028	1.011	0.008	0.008	-0.018
+PTP		1.024	1.009	0.006	0.006	-0.010
+RRL		1.172	1.048	0.034	0.037	0.084
+RRO		1.109	1.039	0.024	0.028	0.125
+CPS		1.156	1.051	0.033	0.037	0.116
+PPNP		1.087	1.033	0.021	0.023	0.083
+FPPI		1.095	1.034	0.022	0.024	0.098
+CRWA		1.104	1.034	0.024	0.025	0.043
+PCRA		1.147	1.045	0.031	0.033	0.052
+DHFA		1.206	1.074	0.050	0.053	0.059
+
+___________________________________________________________________

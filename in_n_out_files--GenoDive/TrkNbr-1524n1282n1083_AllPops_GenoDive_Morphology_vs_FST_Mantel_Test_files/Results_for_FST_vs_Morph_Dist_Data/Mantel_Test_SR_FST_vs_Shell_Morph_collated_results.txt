@@ -1,0 +1,192 @@
+___________________________________________________________________
+
+GenoDive 3.01, 2021-06-14 16:32:22 +0000
+Mantel Test: Mantel, 1967.
+Matrix A:	WM_Shell_Width_1_Pairwise_Mean_Distances
+Matrix B:	AllPops_FST_distance_matrix_for_Shell_Size_Data
+
+18 of 18 observations included
+Statistic:	Mantel's r
+Permutations:	1000000 (999999 + original)
+
+
+– Results of permutation test:
+
+Original value of Mantel's r: 0.185
+
+# perm < original:	895373
+# perm = original:	1
+# perm > original:	104626
+
+One-tailed p-value (depending on sign of original): p = 0.105
+
+
+– Regression equation for linear regression with matrix A as the dependent variable (Y) and matrix B as the independent variable (X).
+
+Equation:	Y = 0.582 + ( 6.125 * X )
+error SS:	194.788
+total SS:	201.682
+R-squared:	0.034
+
+
+___________________________________________________________________
+___________________________________________________________________
+
+GenoDive 3.01, 2021-06-14 16:35:29 +0000
+Mantel Test: Mantel, 1967.
+Matrix A:	WM_Shell_Width_2_Pairwise_Mean_Distances
+Matrix B:	AllPops_FST_distance_matrix_for_Shell_Size_Data
+
+18 of 18 observations included
+Statistic:	Mantel's r
+Permutations:	1000000 (999999 + original)
+
+
+– Results of permutation test:
+
+Original value of Mantel's r: 0.186
+
+# perm < original:	901112
+# perm = original:	1
+# perm > original:	98887
+
+One-tailed p-value (depending on sign of original): p = 0.099
+
+
+– Regression equation for linear regression with matrix A as the dependent variable (Y) and matrix B as the independent variable (X).
+
+Equation:	Y = 0.545 + ( 5.432 * X )
+error SS:	151.179
+total SS:	156.602
+R-squared:	0.035
+
+
+___________________________________________________________________
+___________________________________________________________________
+
+GenoDive 3.01, 2021-06-14 13:37:47 +0000
+Mantel Test: Mantel, 1967.
+Matrix A:	WM_Shell_Width_1_Pairwise_Mean_Distances
+Matrix B:	AllPops_FST_distance_matrix_for_Shell_Size_Data
+
+18 of 18 observations included
+Statistic:	Spearman's r
+Permutations:	1000000 (999999 + original)
+
+
+– Results of permutation test:
+
+Original value of Spearman's r: 0.147
+
+# perm < original:	861179
+# perm = original:	2
+# perm > original:	138819
+
+One-tailed p-value (depending on sign of original): p = 0.139
+
+
+– Regression equation for linear regression with matrix A as the dependent variable (Y) and matrix B as the independent variable (X).
+
+Equation:	Y = 64.841 + ( 0.147 * X )
+error SS:	292017.279
+total SS:	298452.000
+R-squared:	0.022
+
+
+___________________________________________________________________
+___________________________________________________________________
+
+GenoDive 3.01, 2021-06-14 13:42:57 +0000
+Mantel Test: Mantel, 1967.
+Matrix A:	WM_Shell_Width_2_Pairwise_Mean_Distances
+Matrix B:	AllPops_FST_distance_matrix_for_Shell_Size_Data
+
+18 of 18 observations included
+Statistic:	Spearman's r
+Permutations:	1000000 (999999 + original)
+
+
+– Results of permutation test:
+
+Original value of Spearman's r: 0.152
+
+# perm < original:	874640
+# perm = original:	1
+# perm > original:	125359
+
+One-tailed p-value (depending on sign of original): p = 0.125
+
+
+– Regression equation for linear regression with matrix A as the dependent variable (Y) and matrix B as the independent variable (X).
+
+Equation:	Y = 64.454 + ( 0.152 * X )
+error SS:	291563.769
+total SS:	298452.000
+R-squared:	0.023
+
+
+___________________________________________________________________
+___________________________________________________________________
+
+GenoDive 3.01, 2021-06-14 13:49:14 +0000
+Mantel Test: Mantel, 1967.
+Matrix A:	WM_Shell_Height_Pairwise_Mean_Distances
+Matrix B:	AllPops_FST_distance_matrix_for_Shell_Size_Data
+
+18 of 18 observations included
+Statistic:	Spearman's r
+Permutations:	1000000 (999999 + original)
+
+
+– Results of permutation test:
+
+Original value of Spearman's r: 0.008
+
+# perm < original:	524587
+# perm = original:	1
+# perm > original:	475412
+
+One-tailed p-value (depending on sign of original): p = 0.475
+
+
+– Regression equation for linear regression with matrix A as the dependent variable (Y) and matrix B as the independent variable (X).
+
+Equation:	Y = 75.392 + ( 0.008 * X )
+error SS:	298432.925
+total SS:	298452.000
+R-squared:	0.000
+
+
+___________________________________________________________________
+___________________________________________________________________
+
+GenoDive 3.01, 2021-06-14 13:54:15 +0000
+Mantel Test: Mantel, 1967.
+Matrix A:	WM_Shell_Mean_Gray_Value_Pairwise_Mean_Distances
+Matrix B:	AllPops_FST_distance_matrix_for_Shell_Brightness_Data
+
+12 of 12 observations included
+Statistic:	Spearman's r
+Permutations:	1000000 (999999 + original)
+
+
+– Results of permutation test:
+
+Original value of Spearman's r: -0.160
+
+# perm < original:	189048
+# perm = original:	15
+# perm > original:	810937
+
+One-tailed p-value (depending on sign of original): p = 0.189
+
+
+– Regression equation for linear regression with matrix A as the dependent variable (Y) and matrix B as the independent variable (X).
+
+Equation:	Y = 37.699 + ( -0.160 * X )
+error SS:	23339.604
+total SS:	23952.500
+R-squared:	0.026
+
+
+___________________________________________________________________

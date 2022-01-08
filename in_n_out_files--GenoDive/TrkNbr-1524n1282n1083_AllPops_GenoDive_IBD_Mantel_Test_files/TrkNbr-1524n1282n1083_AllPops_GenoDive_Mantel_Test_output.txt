@@ -1,0 +1,33 @@
+
+___________________________________________________________________
+
+GenoDive 3.01, 2021-05-02 05:45:19 +0000
+Mantel Test: Mantel, 1967.
+Matrix A:	AllPops_FST_results
+Matrix B:	AllPops_straight_line_geographic_distance_matrix
+
+18 of 18 observations included
+Statistic:	Mantel's r
+Permutations:	1000 (999 + original)
+
+
+– Results of permutation test:
+
+Original value of Mantel's r: 0.634
+
+# perm < original:	999
+# perm = original:	1
+# perm > original:	0
+
+One-tailed p-value (depending on sign of original): p = 0.001
+
+
+– Regression equation for linear regression with matrix A as the dependent variable (Y) and matrix B as the independent variable (X).
+
+Equation:	Y = 0.121 + ( 0.000 * X )
+error SS:	0.110
+total SS:	0.184
+R-squared:	0.402
+
+
+___________________________________________________________________

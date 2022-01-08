@@ -1,0 +1,33 @@
+
+___________________________________________________________________
+
+GenoDive 3.01, 2021-06-10 22:24:29 +0000
+Mantel Test: Mantel, 1967.
+Matrix A:	WM_Shell_Width_2_Pairwise_Mean_Distances
+Matrix B:	AllPops_FST_distance_matrix_corrIBD_for_Shell_Size_Data
+
+18 of 18 observations included
+Statistic:	Spearman's r
+Permutations:	1000 (999 + original)
+
+
+– Results of permutation test:
+
+Original value of Spearman's r: 0.177
+
+# perm < original:	893
+# perm = original:	1
+# perm > original:	106
+
+One-tailed p-value (depending on sign of original): p = 0.107
+
+
+– Regression equation for linear regression with matrix A as the dependent variable (Y) and matrix B as the independent variable (X).
+
+Equation:	Y = 62.516 + ( 0.177 * X )
+error SS:	289057.851
+total SS:	298452.000
+R-squared:	0.031
+
+
+___________________________________________________________________
