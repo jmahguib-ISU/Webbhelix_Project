@@ -1,4 +1,0 @@
-Scenario 1 (null)
-N1 N2 N3 N4 N50 sample 10 sample 20 sample 30 sample 40 sample 5t1 merge 1 2t1 merge 1 3t1 merge 1 4t1 merge 1 5t1 varNe 1 NaScenario 2
-N1 N2 N3 N4 N5 Nref1 Nref20 sample 10 sample 20 sample 30 sample 40 sample 5t1 merge 1 2t1 merge 1 3t1 merge 1 4t1 merge 1 5t1 varNe 1 Nadmixt1 split 1 6 7 rt2 merge 6 7t2 varNe 6 NaScenario 3
-N1 N2 N3 N4 N5 Nref1 Nref20 sample 10 sample 20 sample 30 sample 40 sample 5t1 merge 1 2t1 merge 1 3t1 merge 1 5t1 varNe 1 Nadmixt1 merge 7 4t1 split 1 6 7 rt2 merge 6 7t2 varNe 6 Na
