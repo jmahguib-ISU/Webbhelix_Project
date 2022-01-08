@@ -1,0 +1,13 @@
+
+VCFtools - 0.1.14
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf ./jmahguib/Stacks_Populations_outputs/TrkNbr-1524n1282n1083_AllPops_Stacks_Populations_p14_r080_output/batch_22540000.vcf
+	--out ./jmahguib/VCF_Tools_outputs/TrkNbr-1524n1282n1083_AllPops_VCF_Tools_p14_r080_output/TrkNbr-1524n1282n1083_AllPops_p14_r080_sd
+	--site-depth
+
+After filtering, kept 178 out of 178 Individuals
+Outputting Depth for Each Site
+After filtering, kept 18308 out of a possible 18308 Sites
+Run Time = 1.00 seconds

@@ -1,0 +1,13 @@
+
+VCFtools - 0.1.14
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf ./jmahguib/Plink_Program_outputs/TrkNbr-1524n1282n1083_AllPops_Plink_p5_r080_output/TrkNbr-1524n1282n1083_AllPops_Plink_p5_r080_LDnHWE_SNPs_filtered.vcf
+	--out ./jmahguib/VCF_Tools_outputs/TrkNbr-1524n1282n1083_AllPops_VCF_Tools_p5_r080_LDnHWE_filtered_output/TrkNbr-1524n1282n1083_AllPops_VCF_Tools_p5_r080_LDnHWE_filtered_smd
+	--site-mean-depth
+
+After filtering, kept 178 out of 178 Individuals
+Outputting Depth for Each Site
+After filtering, kept 31742 out of a possible 31742 Sites
+Run Time = 3.00 seconds

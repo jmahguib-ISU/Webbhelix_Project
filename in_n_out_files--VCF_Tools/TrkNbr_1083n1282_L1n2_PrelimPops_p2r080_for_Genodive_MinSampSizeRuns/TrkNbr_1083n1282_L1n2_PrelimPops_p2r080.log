@@ -1,0 +1,13 @@
+
+VCFtools - 0.1.14
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf ./jmahguib/Stacks_Populations_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/batch_22540000.vcf
+	--depth
+	--out ./jmahguib/VCF_Tools_outputs/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080_for_Genodive_MinSampSizeRuns/TrkNbr_1083n1282_L1n2_PrelimPops_p2r080
+
+After filtering, kept 96 out of 96 Individuals
+Outputting Mean Depth by Individual
+After filtering, kept 19533 out of a possible 19533 Sites
+Run Time = 1.00 seconds
