@@ -1,0 +1,33 @@
+
+___________________________________________________________________
+
+GenoDive 3.01, 2019-12-24 22:39:48 +0000
+Genetic Diversity: Nei 1987.
+File: TrkNbr_1083n1282_L1n2_PrelimPops_18SubSampPops_Rep049.txt
+72 of 72 individuals included, 6843 of 6843 loci included
+
+– Summary of indices of genetic diversity
+
+Statistic	Value	Std.Dev.	c.i.2.5%	c.i.97.5%	Description
+Num	1.975	0.002	1.972	1.979	Number of alleles
+Eff_num	1.134	0.002	1.130	1.137	Effective number of alleles
+Ho	0.101	0.001	0.098	0.103	Observed Heterozygosity
+Hs	0.110	0.001	0.108	0.112	Heterozygosity Within Populations
+Ht	0.123	0.001	0.121	0.126	Total Heterozygosity
+H't	0.130	0.002	0.127	0.133	Corrected total Heterozygosity
+Gis	0.084	0.004	0.077	0.091	Inbreeding coefficient
+
+Standard deviations of F-statistics were obtained through jackknifing over loci.
+95% confidence intervals of F-statistics were obtained through bootstrapping over loci.
+
+
+– Indices of genetic diversity per population
+
+Population	Num	Eff_num	Ho	Hs	Gis
+TGCP_WM1	1.607	1.231	0.152	0.154	0.012
+STT_WM184	1.574	1.187	0.119	0.129	0.073
+MPO_WM482	1.560	1.173	0.107	0.121	0.116
+PTP_WM721	1.234	1.082	0.050	0.056	0.109
+
+
+___________________________________________________________________
