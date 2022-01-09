@@ -1,0 +1,199 @@
+> ##########Running an ANalysis Of VAriance and a Kruskal-Wallis test in R##########
+> 
+> 
+> ###Manually load the 'dplyr' library package before running this script###
+> 
+> 
+> ###Set the working directory as the directory where your input files are stored
+> 
+> setwd("~/Desktop/MinSampSize_R_aov_InputFiles/FstRslts_R_aov_input_files")
+> 
+> 
+> ###Import tab delimited .txt file and assign it to object "my_data"
+> 
+> my_data <- read.delim("MPO_PTP_pairwise_Fst_R_aov_input_data.txt", header = TRUE, sep = "\t", quote = "")
+> 
+> 
+> ###Have the 'dplyr' R package take a random sampling of your data and print it to the console so you can check that your using the correct input file and that it's formatted appropriately
+> 
+> set.seed(1234)
+> dplyr::sample_n(my_data, 10)
+    MPO_PTP_Fst_estimates Subsampling_group
+114              0.194181        x06SubSamp
+622              0.187739        x16SubSamp
+609              0.187529        x16SubSamp
+999              0.190741        x22SubSamp
+858              0.192105        x20SubSamp
+638              0.193908        x16SubSamp
+10               0.196235        x04SubSamp
+231              0.194466        x08SubSamp
+661              0.191481        x16SubSamp
+510              0.191202        x14SubSamp
+> 
+> 
+> ###Print your data's group names (called by R "levels") to check they appear in desired order
+> 
+> levels(my_data$Subsampling_group)
+ [1] "x04SubSamp" "x06SubSamp" "x08SubSamp" "x10SubSamp" "x12SubSamp" "x14SubSamp"
+ [7] "x16SubSamp" "x18SubSamp" "x20SubSamp" "x22SubSamp"
+> 
+> 
+> ###Calculate and output summary statistics for your data, including datum counts, data mean and standard deviation
+> 
+> group_by(my_data, Subsampling_group) %>%
++   summarise(
++     count = n(),
++     mean = mean(MPO_PTP_Fst_estimates, na.rm = TRUE),
++     sd = sd(MPO_PTP_Fst_estimates, na.rm = TRUE)
++   )
+# A tibble: 10 x 4
+   Subsampling_group count  mean       sd
+   <fct>             <int> <dbl>    <dbl>
+ 1 x04SubSamp          100 0.192 0.00970 
+ 2 x06SubSamp          100 0.191 0.00709 
+ 3 x08SubSamp          100 0.191 0.00556 
+ 4 x10SubSamp          100 0.190 0.00439 
+ 5 x12SubSamp          100 0.189 0.00371 
+ 6 x14SubSamp          100 0.190 0.00318 
+ 7 x16SubSamp          100 0.189 0.00230 
+ 8 x18SubSamp          100 0.189 0.00197 
+ 9 x20SubSamp          100 0.189 0.00150 
+10 x22SubSamp          100 0.189 0.000934
+> 
+> 
+> 
+> ###Assign the command for running an analysis of variance (aov) to an object, in this case called "res.aov;" the portion of the aov command that is in parentheses consists of the column header for the column containing your dependant variable (your data), followed by a '~' and then the column header for the column containing your independent variable (your group assignments for each data point), followed by designation of your previously established data object to 'data =' (in this case "my_data")
+> 
+> res.aov <- aov(MPO_PTP_Fst_estimates ~ Subsampling_group, data = my_data)
+> 
+> 
+> ###Print a summary of the results of the ANOVA analyses designated by the previous command
+> 
+> summary(res.aov)
+                   Df   Sum Sq   Mean Sq F value  Pr(>F)   
+Subsampling_group   9 0.000615 6.835e-05   2.962 0.00176 **
+Residuals         990 0.022845 2.308e-05                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> 
+> 
+> ###Run a Tukey multiple pairwise comparisons test on the fitted ANOVA from the previous command, and output the results to check which pairwise group comparisons are statistically significantly different from each other
+> 
+> TukeyHSD(res.aov)
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = MPO_PTP_Fst_estimates ~ Subsampling_group, data = my_data)
+
+$Subsampling_group
+                             diff          lwr           upr     p adj
+x06SubSamp-x04SubSamp -0.00045083 -0.002605016  1.703356e-03 0.9996868
+x08SubSamp-x04SubSamp -0.00066990 -0.002824086  1.484286e-03 0.9930209
+x10SubSamp-x04SubSamp -0.00157387 -0.003728056  5.803156e-04 0.3789112
+x12SubSamp-x04SubSamp -0.00222835 -0.004382536 -7.416435e-05 0.0357957
+x14SubSamp-x04SubSamp -0.00147598 -0.003630166  6.782056e-04 0.4764789
+x16SubSamp-x04SubSamp -0.00211632 -0.004270506  3.786565e-05 0.0589399
+x18SubSamp-x04SubSamp -0.00210168 -0.004255866  5.250565e-05 0.0627393
+x20SubSamp-x04SubSamp -0.00214656 -0.004300746  7.625648e-06 0.0517015
+x22SubSamp-x04SubSamp -0.00214531 -0.004299496  8.875648e-06 0.0519851
+x08SubSamp-x06SubSamp -0.00021907 -0.002373256  1.935116e-03 0.9999994
+x10SubSamp-x06SubSamp -0.00112304 -0.003277226  1.031146e-03 0.8212916
+x12SubSamp-x06SubSamp -0.00177752 -0.003931706  3.766656e-04 0.2111459
+x14SubSamp-x06SubSamp -0.00102515 -0.003179336  1.129036e-03 0.8886888
+x16SubSamp-x06SubSamp -0.00166549 -0.003819676  4.886956e-04 0.2964949
+x18SubSamp-x06SubSamp -0.00165085 -0.003805036  5.033356e-04 0.3089562
+x20SubSamp-x06SubSamp -0.00169573 -0.003849916  4.584556e-04 0.2716828
+x22SubSamp-x06SubSamp -0.00169448 -0.003848666  4.597056e-04 0.2726831
+x10SubSamp-x08SubSamp -0.00090397 -0.003058156  1.250216e-03 0.9464840
+x12SubSamp-x08SubSamp -0.00155845 -0.003712636  5.957356e-04 0.3937302
+x14SubSamp-x08SubSamp -0.00080608 -0.002960266  1.348106e-03 0.9743701
+x16SubSamp-x08SubSamp -0.00144642 -0.003600606  7.077656e-04 0.5071747
+x18SubSamp-x08SubSamp -0.00143178 -0.003585966  7.224056e-04 0.5224935
+x20SubSamp-x08SubSamp -0.00147666 -0.003630846  6.775256e-04 0.4757775
+x22SubSamp-x08SubSamp -0.00147541 -0.003629596  6.787756e-04 0.4770670
+x12SubSamp-x10SubSamp -0.00065448 -0.002808666  1.499706e-03 0.9941233
+x14SubSamp-x10SubSamp  0.00009789 -0.002056296  2.252076e-03 1.0000000
+x16SubSamp-x10SubSamp -0.00054245 -0.002696636  1.611736e-03 0.9986069
+x18SubSamp-x10SubSamp -0.00052781 -0.002681996  1.626376e-03 0.9988783
+x20SubSamp-x10SubSamp -0.00057269 -0.002726876  1.581496e-03 0.9978695
+x22SubSamp-x10SubSamp -0.00057144 -0.002725626  1.582746e-03 0.9979054
+x14SubSamp-x12SubSamp  0.00075237 -0.001401816  2.906556e-03 0.9839826
+x16SubSamp-x12SubSamp  0.00011203 -0.002042156  2.266216e-03 1.0000000
+x18SubSamp-x12SubSamp  0.00012667 -0.002027516  2.280856e-03 1.0000000
+x20SubSamp-x12SubSamp  0.00008179 -0.002072396  2.235976e-03 1.0000000
+x22SubSamp-x12SubSamp  0.00008304 -0.002071146  2.237226e-03 1.0000000
+x16SubSamp-x14SubSamp -0.00064034 -0.002794526  1.513846e-03 0.9950057
+x18SubSamp-x14SubSamp -0.00062570 -0.002779886  1.528486e-03 0.9958024
+x20SubSamp-x14SubSamp -0.00067058 -0.002824766  1.483606e-03 0.9929687
+x22SubSamp-x14SubSamp -0.00066933 -0.002823516  1.484856e-03 0.9930645
+x18SubSamp-x16SubSamp  0.00001464 -0.002139546  2.168826e-03 1.0000000
+x20SubSamp-x16SubSamp -0.00003024 -0.002184426  2.123946e-03 1.0000000
+x22SubSamp-x16SubSamp -0.00002899 -0.002183176  2.125196e-03 1.0000000
+x20SubSamp-x18SubSamp -0.00004488 -0.002199066  2.109306e-03 1.0000000
+x22SubSamp-x18SubSamp -0.00004363 -0.002197816  2.110556e-03 1.0000000
+x22SubSamp-x20SubSamp  0.00000125 -0.002152936  2.155436e-03 1.0000000
+
+> 
+> 
+> ###Plot first the Residuals vs Fitted values from the fitted ANOVA in order to check for homogeneity of variance (which is an assumption of ANOVA), then plot a normality plot of residuals to check that the data are normally distributed (another assumption of ANOVA); the quantiles of the residuals are plotted against the quantiles of the normal distribution
+> 
+> plot(res.aov, 1)
+> plot(res.aov, 2)
+> 
+> 
+> ###Perform a Shapiro-Wilk test as an additional check for normality of the data
+> 
+> aov_residuals <- residuals(object = res.aov )
+> shapiro.test(x = aov_residuals )
+
+	Shapiro-Wilk normality test
+
+data:  aov_residuals
+W = 0.92622, p-value < 2.2e-16
+
+> 
+> 
+> ###In the case that either or both tests for the assumptions of an ANOVA are not passed, a non-parametric test for comparison of group means is performed here in the form of a Kruskal-Wallis rank sum test
+> 
+> kruskal.test(MPO_PTP_Fst_estimates ~ Subsampling_group, data = my_data)
+
+	Kruskal-Wallis rank sum test
+
+data:  MPO_PTP_Fst_estimates by Subsampling_group
+Kruskal-Wallis chi-squared = 22.475, df = 9, p-value = 0.007491
+
+> 
+> 
+> ###As a follow-up to the Kruskal-Wallis to check which specific group pairs are statistically significantly different from each other, a pairwise t-test is done here with corrections for multiple testing
+> 
+> pairwise.t.test(my_data$MPO_PTP_Fst_estimates, my_data$Subsampling_group,
++                 p.adjust.method = "BH")
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  my_data$MPO_PTP_Fst_estimates and my_data$Subsampling_group 
+
+           x04SubSamp x06SubSamp x08SubSamp x10SubSamp x12SubSamp x14SubSamp x16SubSamp
+x06SubSamp 0.691      -          -          -          -          -          -         
+x08SubSamp 0.574      0.989      -          -          -          -          -         
+x10SubSamp 0.082      0.247      0.413      -          -          -          -         
+x12SubSamp 0.018      0.068      0.082      0.574      -          -          -         
+x14SubSamp 0.090      0.312      0.505      0.999      0.549      -          -         
+x16SubSamp 0.018      0.069      0.093      0.615      0.999      0.574      -         
+x18SubSamp 0.018      0.069      0.093      0.615      0.999      0.574      0.999     
+x20SubSamp 0.018      0.069      0.090      0.601      0.999      0.574      0.999     
+x22SubSamp 0.018      0.069      0.090      0.601      0.999      0.574      0.999     
+           x18SubSamp x20SubSamp
+x06SubSamp -          -         
+x08SubSamp -          -         
+x10SubSamp -          -         
+x12SubSamp -          -         
+x14SubSamp -          -         
+x16SubSamp -          -         
+x18SubSamp -          -         
+x20SubSamp 0.999      -         
+x22SubSamp 0.999      0.999     
+
+P value adjustment method: BH 
+> 

@@ -1,0 +1,212 @@
+> ##########Running an ANalysis Of VAriance and a Kruskal-Wallis test in R##########
+> 
+> 
+> ###Manually load the 'dplyr' library package before running this script###
+> 
+> 
+> ###Set the working directory as the directory where your input files are stored
+> 
+> setwd("~/Desktop/MinSampSize_R_aov_InputFiles/GenDivRslts_R_aov_input_files")
+> 
+> 
+> ###Import tab delimited .txt file and assign it to object "my_data"
+> 
+> my_data <- read.delim("MPO_Hs_estimate_R_aov_input_data.txt", header = TRUE, sep = "\t", quote = "")
+> 
+> 
+> ###Have the 'dplyr' R package take a random sampling of your data and print it to the console so you can check that your using the correct input file and that it's formatted appropriately
+> 
+> set.seed(1234)
+> dplyr::sample_n(my_data, 10)
+     MPO_Hs_estimates Subsampling_group
+126             0.122      Hs_04SubSamp
+684             0.117      Hs_14SubSamp
+669             0.118      Hs_14SubSamp
+1099            0.120      Hs_22SubSamp
+944             0.120      Hs_20SubSamp
+702             0.124      Hs_16SubSamp
+11              0.118      Hs_02SubSamp
+255             0.123      Hs_06SubSamp
+728             0.122      Hs_16SubSamp
+562             0.116      Hs_12SubSamp
+> 
+> 
+> ###Print your data's group names (called by R "levels") to check they appear in desired order
+> 
+> levels(my_data$Subsampling_group)
+ [1] "Hs_02SubSamp" "Hs_04SubSamp" "Hs_06SubSamp" "Hs_08SubSamp" "Hs_10SubSamp" "Hs_12SubSamp"
+ [7] "Hs_14SubSamp" "Hs_16SubSamp" "Hs_18SubSamp" "Hs_20SubSamp" "Hs_22SubSamp"
+> 
+> 
+> ###Calculate and output summary statistics for your data, including datum counts, data mean and standard deviation
+> 
+> group_by(my_data, Subsampling_group) %>%
++   summarise(
++     count = n(),
++     mean = mean(MPO_Hs_estimates, na.rm = TRUE),
++     sd = sd(MPO_Hs_estimates, na.rm = TRUE)
++   )
+# A tibble: 11 x 4
+   Subsampling_group count  mean      sd
+   <fct>             <int> <dbl>   <dbl>
+ 1 Hs_02SubSamp        100 0.114 0.0115 
+ 2 Hs_04SubSamp        100 0.119 0.00705
+ 3 Hs_06SubSamp        100 0.121 0.00524
+ 4 Hs_08SubSamp        100 0.121 0.00475
+ 5 Hs_10SubSamp        100 0.120 0.00401
+ 6 Hs_12SubSamp        100 0.120 0.00337
+ 7 Hs_14SubSamp        100 0.120 0.00288
+ 8 Hs_16SubSamp        100 0.120 0.00230
+ 9 Hs_18SubSamp        100 0.120 0.00183
+10 Hs_20SubSamp        100 0.120 0.00153
+11 Hs_22SubSamp        100 0.120 0.00104
+> 
+> 
+> 
+> ###Assign the command for running an analysis of variance (aov) to an object, in this case called "res.aov;" the portion of the aov command that is in parentheses consists of the column header for the column containing your dependant variable (your data), followed by a '~' and then the column header for the column containing your independent variable (your group assignments for each data point), followed by designation of your previously established data object to 'data =' (in this case "my_data")
+> 
+> res.aov <- aov(MPO_Hs_estimates ~ Subsampling_group, data = my_data)
+> 
+> 
+> ###Print a summary of the results of the ANOVA analyses designated by the previous command
+> 
+> summary(res.aov)
+                    Df  Sum Sq  Mean Sq F value Pr(>F)    
+Subsampling_group   10 0.00389 3.89e-04    15.3 <2e-16 ***
+Residuals         1089 0.02769 2.54e-05                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> 
+> 
+> ###Run a Tukey multiple pairwise comparisons test on the fitted ANOVA from the previous command, and output the results to check which pairwise group comparisons are statistically significantly different from each other
+> 
+> TukeyHSD(res.aov)
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = MPO_Hs_estimates ~ Subsampling_group, data = my_data)
+
+$Subsampling_group
+                              diff           lwr       upr     p adj
+Hs_04SubSamp-Hs_02SubSamp  0.00567  0.0033697004 0.0079703 0.0000000
+Hs_06SubSamp-Hs_02SubSamp  0.00712  0.0048197004 0.0094203 0.0000000
+Hs_08SubSamp-Hs_02SubSamp  0.00692  0.0046197004 0.0092203 0.0000000
+Hs_10SubSamp-Hs_02SubSamp  0.00619  0.0038897004 0.0084903 0.0000000
+Hs_12SubSamp-Hs_02SubSamp  0.00663  0.0043297004 0.0089303 0.0000000
+Hs_14SubSamp-Hs_02SubSamp  0.00640  0.0040997004 0.0087003 0.0000000
+Hs_16SubSamp-Hs_02SubSamp  0.00613  0.0038297004 0.0084303 0.0000000
+Hs_18SubSamp-Hs_02SubSamp  0.00648  0.0041797004 0.0087803 0.0000000
+Hs_20SubSamp-Hs_02SubSamp  0.00636  0.0040597004 0.0086603 0.0000000
+Hs_22SubSamp-Hs_02SubSamp  0.00621  0.0039097004 0.0085103 0.0000000
+Hs_06SubSamp-Hs_04SubSamp  0.00145 -0.0008502996 0.0037503 0.6255316
+Hs_08SubSamp-Hs_04SubSamp  0.00125 -0.0010502996 0.0035503 0.8074145
+Hs_10SubSamp-Hs_04SubSamp  0.00052 -0.0017802996 0.0028203 0.9997209
+Hs_12SubSamp-Hs_04SubSamp  0.00096 -0.0013402996 0.0032603 0.9603909
+Hs_14SubSamp-Hs_04SubSamp  0.00073 -0.0015702996 0.0030303 0.9948992
+Hs_16SubSamp-Hs_04SubSamp  0.00046 -0.0018402996 0.0027603 0.9999085
+Hs_18SubSamp-Hs_04SubSamp  0.00081 -0.0014902996 0.0031103 0.9884479
+Hs_20SubSamp-Hs_04SubSamp  0.00069 -0.0016102996 0.0029903 0.9967791
+Hs_22SubSamp-Hs_04SubSamp  0.00054 -0.0017602996 0.0028403 0.9996089
+Hs_08SubSamp-Hs_06SubSamp -0.00020 -0.0025002996 0.0021003 1.0000000
+Hs_10SubSamp-Hs_06SubSamp -0.00093 -0.0032302996 0.0013703 0.9681882
+Hs_12SubSamp-Hs_06SubSamp -0.00049 -0.0027902996 0.0018103 0.9998369
+Hs_14SubSamp-Hs_06SubSamp -0.00072 -0.0030202996 0.0015803 0.9954375
+Hs_16SubSamp-Hs_06SubSamp -0.00099 -0.0032902996 0.0013103 0.9512747
+Hs_18SubSamp-Hs_06SubSamp -0.00064 -0.0029402996 0.0016603 0.9982841
+Hs_20SubSamp-Hs_06SubSamp -0.00076 -0.0030602996 0.0015403 0.9929643
+Hs_22SubSamp-Hs_06SubSamp -0.00091 -0.0032102996 0.0013903 0.9727072
+Hs_10SubSamp-Hs_08SubSamp -0.00073 -0.0030302996 0.0015703 0.9948992
+Hs_12SubSamp-Hs_08SubSamp -0.00029 -0.0025902996 0.0020103 0.9999988
+Hs_14SubSamp-Hs_08SubSamp -0.00052 -0.0028202996 0.0017803 0.9997209
+Hs_16SubSamp-Hs_08SubSamp -0.00079 -0.0030902996 0.0015103 0.9904717
+Hs_18SubSamp-Hs_08SubSamp -0.00044 -0.0027402996 0.0018603 0.9999393
+Hs_20SubSamp-Hs_08SubSamp -0.00056 -0.0028602996 0.0017403 0.9994602
+Hs_22SubSamp-Hs_08SubSamp -0.00071 -0.0030102996 0.0015903 0.9959280
+Hs_12SubSamp-Hs_10SubSamp  0.00044 -0.0018602996 0.0027403 0.9999393
+Hs_14SubSamp-Hs_10SubSamp  0.00021 -0.0020902996 0.0025103 1.0000000
+Hs_16SubSamp-Hs_10SubSamp -0.00006 -0.0023602996 0.0022403 1.0000000
+Hs_18SubSamp-Hs_10SubSamp  0.00029 -0.0020102996 0.0025903 0.9999988
+Hs_20SubSamp-Hs_10SubSamp  0.00017 -0.0021302996 0.0024703 1.0000000
+Hs_22SubSamp-Hs_10SubSamp  0.00002 -0.0022802996 0.0023203 1.0000000
+Hs_14SubSamp-Hs_12SubSamp -0.00023 -0.0025302996 0.0020703 0.9999999
+Hs_16SubSamp-Hs_12SubSamp -0.00050 -0.0028002996 0.0018003 0.9998041
+Hs_18SubSamp-Hs_12SubSamp -0.00015 -0.0024502996 0.0021503 1.0000000
+Hs_20SubSamp-Hs_12SubSamp -0.00027 -0.0025702996 0.0020303 0.9999994
+Hs_22SubSamp-Hs_12SubSamp -0.00042 -0.0027202996 0.0018803 0.9999606
+Hs_16SubSamp-Hs_14SubSamp -0.00027 -0.0025702996 0.0020303 0.9999994
+Hs_18SubSamp-Hs_14SubSamp  0.00008 -0.0022202996 0.0023803 1.0000000
+Hs_20SubSamp-Hs_14SubSamp -0.00004 -0.0023402996 0.0022603 1.0000000
+Hs_22SubSamp-Hs_14SubSamp -0.00019 -0.0024902996 0.0021103 1.0000000
+Hs_18SubSamp-Hs_16SubSamp  0.00035 -0.0019502996 0.0026503 0.9999929
+Hs_20SubSamp-Hs_16SubSamp  0.00023 -0.0020702996 0.0025303 0.9999999
+Hs_22SubSamp-Hs_16SubSamp  0.00008 -0.0022202996 0.0023803 1.0000000
+Hs_20SubSamp-Hs_18SubSamp -0.00012 -0.0024202996 0.0021803 1.0000000
+Hs_22SubSamp-Hs_18SubSamp -0.00027 -0.0025702996 0.0020303 0.9999994
+Hs_22SubSamp-Hs_20SubSamp -0.00015 -0.0024502996 0.0021503 1.0000000
+
+> 
+> 
+> ###Plot first the Residuals vs Fitted values from the fitted ANOVA in order to check for homogeneity of variance (which is an assumption of ANOVA), then plot a normality plot of residuals to check that the data are normally distributed (another assumption of ANOVA); the quantiles of the residuals are plotted against the quantiles of the normal distribution
+> 
+> plot(res.aov, 1)
+> plot(res.aov, 2)
+> 
+> 
+> ###Perform a Shapiro-Wilk test as an additional check for normality of the data
+> 
+> aov_residuals <- residuals(object = res.aov )
+> shapiro.test(x = aov_residuals )
+
+	Shapiro-Wilk normality test
+
+data:  aov_residuals
+W = 0.92644, p-value < 2.2e-16
+
+> 
+> 
+> ###In the case that either or both tests for the assumptions of an ANOVA are not passed, a non-parametric test for comparison of group means is performed here in the form of a Kruskal-Wallis rank sum test
+> 
+> kruskal.test(MPO_Hs_estimates ~ Subsampling_group, data = my_data)
+
+	Kruskal-Wallis rank sum test
+
+data:  MPO_Hs_estimates by Subsampling_group
+Kruskal-Wallis chi-squared = 42.494, df = 10, p-value = 6.123e-06
+
+> 
+> 
+> ###As a follow-up to the Kruskal-Wallis to check which specific group pairs are statistically significantly different from each other, a pairwise t-test is done here with corrections for multiple testing
+> 
+> pairwise.t.test(my_data$MPO_Hs_estimates, my_data$Subsampling_group,
++                 p.adjust.method = "BH")
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  my_data$MPO_Hs_estimates and my_data$Subsampling_group 
+
+             Hs_02SubSamp Hs_04SubSamp Hs_06SubSamp Hs_08SubSamp Hs_10SubSamp Hs_12SubSamp
+Hs_04SubSamp 2.5e-14      -            -            -            -            -           
+Hs_06SubSamp < 2e-16      0.21         -            -            -            -           
+Hs_08SubSamp < 2e-16      0.37         0.94         -            -            -           
+Hs_10SubSamp < 2e-16      0.87         0.70         0.76         -            -           
+Hs_12SubSamp < 2e-16      0.70         0.87         0.94         0.87         -           
+Hs_14SubSamp < 2e-16      0.76         0.76         0.87         0.94         0.94        
+Hs_16SubSamp < 2e-16      0.87         0.70         0.76         0.97         0.87        
+Hs_18SubSamp < 2e-16      0.76         0.81         0.87         0.94         0.94        
+Hs_20SubSamp < 2e-16      0.76         0.76         0.87         0.94         0.94        
+Hs_22SubSamp < 2e-16      0.87         0.70         0.76         0.98         0.87        
+             Hs_14SubSamp Hs_16SubSamp Hs_18SubSamp Hs_20SubSamp
+Hs_04SubSamp -            -            -            -           
+Hs_06SubSamp -            -            -            -           
+Hs_08SubSamp -            -            -            -           
+Hs_10SubSamp -            -            -            -           
+Hs_12SubSamp -            -            -            -           
+Hs_14SubSamp -            -            -            -           
+Hs_16SubSamp 0.94         -            -            -           
+Hs_18SubSamp 0.96         0.94         -            -           
+Hs_20SubSamp 0.97         0.94         0.95         -           
+Hs_22SubSamp 0.94         0.96         0.94         0.94        
+
+P value adjustment method: BH 
+> 

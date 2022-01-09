@@ -1,0 +1,213 @@
+> ##########Running an ANalysis Of VAriance and a Kruskal-Wallis test in R##########
+> 
+> 
+> ###Manually load the 'dplyr' library package before running this script###
+> 
+> 
+> ###Set the working directory as the directory where your input files are stored
+> 
+> setwd("~/Desktop/MinSampSize_R_aov_InputFiles/GenDivRslts_R_aov_input_files")
+> 
+> 
+> ###Import tab delimited .txt file and assign it to object "my_data"
+> 
+> my_data <- read.delim("PTP_Gis_estimate_R_aov_input_data.txt", header = TRUE, sep = "\t", quote = "")
+> 
+> 
+> ###Have the 'dplyr' R package take a random sampling of your data and print it to the console so you can check that your using the correct input file and that it's formatted appropriately
+> 
+> set.seed(1234)
+> dplyr::sample_n(my_data, 10)
+     PTP_Gis_estimates Subsampling_group
+126              0.099     Gis_04SubSamp
+684              0.086     Gis_14SubSamp
+669              0.115     Gis_14SubSamp
+1099             0.119     Gis_22SubSamp
+944              0.115     Gis_20SubSamp
+702              0.150     Gis_16SubSamp
+11               0.138     Gis_02SubSamp
+255              0.153     Gis_06SubSamp
+728              0.101     Gis_16SubSamp
+562              0.073     Gis_12SubSamp
+> 
+> 
+> ###Print your data's group names (called by R "levels") to check they appear in desired order
+> 
+> levels(my_data$Subsampling_group)
+ [1] "Gis_02SubSamp" "Gis_04SubSamp" "Gis_06SubSamp" "Gis_08SubSamp" "Gis_10SubSamp"
+ [6] "Gis_12SubSamp" "Gis_14SubSamp" "Gis_16SubSamp" "Gis_18SubSamp" "Gis_20SubSamp"
+[11] "Gis_22SubSamp"
+> 
+> 
+> ###Calculate and output summary statistics for your data, including datum counts, data mean and standard deviation
+> 
+> group_by(my_data, Subsampling_group) %>%
++   summarise(
++     count = n(),
++     mean = mean(PTP_Gis_estimates, na.rm = TRUE),
++     sd = sd(PTP_Gis_estimates, na.rm = TRUE)
++   )
+# A tibble: 11 x 4
+   Subsampling_group count  mean      sd
+   <fct>             <int> <dbl>   <dbl>
+ 1 Gis_02SubSamp       100 0.123 0.0879 
+ 2 Gis_04SubSamp       100 0.109 0.0592 
+ 3 Gis_06SubSamp       100 0.115 0.0461 
+ 4 Gis_08SubSamp       100 0.102 0.0396 
+ 5 Gis_10SubSamp       100 0.111 0.0263 
+ 6 Gis_12SubSamp       100 0.116 0.0275 
+ 7 Gis_14SubSamp       100 0.108 0.0172 
+ 8 Gis_16SubSamp       100 0.108 0.0186 
+ 9 Gis_18SubSamp       100 0.110 0.0153 
+10 Gis_20SubSamp       100 0.108 0.0115 
+11 Gis_22SubSamp       100 0.108 0.00793
+> 
+> 
+> 
+> ###Assign the command for running an analysis of variance (aov) to an object, in this case called "res.aov;" the portion of the aov command that is in parentheses consists of the column header for the column containing your dependant variable (your data), followed by a '~' and then the column header for the column containing your independent variable (your group assignments for each data point), followed by designation of your previously established data object to 'data =' (in this case "my_data")
+> 
+> res.aov <- aov(PTP_Gis_estimates ~ Subsampling_group, data = my_data)
+> 
+> 
+> ###Print a summary of the results of the ANOVA analyses designated by the previous command
+> 
+> summary(res.aov)
+                    Df Sum Sq  Mean Sq F value Pr(>F)  
+Subsampling_group   10  0.030 0.002998   1.891 0.0427 *
+Residuals         1089  1.727 0.001586                 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> 
+> 
+> ###Run a Tukey multiple pairwise comparisons test on the fitted ANOVA from the previous command, and output the results to check which pairwise group comparisons are statistically significantly different from each other
+> 
+> TukeyHSD(res.aov)
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = PTP_Gis_estimates ~ Subsampling_group, data = my_data)
+
+$Subsampling_group
+                                diff          lwr          upr     p adj
+Gis_04SubSamp-Gis_02SubSamp -0.01401 -0.032173483  0.004153483 0.3126527
+Gis_06SubSamp-Gis_02SubSamp -0.00776 -0.025923483  0.010403483 0.9536013
+Gis_08SubSamp-Gis_02SubSamp -0.02067 -0.038833483 -0.002506517 0.0114207
+Gis_10SubSamp-Gis_02SubSamp -0.01221 -0.030373483  0.005953483 0.5281035
+Gis_12SubSamp-Gis_02SubSamp -0.00747 -0.025633483  0.010693483 0.9641790
+Gis_14SubSamp-Gis_02SubSamp -0.01516 -0.033323483  0.003003483 0.2046383
+Gis_16SubSamp-Gis_02SubSamp -0.01520 -0.033363483  0.002963483 0.2014005
+Gis_18SubSamp-Gis_02SubSamp -0.01297 -0.031133483  0.005193483 0.4322824
+Gis_20SubSamp-Gis_02SubSamp -0.01538 -0.033543483  0.002783483 0.1872682
+Gis_22SubSamp-Gis_02SubSamp -0.01454 -0.032703483  0.003623483 0.2593443
+Gis_06SubSamp-Gis_04SubSamp  0.00625 -0.011913483  0.024413483 0.9903281
+Gis_08SubSamp-Gis_04SubSamp -0.00666 -0.024823483  0.011503483 0.9843122
+Gis_10SubSamp-Gis_04SubSamp  0.00180 -0.016363483  0.019963483 0.9999999
+Gis_12SubSamp-Gis_04SubSamp  0.00654 -0.011623483  0.024703483 0.9863153
+Gis_14SubSamp-Gis_04SubSamp -0.00115 -0.019313483  0.017013483 1.0000000
+Gis_16SubSamp-Gis_04SubSamp -0.00119 -0.019353483  0.016973483 1.0000000
+Gis_18SubSamp-Gis_04SubSamp  0.00104 -0.017123483  0.019203483 1.0000000
+Gis_20SubSamp-Gis_04SubSamp -0.00137 -0.019533483  0.016793483 1.0000000
+Gis_22SubSamp-Gis_04SubSamp -0.00053 -0.018693483  0.017633483 1.0000000
+Gis_08SubSamp-Gis_06SubSamp -0.01291 -0.031073483  0.005253483 0.4396654
+Gis_10SubSamp-Gis_06SubSamp -0.00445 -0.022613483  0.013713483 0.9994291
+Gis_12SubSamp-Gis_06SubSamp  0.00029 -0.017873483  0.018453483 1.0000000
+Gis_14SubSamp-Gis_06SubSamp -0.00740 -0.025563483  0.010763483 0.9664397
+Gis_16SubSamp-Gis_06SubSamp -0.00744 -0.025603483  0.010723483 0.9651613
+Gis_18SubSamp-Gis_06SubSamp -0.00521 -0.023373483  0.012953483 0.9977805
+Gis_20SubSamp-Gis_06SubSamp -0.00762 -0.025783483  0.010543483 0.9589576
+Gis_22SubSamp-Gis_06SubSamp -0.00678 -0.024943483  0.011383483 0.9820861
+Gis_10SubSamp-Gis_08SubSamp  0.00846 -0.009703483  0.026623483 0.9191638
+Gis_12SubSamp-Gis_08SubSamp  0.01320 -0.004963483  0.031363483 0.4043889
+Gis_14SubSamp-Gis_08SubSamp  0.00551 -0.012653483  0.023673483 0.9964663
+Gis_16SubSamp-Gis_08SubSamp  0.00547 -0.012693483  0.023633483 0.9966719
+Gis_18SubSamp-Gis_08SubSamp  0.00770 -0.010463483  0.025863483 0.9559554
+Gis_20SubSamp-Gis_08SubSamp  0.00529 -0.012873483  0.023453483 0.9974785
+Gis_22SubSamp-Gis_08SubSamp  0.00613 -0.012033483  0.024293483 0.9916834
+Gis_12SubSamp-Gis_10SubSamp  0.00474 -0.013423483  0.022903483 0.9990090
+Gis_14SubSamp-Gis_10SubSamp -0.00295 -0.021113483  0.015213483 0.9999869
+Gis_16SubSamp-Gis_10SubSamp -0.00299 -0.021153483  0.015173483 0.9999851
+Gis_18SubSamp-Gis_10SubSamp -0.00076 -0.018923483  0.017403483 1.0000000
+Gis_20SubSamp-Gis_10SubSamp -0.00317 -0.021333483  0.014993483 0.9999742
+Gis_22SubSamp-Gis_10SubSamp -0.00233 -0.020493483  0.015833483 0.9999986
+Gis_14SubSamp-Gis_12SubSamp -0.00769 -0.025853483  0.010473483 0.9563391
+Gis_16SubSamp-Gis_12SubSamp -0.00773 -0.025893483  0.010433483 0.9547894
+Gis_18SubSamp-Gis_12SubSamp -0.00550 -0.023663483  0.012663483 0.9965187
+Gis_20SubSamp-Gis_12SubSamp -0.00791 -0.026073483  0.010253483 0.9473212
+Gis_22SubSamp-Gis_12SubSamp -0.00707 -0.025233483  0.011093483 0.9756908
+Gis_16SubSamp-Gis_14SubSamp -0.00004 -0.018203483  0.018123483 1.0000000
+Gis_18SubSamp-Gis_14SubSamp  0.00219 -0.015973483  0.020353483 0.9999992
+Gis_20SubSamp-Gis_14SubSamp -0.00022 -0.018383483  0.017943483 1.0000000
+Gis_22SubSamp-Gis_14SubSamp  0.00062 -0.017543483  0.018783483 1.0000000
+Gis_18SubSamp-Gis_16SubSamp  0.00223 -0.015933483  0.020393483 0.9999991
+Gis_20SubSamp-Gis_16SubSamp -0.00018 -0.018343483  0.017983483 1.0000000
+Gis_22SubSamp-Gis_16SubSamp  0.00066 -0.017503483  0.018823483 1.0000000
+Gis_20SubSamp-Gis_18SubSamp -0.00241 -0.020573483  0.015753483 0.9999981
+Gis_22SubSamp-Gis_18SubSamp -0.00157 -0.019733483  0.016593483 1.0000000
+Gis_22SubSamp-Gis_20SubSamp  0.00084 -0.017323483  0.019003483 1.0000000
+
+> 
+> 
+> ###Plot first the Residuals vs Fitted values from the fitted ANOVA in order to check for homogeneity of variance (which is an assumption of ANOVA), then plot a normality plot of residuals to check that the data are normally distributed (another assumption of ANOVA); the quantiles of the residuals are plotted against the quantiles of the normal distribution
+> 
+> plot(res.aov, 1)
+> plot(res.aov, 2)
+> 
+> 
+> ###Perform a Shapiro-Wilk test as an additional check for normality of the data
+> 
+> aov_residuals <- residuals(object = res.aov )
+> shapiro.test(x = aov_residuals )
+
+	Shapiro-Wilk normality test
+
+data:  aov_residuals
+W = 0.91117, p-value < 2.2e-16
+
+> 
+> 
+> ###In the case that either or both tests for the assumptions of an ANOVA are not passed, a non-parametric test for comparison of group means is performed here in the form of a Kruskal-Wallis rank sum test
+> 
+> kruskal.test(PTP_Gis_estimates ~ Subsampling_group, data = my_data)
+
+	Kruskal-Wallis rank sum test
+
+data:  PTP_Gis_estimates by Subsampling_group
+Kruskal-Wallis chi-squared = 14.954, df = 10, p-value = 0.1338
+
+> 
+> 
+> ###As a follow-up to the Kruskal-Wallis to check which specific group pairs are statistically significantly different from each other, a pairwise t-test is done here with corrections for multiple testing
+> 
+> pairwise.t.test(my_data$PTP_Gis_estimates, my_data$Subsampling_group,
++                 p.adjust.method = "BH")
+
+	Pairwise comparisons using t tests with pooled SD 
+
+data:  my_data$PTP_Gis_estimates and my_data$Subsampling_group 
+
+              Gis_02SubSamp Gis_04SubSamp Gis_06SubSamp Gis_08SubSamp Gis_10SubSamp
+Gis_04SubSamp 0.119         -             -             -             -            
+Gis_06SubSamp 0.520         0.585         -             -             -            
+Gis_08SubSamp 0.014         0.563         0.135         -             -            
+Gis_10SubSamp 0.167         0.993         0.716         0.520         -            
+Gis_12SubSamp 0.520         0.563         0.993         0.135         0.688        
+Gis_14SubSamp 0.099         0.993         0.520         0.629         0.917        
+Gis_16SubSamp 0.099         0.993         0.520         0.629         0.917        
+Gis_18SubSamp 0.135         0.993         0.630         0.520         0.993        
+Gis_20SubSamp 0.099         0.993         0.520         0.630         0.917        
+Gis_22SubSamp 0.109         0.993         0.563         0.585         0.959        
+              Gis_12SubSamp Gis_14SubSamp Gis_16SubSamp Gis_18SubSamp Gis_20SubSamp
+Gis_04SubSamp -             -             -             -             -            
+Gis_06SubSamp -             -             -             -             -            
+Gis_08SubSamp -             -             -             -             -            
+Gis_10SubSamp -             -             -             -             -            
+Gis_12SubSamp -             -             -             -             -            
+Gis_14SubSamp 0.520         -             -             -             -            
+Gis_16SubSamp 0.520         0.994         -             -             -            
+Gis_18SubSamp 0.629         0.959         0.959         -             -            
+Gis_20SubSamp 0.520         0.993         0.993         0.959         -            
+Gis_22SubSamp 0.549         0.993         0.993         0.993         0.993        
+
+P value adjustment method: BH 
+> 
